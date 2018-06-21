@@ -3,7 +3,7 @@ var sass = require('gulp-sass');
 
 gulp.task('default', () => {
   return gulp.src('src/**/*.scss')
-    .pipe(sass())
+    .pipe(sass({includePaths: ['../../node_modules']}))
     .pipe(gulp.dest('build'));
 });
 

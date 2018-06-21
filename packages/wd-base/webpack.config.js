@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/Button.js'],
+  entry: ['./index.js'],
   module: {
     rules: [{
       test: /\.js$/,
@@ -20,15 +20,8 @@ module.exports = {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({
         use: [
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: ["../../node_modules"]
-            }
-          }
+          'css-loader',
+          'sass-loader',
         ],
       }),
     }],
@@ -36,7 +29,7 @@ module.exports = {
   output: {
     library: 'metal',
     libraryTarget: 'this',
-    filename: './build/globals/wd-button.js',
+    filename: './build/globals/wd-base.js',
   },
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),

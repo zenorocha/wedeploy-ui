@@ -1,8 +1,19 @@
 {
   "name": "wd-base",
   "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-sass": "^4.0.1"
+    "babel-cli": "^6.4.5",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-node-env-inline": "^0.2.0",
+    "babel-preset-metal": "^4.0.0",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "webpack": "^3.12.0"
   }
 }

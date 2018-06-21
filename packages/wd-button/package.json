@@ -1,6 +1,6 @@
 {
   "name": "wd-button",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "WeDeploy Button component",
   "license": "BSD-3-Clause",
   "repository": "https://github.com/wedeploy/wedeploy-ui/tree/master/packages/wd-button",

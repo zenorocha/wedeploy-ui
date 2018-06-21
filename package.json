@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "lerna bootstrap -- --no-optional --no-package-lock",
+    "publish": "lerna publish",
+    "build": "lerna run compile && lerna run build",
+    "compile": "lerna run compile",
+    "link": "lerna link",
+    "test": "jest",
+    "format": "npm run prettier -- --write",
+    "prettier": "prettier-eslint packages/wd-*/src/*.js packages/wd-*/src/**/*.js"
+  },
+  "devDependencies": {
+    "babel-jest": "^23.0.1",
+    "babel-preset-metal": "^4.0.0",
+    "eslint": "^4.11.0",
+    "eslint-config-liferay": "^2.0.10",
+    "jest": "^23.1.0",
+    "lerna": "^2.5.1",
+    "metal-jest-serializer": "^2.0.0",
+    "prettier-eslint-cli": "^4.4.0",
+    "regenerator-runtime": "^0.11.0",
+    "sinon": "^6.0.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/*.js"
+    ],
+    "transformIgnorePatterns": [
+      "<rootDir>.*(node_modules)(?!.*wd.*).*$"
+    ],
+    "snapshotSerializers": [
+      "metal-jest-serializer"
+    ],
+    "resolver": "./jest-wd-lerna-resolver"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

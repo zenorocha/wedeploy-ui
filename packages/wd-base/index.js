@@ -1,5 +1,2 @@
-var path = require('path');
+import './src/main.scss';
 
-module.exports = {
-  src: path.join(__dirname, 'src')
-};

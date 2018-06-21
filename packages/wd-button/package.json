@@ -17,7 +17,7 @@
     "test"
   ],
   "scripts": {
-    "build": "npm run soy && webpack && gulp",
+    "build": "npm run soy && webpack",
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run soy && npm run compile",
     "soy": "metalsoy"
@@ -37,10 +37,12 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-node-env-inline": "^0.2.0",
     "babel-preset-metal": "^4.0.0",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^4.0.1",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
     "metal-tools-soy": "^4.2.6",
     "metal-useragent": "^2.1.1",
-    "webpack": "^3.5.5"
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "webpack": "^3.12.0"
   }
 }

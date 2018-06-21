@@ -1,0 +1,22 @@
+{
+  "name": "generator-wd",
+  "version": "1.0.0",
+  "description": "Yeoman generator for WeDeploy UI components",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "https://github.com/wedeploy/wedeploy-ui/tree/master/packages/generator-wd",
+  "keywords": [
+    "metal",
+    "wedeploy",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "lodash": "^3.9.3",
+    "yeoman-generator": "^0.19.0"
+  },
+  "devDependencies": {
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^1.7.2"
+  }
+}

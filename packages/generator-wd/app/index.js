@@ -66,6 +66,10 @@ module.exports = yeoman.generators.Base.extend({
       }
     );
     this.fs.copyTpl(
+      this.templatePath('_src/_Boilerplate.scss'),
+      this.destinationPath('src/' + this.componentName + '.scss')
+    );
+    this.fs.copyTpl(
       this.templatePath('_src/_Boilerplate.js'),
       this.destinationPath('src/' + this.componentName + '.js'),
       {

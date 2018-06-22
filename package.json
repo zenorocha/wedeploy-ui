@@ -34,7 +34,7 @@
     ],
     "resolver": "./jest-wd-lerna-resolver",
     "moduleNameMapper": {
-      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(css|scss)$": "<rootDir>/mocks/styleMock.js"
     }
   },
   "workspaces": [

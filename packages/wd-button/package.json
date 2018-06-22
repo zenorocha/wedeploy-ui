@@ -1,6 +1,6 @@
 {
   "name": "wd-button",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "WeDeploy Button component",
   "license": "BSD-3-Clause",
   "repository": "https://github.com/wedeploy/wedeploy-ui/tree/master/packages/wd-button",
@@ -30,7 +30,7 @@
     "metal-component": "^2.14.0",
     "metal-soy": "^2.14.0",
     "metal-state": "^2.14.0",
-    "wd-base": "^0.0.2"
+    "wd-base": "^0.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.4.5",

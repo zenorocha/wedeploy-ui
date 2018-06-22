@@ -6,15 +6,15 @@ var templates;
 goog.loadModule(function(exports) {
 var soy = goog.require('soy');
 var soydata = goog.require('soydata');
-// This file was automatically generated from Button.soy.
+// This file was automatically generated from WDButton.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace Button.
+ * @fileoverview Templates in namespace WDButton.
  * @public
  */
 
-goog.module('Button.incrementaldom');
+goog.module('WDButton.incrementaldom');
 
 goog.require('goog.soy.data.SanitizedContent');
 var incrementalDom = goog.require('incrementaldom');
@@ -50,7 +50,7 @@ exports.render = $render;
  */
 $render.Params;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'Button.render';
+  $render.soyTemplateName = 'WDButton.render';
 }
 
 exports.render.params = ["id"];
@@ -60,8 +60,8 @@ return exports;
 
 });
 
-class Button extends Component {}
-Soy.register(Button, templates);
-export { Button, templates };
+class WDButton extends Component {}
+Soy.register(WDButton, templates);
+export { WDButton, templates };
 export default templates;
 /* jshint ignore:end */

@@ -2,29 +2,19 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: ['./index.js'],
+  entry: ['./src/main.scss'],
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /(node_modules)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          compact: false,
-          presets: ['babel-preset-es2015'],
-          plugins: ['babel-plugin-transform-node-env-inline'],
-        },
+    rules: [
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            'css-loader',
+            'sass-loader',
+          ],
+        }),
       },
-    },
-    {
-      test: /\.scss$/,
-      use: ExtractTextPlugin.extract({
-        use: [
-          'css-loader',
-          'sass-loader',
-        ],
-      }),
-    }],
+    ],
   },
   output: {
     library: 'metal',

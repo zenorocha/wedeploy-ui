@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/* Font Faces
+   ========================================================================== */
+$font-primary: "Circular", sans-serif !default;
+$font-secondary: "Open Sans", sans-serif !default;
+$font-mono: "Roboto Mono", sans-serif !default;
+
+
+// color
+$color-black: #0e141a;
+
+// font weight
+$display: 900;
+$emphasis: 500;
+$body: normal;
+
+// font family & color helper mixin
+@mixin font-primary($color-variable) {
+  font-family: $font-primary;
+  color: $color-variable;
+}
+
+
+/* Font Mixins
+   ========================================================================== */
+@mixin wd-typography-large($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 85px;
+  line-height: 96px;
+
+  @include font-primary($color-black);
+}
+
+@mixin wd-typography-heading-1($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 69px;
+  line-height: 78px;
+
+  @include font-primary($color-black);
+}
+
+@mixin wd-typography-heading-2($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 56px;
+  line-height: 66px;
+
+  @include font-primary($color-black);
+}
+
+@mixin wd-typography-heading-3($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 46px;
+  line-height: 60px;
+
+  @include font-primary($color-black);
+}
+
+@mixin wd-typography-heading-4($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 41px;
+  line-height: 54px;
+
+  @include font-primary($color-black);
+}
+
+@mixin wd-typography-heading-5($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 33px;
+  line-height: 48px;
+
+  @include font-primary($color-black);
+}
+
+@mixin wd-typography-heading-6($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 27px;
+  line-height: 36px;
+
+  @include font-primary($color-black);
+}
+
+@mixin wd-typography-subheading($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 22px;
+  line-height: 30px;
+
+  @include font-primary($color-black);
+}
+
+@mixin wd-typography-body($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 18px;
+  line-height: 30px;
+
+  @include font-primary($color-black);
+}
+
+@mixin wd-typography-caption($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 16px;
+  line-height: 24px;
+
+  @include font-primary($color-black);
+}
+
+@mixin wd-typography-small($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 14px;
+  line-height: 18px;
+
+  @include font-primary($color-black);
+}
+
+@mixin wd-typography-x-small($weight-variable) {
+  font-weight: $weight-variable;
+  font-size: 13px;
+  line-height: 18px;
+
+  @include font-primary($color-black);
+}

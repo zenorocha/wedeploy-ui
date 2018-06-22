@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo: Typography</title>
+  <link rel="stylesheet" href="../build/main.css">
+  <link rel="stylesheet" href="../src/fonts/circular/circular.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      margin: 24px 0;
+    }
+    .wd-demo-container {
+      margin: 0;
+      padding: 48px 48px 84px;
+      box-sizing: border-box;
+      width: 100vw;
+      background-color: rgba(14, 20, 26, 0.02);
+    }
+    .wd-demo-heading {}
+    .wd-demo-cardheading {
+      color: rgba(14, 20, 26, 0.6);
+      margin: 0 0 24px;
+    }
+    .wd-demo-header {
+      margin: 0 0 60px;
+    }
+    .wd-demo-body {
+      width: 100%;
+      padding: 0;
+    }
+    .wd-demo-body-section {
+      margin: 24px 0 48px;
+    }
+    .wd-demo-body-content {
+      margin: 0 auto;
+      display: inline-flex;
+      width: 100%;
+    }
+    .wd-demo-body-content-3card {
+      box-sizing: border-box;
+      background-color: #fff;
+      padding: 48px;
+      box-shadow: 0 1px 8px -4px rgba(14, 20, 26, 0.3), 0 0 1px 0 rgba(14, 20, 26, 0.36);
+      border-radius: 4px;
+      width: 33%;
+      margin-right: 48px;
+    }
+    .wd-demo-body-content-3card:last-child {
+      margin-right: 0;
+    }
+    .wd-demo-dark-section {
+      background-color: rgba(14, 20, 26, 0.9);
+    }
+    .line-break-force {
+      width: 100%;
+      height: 0px;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wd-demo-container">
+
+    <div class="wd-demo-header">
+      <h1 class="wd-typography-heading-3-display">Typography</h1>
+    </div>
+
+    <div class="wd-demo-body">
+
+      <div class="wd-demo-body-section">
+        <h2 class="wd-typography-caption-body wd-demo-cardheading">Display</h2>
+        <div class="wd-demo-body-content">
+          <div class="wd-demo-body-content-3card">
+            <p class="wd-typography-title-display">01-large</p>
+            <p class="wd-typography-heading-1-display">02-heading-1</p>
+            <p class="wd-typography-heading-2-display">03-heading-2</p>
+            <p class="wd-typography-heading-3-display">04-heading-3</p>
+            <p class="wd-typography-heading-4-display">05-heading-4</p>
+            <p class="wd-typography-heading-5-display">06-heading-5</p>
+            <p class="wd-typography-heading-6-display">07-heading-6</p>
+            <p class="wd-typography-subheading-display">08-subheading</p>
+            <p class="wd-typography-body-display">09-body</p>
+            <p class="wd-typography-caption-display">10-caption</p>
+            <p class="wd-typography-small-display">11-small</p>
+            <p class="wd-typography-x-small-display">12-x-small</p>
+          </div>
+          <div class="wd-demo-body-content-3card" style="text-align: center;">
+            <p class="wd-typography-title-display">01-large</p>
+            <p class="wd-typography-heading-1-display">02-heading-1</p>
+            <p class="wd-typography-heading-2-display">03-heading-2</p>
+            <p class="wd-typography-heading-3-display">04-heading-3</p>
+            <p class="wd-typography-heading-4-display">05-heading-4</p>
+            <p class="wd-typography-heading-5-display">06-heading-5</p>
+            <p class="wd-typography-heading-6-display">07-heading-6</p>
+            <p class="wd-typography-subheading-display">08-subheading</p>
+            <p class="wd-typography-body-display">09-body</p>
+            <p class="wd-typography-caption-display">10-caption</p>
+            <p class="wd-typography-small-display">11-small</p>
+            <p class="wd-typography-x-small-display">12-x-small</p>
+          </div>
+          <div class="wd-demo-body-content-3card" style="text-align: right;">
+            <p class="wd-typography-title-display">01-large</p>
+            <p class="wd-typography-heading-1-display">02-heading-1</p>
+            <p class="wd-typography-heading-2-display">03-heading-2</p>
+            <p class="wd-typography-heading-3-display">04-heading-3</p>
+            <p class="wd-typography-heading-4-display">05-heading-4</p>
+            <p class="wd-typography-heading-5-display">06-heading-5</p>
+            <p class="wd-typography-heading-6-display">07-heading-6</p>
+            <p class="wd-typography-subheading-display">08-subheading</p>
+            <p class="wd-typography-body-display">09-body</p>
+            <p class="wd-typography-caption-display">10-caption</p>
+            <p class="wd-typography-small-display">11-small</p>
+            <p class="wd-typography-x-small-display">12-x-small</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-demo-body-section">
+        <h2 class="wd-typography-caption-body wd-demo-cardheading">Emphasis</h2>
+        <div class="wd-demo-body-content">
+          <div class="wd-demo-body-content-3card">
+            <p class="wd-typography-title-emphasis">01-large</p>
+            <p class="wd-typography-heading-1-emphasis">02-heading-1</p>
+            <p class="wd-typography-heading-2-emphasis">03-heading-2</p>
+            <p class="wd-typography-heading-3-emphasis">04-heading-3</p>
+            <p class="wd-typography-heading-4-emphasis">05-heading-4</p>
+            <p class="wd-typography-heading-5-emphasis">06-heading-5</p>
+            <p class="wd-typography-heading-6-emphasis">07-heading-6</p>
+            <p class="wd-typography-subheading-emphasis">08-subheading</p>
+            <p class="wd-typography-body-emphasis">09-body</p>
+            <p class="wd-typography-caption-emphasis">10-caption</p>
+            <p class="wd-typography-small-emphasis">11-small</p>
+            <p class="wd-typography-x-small-emphasis">12-x-small</p>
+          </div>
+          <div class="wd-demo-body-content-3card" style="text-align: center;">
+            <p class="wd-typography-title-emphasis">01-large</p>
+            <p class="wd-typography-heading-1-emphasis">02-heading-1</p>
+            <p class="wd-typography-heading-2-emphasis">03-heading-2</p>
+            <p class="wd-typography-heading-3-emphasis">04-heading-3</p>
+            <p class="wd-typography-heading-4-emphasis">05-heading-4</p>
+            <p class="wd-typography-heading-5-emphasis">06-heading-5</p>
+            <p class="wd-typography-heading-6-emphasis">07-heading-6</p>
+            <p class="wd-typography-subheading-emphasis">08-subheading</p>
+            <p class="wd-typography-body-emphasis">09-body</p>
+            <p class="wd-typography-caption-emphasis">10-caption</p>
+            <p class="wd-typography-small-emphasis">11-small</p>
+            <p class="wd-typography-x-small-emphasis">12-x-small</p>
+          </div>
+          <div class="wd-demo-body-content-3card" style="text-align: right;">
+            <p class="wd-typography-title-emphasis">01-large</p>
+            <p class="wd-typography-heading-1-emphasis">02-heading-1</p>
+            <p class="wd-typography-heading-2-emphasis">03-heading-2</p>
+            <p class="wd-typography-heading-3-emphasis">04-heading-3</p>
+            <p class="wd-typography-heading-4-emphasis">05-heading-4</p>
+            <p class="wd-typography-heading-5-emphasis">06-heading-5</p>
+            <p class="wd-typography-heading-6-emphasis">07-heading-6</p>
+            <p class="wd-typography-subheading-emphasis">08-subheading</p>
+            <p class="wd-typography-body-emphasis">09-body</p>
+            <p class="wd-typography-caption-emphasis">10-caption</p>
+            <p class="wd-typography-small-emphasis">11-small</p>
+            <p class="wd-typography-x-small-emphasis">12-x-small</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-demo-body-section">
+        <h2 class="wd-typography-caption-body wd-demo-cardheading">Body</h2>
+        <div class="wd-demo-body-content">
+          <div class="wd-demo-body-content-3card">
+            <p class="wd-typography-title-body">01-large</p>
+            <p class="wd-typography-heading-1-body">02-heading-1</p>
+            <p class="wd-typography-heading-2-body">03-heading-2</p>
+            <p class="wd-typography-heading-3-body">04-heading-3</p>
+            <p class="wd-typography-heading-4-body">05-heading-4</p>
+            <p class="wd-typography-heading-5-body">06-heading-5</p>
+            <p class="wd-typography-heading-6-body">07-heading-6</p>
+            <p class="wd-typography-subheading-body">08-subheading</p>
+            <p class="wd-typography-body-body">09-body</p>
+            <p class="wd-typography-caption-body">10-caption</p>
+            <p class="wd-typography-small-body">11-small</p>
+            <p class="wd-typography-x-small-body">12-x-small</p>
+          </div>
+          <div class="wd-demo-body-content-3card" style="text-align: center;">
+            <p class="wd-typography-title-body">01-large</p>
+            <p class="wd-typography-heading-1-body">02-heading-1</p>
+            <p class="wd-typography-heading-2-body">03-heading-2</p>
+            <p class="wd-typography-heading-3-body">04-heading-3</p>
+            <p class="wd-typography-heading-4-body">05-heading-4</p>
+            <p class="wd-typography-heading-5-body">06-heading-5</p>
+            <p class="wd-typography-heading-6-body">07-heading-6</p>
+            <p class="wd-typography-subheading-body">08-subheading</p>
+            <p class="wd-typography-body-body">09-body</p>
+            <p class="wd-typography-caption-body">10-caption</p>
+            <p class="wd-typography-small-body">11-small</p>
+            <p class="wd-typography-x-small-body">12-x-small</p>
+          </div>
+          <div class="wd-demo-body-content-3card" style="text-align: right;">
+            <p class="wd-typography-title-body">01-large</p>
+            <p class="wd-typography-heading-1-body">02-heading-1</p>
+            <p class="wd-typography-heading-2-body">03-heading-2</p>
+            <p class="wd-typography-heading-3-body">04-heading-3</p>
+            <p class="wd-typography-heading-4-body">05-heading-4</p>
+            <p class="wd-typography-heading-5-body">06-heading-5</p>
+            <p class="wd-typography-heading-6-body">07-heading-6</p>
+            <p class="wd-typography-subheading-body">08-subheading</p>
+            <p class="wd-typography-body-body">09-body</p>
+            <p class="wd-typography-caption-body">10-caption</p>
+            <p class="wd-typography-small-body">11-small</p>
+            <p class="wd-typography-x-small-body">12-x-small</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

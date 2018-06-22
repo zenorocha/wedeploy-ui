@@ -8,9 +8,9 @@
     "node": ">=0.12.0",
     "npm": ">=3.0.0"
   },
-  "main": "lib/Button.js",
-  "esnext:main": "src/Button.js",
-  "jsnext:main": "src/Button.js",
+  "main": "lib/WDButton.js",
+  "esnext:main": "src/WDButton.js",
+  "jsnext:main": "src/WDButton.js",
   "files": [
     "lib",
     "src",

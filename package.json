@@ -32,7 +32,10 @@
     "snapshotSerializers": [
       "metal-jest-serializer"
     ],
-    "resolver": "./jest-wd-lerna-resolver"
+    "resolver": "./jest-wd-lerna-resolver",
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "workspaces": [
     "packages/*"

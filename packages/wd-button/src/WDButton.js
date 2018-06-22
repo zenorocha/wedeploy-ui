@@ -1,21 +1,20 @@
 import Component from 'metal-component';
 import Soy from 'metal-soy';
 import {Config} from 'metal-state';
-import './Button.scss';
 
-import templates from './Button.soy.js';
+import templates from './WDButton.soy.js';
 
 /**
- * Button component.
+ * WDButton component.
  */
-class Button extends Component {}
+class WDButton extends Component {}
 
 /**
  * State definition.
  * @static
  * @type {!Object}
  */
-Button.STATE = {
+WDButton.STATE = {
   /**
    * ID to be applied to the element.
    * @type {!String}
@@ -24,7 +23,7 @@ Button.STATE = {
   id: Config.string().value('example'),
 };
 
-Soy.register(Button, templates);
+Soy.register(WDButton, templates);
 
-export {Button};
-export default Button;
+export {WDButton};
+export default WDButton;

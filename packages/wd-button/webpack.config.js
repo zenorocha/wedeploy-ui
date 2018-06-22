@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/Button.js'],
+  entry: ['./src/WDButton.js', './src/WDButton.scss'],
   module: {
     rules: [{
       test: /\.js$/,
@@ -21,14 +21,14 @@ module.exports = {
       use: ExtractTextPlugin.extract({
         use: [
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
           },
           {
             loader: 'sass-loader',
             options: {
-              includePaths: ["../../node_modules"]
-            }
-          }
+              includePaths: ['../../node_modules'],
+            },
+          },
         ],
       }),
     }],

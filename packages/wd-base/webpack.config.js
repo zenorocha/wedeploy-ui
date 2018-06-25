@@ -1,32 +1,33 @@
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  mode: 'production',
   entry: ['./src/main.scss'],
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            'css-loader',
-            'sass-loader',
-          ],
-        }),
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
       },
     ],
   },
   output: {
     library: 'metal',
     libraryTarget: 'this',
-    filename: './build/globals/wd-base.js',
+    filename: 'wd-base.js',
+    path: __dirname + '/build/globals',
   },
   plugins: [
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new ExtractTextPlugin({
-      disable: false,
-      filename: './build/commons.css',
-      allChunks: true,
+    new MiniCssExtractPlugin({
+      filename: '../main.css',
     }),
   ],
 };

@@ -2,122 +2,181 @@
    Typography
    ========================================================================== */
 
-/* Font Faces
+/* Font Variables
    ========================================================================== */
-$font-primary: "Circular", sans-serif !default;
-$font-secondary: "Open Sans", sans-serif !default;
-$font-mono: "Roboto Mono", sans-serif !default;
+$wd-font-primary :  "Circular", sans-serif !default;
+
+/* Font Weight Variables */
+$wd--display     :  900 !default;
+$wd--emphasis    :  500 !default;
+$wd--body        :  400 !default;
 
 
-// color
-$color-black: #0e141a;
+/* Font Builder Mixin
+   ========================================================================== */
+@mixin font-builder($font-weight-variable) {
+  font-weight: $font-weight-variable;
 
-// font weight
-$display: 900;
-$emphasis: 500;
-$body: normal;
-
-// font family & color helper mixin
-@mixin font-primary($color-variable) {
-  font-family: $font-primary;
-  color: $color-variable;
+  font-family: $wd-font-primary;
+  color: $wd-color-black;
 }
 
 
 /* Font Mixins
    ========================================================================== */
-@mixin wd-typography-large($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-large {
   font-size: 85px;
   line-height: 96px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--display);
 }
 
-@mixin wd-typography-heading-1($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-h1 {
   font-size: 69px;
   line-height: 78px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--display);
 }
 
-@mixin wd-typography-heading-2($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-h2 {
   font-size: 56px;
   line-height: 66px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--display);
 }
 
-@mixin wd-typography-heading-3($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-h3 {
   font-size: 46px;
   line-height: 60px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--display);
 }
 
-@mixin wd-typography-heading-4($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-h4 {
   font-size: 41px;
   line-height: 54px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--display);
 }
 
-@mixin wd-typography-heading-5($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-h5 {
   font-size: 33px;
   line-height: 48px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--display);
 }
 
-@mixin wd-typography-heading-6($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-h6 {
   font-size: 27px;
   line-height: 36px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--display);
 }
 
-@mixin wd-typography-subheading($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-subheading {
   font-size: 22px;
   line-height: 30px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--emphasis);
 }
 
-@mixin wd-typography-body($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-body {
   font-size: 18px;
   line-height: 30px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--body);
 }
 
-@mixin wd-typography-caption($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-caption {
   font-size: 16px;
   line-height: 24px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--body);
 }
 
-@mixin wd-typography-small($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-small {
   font-size: 14px;
   line-height: 18px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--body);
 }
 
-@mixin wd-typography-x-small($weight-variable) {
-  font-weight: $weight-variable;
+@mixin wd-typo-xsmall {
   font-size: 13px;
   line-height: 18px;
 
-  @include font-primary($color-black);
+  @include font-builder($wd--body);
+}
+
+
+/* Font Classes
+   ========================================================================== */
+
+/* General Classes */
+.wd-typo-large,
+.wd-typo-lg {
+  @include wd-typo-large;
+}
+
+.wd-typo-h1 {
+  @include wd-typo-h1;
+}
+
+.wd-typo-h2 {
+  @include wd-typo-h2;
+}
+
+.wd-typo-h3 {
+  @include wd-typo-h3;
+}
+
+.wd-typo-h4 {
+  @include wd-typo-h4;
+}
+
+.wd-typo-h5 {
+  @include wd-typo-h5;
+}
+
+.wd-typo-h6 {
+  @include wd-typo-h6;
+}
+
+.wd-typo-subheading,
+.wd-typo-sh {
+  @include wd-typo-subheading;
+}
+
+.wd-typo-caption,
+.wd-typo-cp {
+  @include wd-typo-caption;
+}
+
+.wd-typo-body,
+.wd-typo-bd {
+  @include wd-typo-body;
+}
+
+.wd-typo-small,
+.wd-typo-sm {
+  @include wd-typo-small;
+}
+
+.wd-typo-xsmall,
+.wd-typo-xs {
+  @include wd-typo-xsmall;
+}
+
+
+/* Font-Weight Modifier Classes */
+.wd--display {
+  font-weight: $wd--display;
+}
+
+.wd--emphasis {
+  font-weight: $wd--emphasis;
+}
+
+.wd--body {
+  font-weight: $wd--body;
 }

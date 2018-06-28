@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo: Button</title>
 
-  <link rel="stylesheet" href="../build/commons.css">
+  <link rel="stylesheet" href="../build/main.css">
+  <link rel="stylesheet" href="../../wd-base/build/fonts/circular/circular.css">
 
   <style>
     * {
@@ -72,21 +73,21 @@
 
 
 
-    .wd-demo-body .wd-demo-body-section .btn {
+    .wd-demo-body .wd-demo-body-section .wd-btn {
       margin-right: 18px;
       margin-bottom: 12px;
     }
-    .wd-demo-body .wd-demo-body-section .btn:last-child {
+    .wd-demo-body .wd-demo-body-section .wd-btn:last-child {
       margin-right: 0;
       margin-bottom: 0;
     }
-    .wd-demo-body .wd-demo-body-section .btngroup {
+    .wd-demo-body .wd-demo-body-section .wd-btn-group {
       margin: 9px 18px;
     }
-    .wd-demo-body .wd-demo-body-section .btngroup .btn {
+    .wd-demo-body .wd-demo-body-section .wd-btn-group .wd-btn {
       margin: 0;
     }
-    #styles .btn, #stylesDarkTheme .btn, #colors .btn, #weights .btn, #rounded .btn {
+    #styles .wd-btn, #stylesDarkTheme .wd-btn, #colors .wd-btn, #weights .wd-btn, #rounded .wd-btn {
       width: 106px;
     }
   </style>
@@ -97,16 +98,16 @@
   <div class="wd-demo-container">
 
     <div class="wd-demo-header">
-      <h1 class="wd-typography-heading-3-display">Button</h1>
+      <h1 class="wd-typo-h3">Button</h1>
     </div>
 
     <div class="wd-demo-body">
 
       <div id="styles" class="wd-demo-body-section">
-        <h3 class="wd-typography-heading-6-emphasis wd-demo-heading">Style</h3>
+        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Style</h3>
 
         <div class="wd-demo-body-content-section" id="states">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">States</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">States</h3>
           <script>
 
             new metal.WDButton({
@@ -137,7 +138,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="selected">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Selected <em style="color:rgba(14,20,26,0.3)">(Class, different from the Active state when clicked. For states, see above.)</em></h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Selected <em style="color:rgba(14,20,26,0.3)">(Class, different from the Active state when clicked. For states, see above.)</em></h3>
           <script>
 
             new metal.WDButton({
@@ -173,7 +174,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="disabled">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Disabled</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Disabled</h3>
           <script>
 
             new metal.WDButton({
@@ -210,10 +211,10 @@
       </div>
 
       <div id="sizes" class="wd-demo-body-section">
-        <h3 class="wd-typography-heading-6-emphasis wd-demo-heading">Size</h3>
+        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Size</h3>
 
         <div class="wd-demo-body-content-section" id="xs">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">XS</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">XS</h3>
           <script>
 
             new metal.WDButton({
@@ -249,7 +250,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="s">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">S</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">S</h3>
           <script>
 
             new metal.WDButton({
@@ -285,7 +286,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="m">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">M</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">M</h3>
           <script>
 
             new metal.WDButton({
@@ -321,7 +322,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="l">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">L</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">L</h3>
           <script>
 
             new metal.WDButton({
@@ -357,7 +358,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="xl">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">XL</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">XL</h3>
           <script>
 
             new metal.WDButton({
@@ -393,7 +394,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="xxl">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">XXL</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">XXL</h3>
           <script>
 
             new metal.WDButton({
@@ -430,10 +431,10 @@
       </div>
 
       <div id="weights" class="wd-demo-body-section">
-        <h3 class="wd-typography-heading-6-emphasis wd-demo-heading">Weight</h3>
+        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Weight</h3>
 
         <div class="wd-demo-body-content-section" id="lightweight">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Lightweight</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Lightweight</h3>
           <script>
 
             new metal.WDButton({
@@ -469,7 +470,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="middleweight">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Middleweight</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Middleweight</h3>
           <script>
 
             new metal.WDButton({
@@ -505,7 +506,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="heavyweight">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Heavyweight</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Heavyweight</h3>
           <script>
 
             new metal.WDButton({
@@ -542,10 +543,10 @@
       </div>
 
       <div id="borderRadius" class="wd-demo-body-section">
-        <h3 class="wd-typography-heading-6-emphasis wd-demo-heading">Border Radius <em style="color:rgba(14,20,26,0.3)">(borderRadius)</em></h3>
+        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Border Radius <em style="color:rgba(14,20,26,0.3)">(borderRadius)</em></h3>
 
         <div class="wd-demo-body-content-section" id="borderRadius-6px">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">6px <em style="color:rgba(14,20,26,0.3)">(borderRadius-6px)</em></h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">6px <em style="color:rgba(14,20,26,0.3)">(borderRadius-6px)</em></h3>
           <script>
 
             new metal.WDButton({
@@ -581,7 +582,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="borderRadius-rounded">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Rounded</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Rounded</h3>
           <script>
 
             new metal.WDButton({
@@ -618,10 +619,10 @@
       </div>
 
       <div id="fitting" class="wd-demo-body-section">
-        <h3 class="wd-typography-heading-6-emphasis wd-demo-heading">Width</h3>
+        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Width</h3>
 
         <div class="wd-demo-body-content-section" id="fullwidth">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Fullwidth</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Fullwidth</h3>
 
           <script>
 
@@ -665,7 +666,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="custom">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Customized <em style="color:rgba(14,20,26,0.3)">('&lt;number&gt;px')</em></h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Customized <em style="color:rgba(14,20,26,0.3)">('&lt;number&gt;px')</em></h3>
 
           <script>
 
@@ -725,10 +726,10 @@
       </div>
 
       <div id="colors" class="wd-demo-body-section">
-        <h3 class="wd-typography-heading-6-emphasis wd-demo-heading">Color</h3>
+        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Color</h3>
 
         <div class="wd-demo-body-content-section" id="black">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Black</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Black</h3>
           <script>
 
             new metal.WDButton({
@@ -764,7 +765,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="green">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Green</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Green</h3>
           <script>
 
             new metal.WDButton({
@@ -800,7 +801,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="blue-lt">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Blue-Light</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Blue-Light</h3>
           <script>
 
             new metal.WDButton({
@@ -836,7 +837,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="blue">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Blue</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Blue</h3>
           <script>
 
             new metal.WDButton({
@@ -872,7 +873,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="violet">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Violet</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Violet</h3>
           <script>
 
             new metal.WDButton({
@@ -908,7 +909,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="red">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Red</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Red</h3>
           <script>
 
             new metal.WDButton({
@@ -944,7 +945,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="orange">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Orange</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Orange</h3>
           <script>
 
             new metal.WDButton({
@@ -980,7 +981,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="yellow">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Yellow</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Yellow</h3>
           <script>
 
             new metal.WDButton({
@@ -1017,10 +1018,10 @@
       </div>
 
       <div id="stylesDarkTheme" class="wd-demo-body-section wd-demo-dark-section">
-        <h3 class="wd-typography-heading-6-emphasis wd-demo-heading">Dark Theme <em style="color:rgba(170,170,170,0.3)">(darkTheme)</em></h3>
+        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Dark Theme <em style="color:rgba(170,170,170,0.3)">(darkTheme)</em></h3>
 
         <div class="wd-demo-body-content-section" id="darkThemeStates">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">States</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">States</h3>
           <script>
 
             new metal.WDButton({
@@ -1056,7 +1057,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="darkThemeSelected">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Selected <em style="color:rgba(170,170,170,0.3)">(Class, different from the Active state when clicked. For states, see above.)</em></h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Selected <em style="color:rgba(170,170,170,0.3)">(Class, different from the Active state when clicked. For states, see above.)</em></h3>
           <script>
 
             new metal.WDButton({
@@ -1097,7 +1098,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="darkThemeDisabled">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Disabled</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Disabled</h3>
           <script>
 
             new metal.WDButton({
@@ -1139,11 +1140,11 @@
       </div>
 
       <div id="icons" class="wd-demo-body-section">
-        <h3 class="wd-typography-heading-6-emphasis wd-demo-heading">Content</h3>
+        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Content</h3>
 
         <div class="wd-demo-body-content-section">
           <div id="xs-lone-icons" class="wd-demo-body-content-section">
-            <h4 class="wd-typography-caption-body wd-demo-sectionheading">Lone Icon - XS</h4>
+            <h4 class="wd-typo-caption wd-demo-sectionheading">Lone Icon - XS</h4>
 
             <script>
 
@@ -1205,7 +1206,7 @@
           </div>
 
           <div id="s-lone-icons" class="wd-demo-body-content-section">
-            <h4 class="wd-typography-caption-body wd-demo-sectionheading">Lone Icon - S</h4>
+            <h4 class="wd-typo-caption wd-demo-sectionheading">Lone Icon - S</h4>
 
             <script>
 
@@ -1267,7 +1268,7 @@
           </div>
 
           <div id="m-lone-icons" class="wd-demo-body-content-section">
-            <h4 class="wd-typography-caption-body wd-demo-sectionheading">Lone Icon - M</h4>
+            <h4 class="wd-typo-caption wd-demo-sectionheading">Lone Icon - M</h4>
 
             <script>
 
@@ -1329,7 +1330,7 @@
           </div>
 
           <div id="l-lone-icons" class="wd-demo-body-content-section">
-            <h4 class="wd-typography-caption-body wd-demo-sectionheading">Lone Icon - L</h4>
+            <h4 class="wd-typo-caption wd-demo-sectionheading">Lone Icon - L</h4>
 
             <script>
 
@@ -1391,7 +1392,7 @@
           </div>
 
           <div id="xl-lone-icons" class="wd-demo-body-content-section">
-            <h4 class="wd-typography-caption-body wd-demo-sectionheading">Lone Icon - XL</h4>
+            <h4 class="wd-typo-caption wd-demo-sectionheading">Lone Icon - XL</h4>
 
             <script>
 
@@ -1453,7 +1454,7 @@
           </div>
 
           <div id="xxl-lone-icons" class="wd-demo-body-content-section">
-            <h4 class="wd-typography-caption-body wd-demo-sectionheading">Lone Icon - XXL</h4>
+            <h4 class="wd-typo-caption wd-demo-sectionheading">Lone Icon - XXL</h4>
 
             <script>
 
@@ -1517,7 +1518,7 @@
 
         <div class="wd-demo-body-content-section" id="icon-label">
           <div class="wd-demo-body-content-section" id="icon-label-lc">
-            <h3 class="wd-typography-caption-body wd-demo-sectionheading">Icon With Label - Left Center</h3>
+            <h3 class="wd-typo-caption wd-demo-sectionheading">Icon With Label - Left Center</h3>
 
             <div class="wd-demo-body-content-section" id="xs-icon-label-lc">
               <script>
@@ -1881,7 +1882,7 @@
           </div>
 
           <div class="wd-demo-body-content-section" id="icon-label-rc">
-            <h3 class="wd-typography-caption-body wd-demo-sectionheading">Icon With Label - Right Center</h3>
+            <h3 class="wd-typo-caption wd-demo-sectionheading">Icon With Label - Right Center</h3>
 
             <div class="wd-demo-body-content-section" id="xs-icon-label-rc">
               <script>
@@ -2245,7 +2246,7 @@
           </div>
 
           <div class="wd-demo-body-content-section" id="icon-label-lj">
-            <h3 class="wd-typography-caption-body wd-demo-sectionheading">Icon With Label - Left Justified</h3>
+            <h3 class="wd-typo-caption wd-demo-sectionheading">Icon With Label - Left Justified</h3>
 
             <div class="wd-demo-body-content-section" id="xs-icon-label-lj">
               <script>
@@ -2669,7 +2670,7 @@
           </div>
 
           <div class="wd-demo-body-content-section" id="icon-label-rj">
-            <h3 class="wd-typography-caption-body wd-demo-sectionheading">Icon With Label - Right Justified</h3>
+            <h3 class="wd-typo-caption wd-demo-sectionheading">Icon With Label - Right Justified</h3>
 
             <div class="wd-demo-body-content-section" id="xs-icon-label-rj">
               <script>
@@ -3096,10 +3097,10 @@
 
 
       <div id="group" class="wd-demo-body-section">
-        <h3 class="wd-typography-heading-6-emphasis wd-demo-heading">Group</h3>
+        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Group</h3>
 
         <div class="wd-demo-body-content-section" id="group-default">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Default</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Default</h3>
           <script>
 
             new metal.WDButton({
@@ -3123,7 +3124,7 @@
           </script>
         </div>
         <div class="wd-demo-body-content-section" id="group-segmented">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Segmented</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Segmented</h3>
           <script>
 
             new metal.WDButton({
@@ -3147,7 +3148,7 @@
           </script>
         </div>
         <div class="wd-demo-body-content-section" id="group-segmented-icon">
-          <h3 class="wd-typography-caption-body wd-demo-sectionheading">Segmented With Lone Icon</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Segmented With Lone Icon</h3>
           <script>
 
             new metal.WDButton({

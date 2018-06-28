@@ -1,6 +1,7 @@
 import Component from 'metal-component';
 import Soy from 'metal-soy';
 import {Config} from 'metal-state';
+import './WDButton.scss';
 
 import templates from './WDButton.soy.js';
 
@@ -66,9 +67,9 @@ WDButton.STATE = {
 
   /**
    * @type {?string}
-   * @default 'middle'
+   * @default undefined
    */
-  weight: Config.oneOf(['lightweight', 'middleweight', 'heavyweight']).value('middleweight'),
+  weight: Config.oneOf(['lightweight', 'middleweight', 'heavyweight']),
 
   /**
    * @type {?boolean}
@@ -113,7 +114,7 @@ WDButton.STATE = {
       size: Config.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl']).value('s'),
       width: Config.string(),
       hardWidth: Config.bool().value(false),
-      weight: Config.oneOf(['lightweight', 'middleweight', 'heavyweight']).value('middleweight'),
+      weight: Config.oneOf(['lightweight', 'middleweight', 'heavyweight']),
       darkTheme: Config.bool(),
       href: Config.string(),
       icon: Config.any(),

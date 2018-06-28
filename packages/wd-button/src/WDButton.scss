@@ -1,31 +1,17 @@
-@import "wd-base/build/main";
-
-
-$font-primary: "Circular", sans-serif;
-$accent: #00ae55;
-
-
-$btn-accent: $accent;
-$btn-black: #0e141a;
-$btn-green: #00ae55;
-$btn-blue-light: #00a4ff;
-$btn-blue: #1f7aff;
-$btn-violet: #9552ef;
-$btn-red: #ff4040;
-$btn-orange: #ff6e02;
-$btn-yellow: #ffb700;
+@import "wd-base/src/main";
 
 /* ==========================================================================
    Buttons
    ========================================================================== */
-.btn {
+.wd-btn {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
   display: inline-flex;
   border: 0 solid transparent;
   border-radius: 4px;
-  font-family: $font-primary;
+  font-family: $wd-font-primary;
+  font-weight: 500;
   justify-content: center;
   text-align: center;
   white-space: nowrap;
@@ -43,7 +29,7 @@ $btn-yellow: #ffb700;
     text-decoration: none;
   }
 
-  .icon svg {
+  .wd-btn-icon svg {
     transition: 0.33s;
   }
 }
@@ -52,124 +38,124 @@ $btn-yellow: #ffb700;
    ========================================================================== */
 @mixin button-primary($overlay-color, $btn-color) {
   background-color: $btn-color;
-  box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.18), 0 0 0 0.65px $btn-color;
+  box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.18), 0 0 0 0.65px $btn-color;
   color: rgba(255, 255, 255, 0.98);
 
-  .icon svg {
+  .wd-btn-icon svg {
     fill: rgba(255, 255, 255, 0.98);
   }
 
   &:hover {
     background-color: mix($overlay-color, $btn-color, 10%);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.2), 0 0 0 0.65px $btn-color;
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.2), 0 0 0 0.65px $btn-color;
   }
 
   &:focus {
     background-color: mix($overlay-color, $btn-color, 20%);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.2), 0 0 0 0.65px $btn-color, 0 0 0 4px rgba($btn-color, 0.3);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.2), 0 0 0 0.65px $btn-color, 0 0 0 4px rgba($btn-color, 0.3);
   }
 
   &:active {
     background-color: mix($overlay-color, $btn-color, 20%);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.3), 0 0 0 0.65px $btn-color;
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.3), 0 0 0 0.65px $btn-color;
   }
 
-  &.btn-selected {
+  &.wd-btn-selected {
     background-color: mix($overlay-color, $btn-color, 30%);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.5), 0 0 0 0.65px $btn-color;
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.5), 0 0 0 0.65px $btn-color;
   }
 
   &[disabled] {
     background-color: rgba($btn-color, 0.4);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.1), 0 0 0 0.65px rgba($btn-color, 0.4);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.1), 0 0 0 0.65px rgba($btn-color, 0.4);
     color: rgba(255, 255, 255, 0.3);
 
-    .icon svg {
+    .wd-btn-icon svg {
       fill: rgba(255, 255, 255, 0.3);
     }
   }
 }
 
 @mixin button-outline($btn-color) {
-  background-color: rgba(14, 20, 26, 0.02);
-  box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.18);
-  color: rgba(14, 20, 26, 0.8);
+  background-color: rgba($wd-color-black, 0.02);
+  box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.18);
+  color: rgba($wd-color-black, 0.8);
 
-  .icon svg {
-    fill: rgba(14, 20, 26, 0.8);
+  .wd-btn-icon svg {
+    fill: rgba($wd-color-black, 0.8);
   }
 
   &:hover {
-    background-color: rgba(14, 20, 26, 0.03);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.3);
+    background-color: rgba($wd-color-black, 0.03);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.3);
 
-    &.btn-darktheme {
+    &.wd-btn-darktheme {
       background-color: rgba(255, 255, 255, 0.03);
       box-shadow: 0 0 0 0.65px rgba(255, 255, 255, 0.3);
     }
   }
 
   &:focus {
-    background-color: rgba(14, 20, 26, 0.03);
-    box-shadow: 0 0 0 3px rgba($btn-color, 0.3), 0 0 0 0.65px rgba(14, 20, 26, 0.3);
+    background-color: rgba($wd-color-black, 0.03);
+    box-shadow: 0 0 0 3px rgba($btn-color, 0.3), 0 0 0 0.65px rgba($wd-color-black, 0.3);
 
-    &.btn-darktheme {
+    &.wd-btn-darktheme {
       background-color: rgba(255, 255, 255, 0.03);
       box-shadow: 0 0 0 3px rgba($btn-color, 0.3), 0 0 0 0.65px rgba(255, 255, 255, 0.3);
     }
   }
 
   &:active {
-    background-color: rgba(14, 20, 26, 0.06);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.3);
+    background-color: rgba($wd-color-black, 0.06);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.3);
 
-    &.btn-darktheme {
+    &.wd-btn-darktheme {
       background-color: rgba(255, 255, 255, 0.06);
       box-shadow: 0 0 0 0.65px rgba(255, 255, 255, 0.3);
     }
   }
 
-  &.btn-selected {
+  &.wd-btn-selected {
     background-color: rgba($btn-color, 0.06);
     box-shadow: 0 0 0 0.65px $btn-color;
     color: $btn-color;
 
-    .icon svg {
+    .wd-btn-icon svg {
       fill: $btn-color;
     }
 
-    &.btn-darktheme {
+    &.wd-btn-darktheme {
       background-color: rgba($btn-color, 0.06);
       box-shadow: 0 0 0 0.65px $btn-color;
     }
   }
 
   &[disabled] {
-    background-color: rgba(14, 20, 26, 0.06);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.12);
-    color: rgba(14, 20, 26, 0.3);
+    background-color: rgba($wd-color-black, 0.06);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.12);
+    color: rgba($wd-color-black, 0.3);
 
-    .icon svg {
-      fill: rgba(14, 20, 26, 0.3);
+    .wd-btn-icon svg {
+      fill: rgba($wd-color-black, 0.3);
     }
 
-    &.btn-darktheme {
+    &.wd-btn-darktheme {
       background-color: rgba(255, 255, 255, 0.06);
       box-shadow: 0 0 0 0.65px rgba(255, 255, 255, 0.12);
       color: rgba(255, 255, 255, 0.3);
 
-      .icon svg {
+      .wd-btn-icon svg {
         fill: rgba(255, 255, 255, 0.3);
       }
     }
   }
 
-  &.btn-darktheme {
+  &.wd-btn-darktheme {
     background-color: rgba(255, 255, 255, 0.02);
     box-shadow: 0 0 0 0.65px rgba(255, 255, 255, 0.18);
     color: rgba(255, 255, 255, 0.98);
 
-    .icon svg {
+    .wd-btn-icon svg {
       fill: rgba(255, 255, 255, 0.98);
     }
   }
@@ -177,16 +163,16 @@ $btn-yellow: #ffb700;
 
 @mixin button-ghost($btn-color) {
   background-color: transparent;
-  color: rgba(14, 20, 26, 0.8);
+  color: rgba($wd-color-black, 0.8);
 
-  .icon svg {
-    fill: rgba(14, 20, 26, 0.8);
+  .wd-btn-icon svg {
+    fill: rgba($wd-color-black, 0.8);
   }
 
   &:hover {
-    background-color: rgba(14, 20, 26, 0.08);
+    background-color: rgba($wd-color-black, 0.08);
 
-    &.btn-darktheme {
+    &.wd-btn-darktheme {
       background-color: rgba(255, 255, 255, 0.08);
     }
   }
@@ -200,39 +186,39 @@ $btn-yellow: #ffb700;
     background-color: rgba($btn-color, 0.1);
   }
 
-  &.btn-selected {
+  &.wd-btn-selected {
     background-color: rgba($btn-color, 0.2);
     color: $btn-color;
 
-    .icon svg {
+    .wd-btn-icon svg {
       fill: $btn-color;
     }
 
-    &.btn-darktheme {
+    &.wd-btn-darktheme {
       background-color: rgba($btn-color, 0.2);
     }
   }
 
   &[disabled] {
-    color: rgba(14, 20, 26, 0.3);
+    color: rgba($wd-color-black, 0.3);
 
-    .icon svg {
-      fill: rgba(14, 20, 26, 0.3);
+    .wd-btn-icon svg {
+      fill: rgba($wd-color-black, 0.3);
     }
 
-    &.btn-darktheme {
+    &.wd-btn-darktheme {
       color: rgba(255, 255, 255, 0.3);
 
-      .icon svg {
+      .wd-btn-icon svg {
         fill: rgba(255, 255, 255, 0.3);
       }
     }
   }
 
-  &.btn-darktheme {
+  &.wd-btn-darktheme {
     color: rgba(255, 255, 255, 0.98);
 
-    .icon svg {
+    .wd-btn-icon svg {
       fill: rgba(255, 255, 255, 0.98);
     }
   }
@@ -240,121 +226,121 @@ $btn-yellow: #ffb700;
 
 @mixin button-float($btn-color) {
   background-color: #fff;
-  box-shadow: 0 1px 3px 0 rgba(14, 20, 26, 0.06), 0 6px 12px -3px rgba(14, 20, 26, 0.18);
-  color: rgba(14, 20, 26, 0.8);
+  box-shadow: 0 1px 3px 0 rgba($wd-color-black, 0.06), 0 6px 12px -3px rgba($wd-color-black, 0.18);
+  color: rgba($wd-color-black, 0.8);
 
-  .icon svg {
-    fill: rgba(14, 20, 26, 0.8);
+  .wd-btn-icon svg {
+    fill: rgba($wd-color-black, 0.8);
   }
 
   &:hover {
-    box-shadow: 0 1px 2px 0 rgba(14, 20, 26, 0.12), 0 9px 15px -1px rgba(14, 20, 26, 0.24);
+    box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 9px 15px -1px rgba($wd-color-black, 0.24);
     color: $btn-color;
 
-    .icon svg {
+    .wd-btn-icon svg {
       fill: $btn-color;
     }
 
-    &.btn-darktheme {
-      box-shadow: 0 1px 2px 0 rgba(14, 20, 26, 0.12), 0 9px 15px -1px rgba(14, 20, 26, 0.24);
+    &.wd-btn-darktheme {
+      box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 9px 15px -1px rgba($wd-color-black, 0.24);
       color: $btn-color;
     }
   }
 
   &:focus {
-    box-shadow: 0 1px 2px 0 rgba(14, 20, 26, 0.12), 0 9px 15px -1px rgba(14, 20, 26, 0.24), 0 0 0 3px rgba($btn-color, 0.3);
+    box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 9px 15px -1px rgba($wd-color-black, 0.24), 0 0 0 3px rgba($btn-color, 0.3);
     color: $btn-color;
 
-    .icon svg {
+    .wd-btn-icon svg {
       fill: $btn-color;
     }
   }
 
   &:active {
-    box-shadow: 0 1px 2px 0 rgba(14, 20, 26, 0.12), 0 12px 18px -4px rgba(14, 20, 26, 0.24);
+    box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 12px 18px -4px rgba($wd-color-black, 0.24);
     color: $btn-color;
 
-    .icon svg {
+    .wd-btn-icon svg {
       fill: $btn-color;
     }
   }
 
-  &.btn-selected {
-    box-shadow: 0 1px 2px 0 rgba(14, 20, 26, 0.12), 0 9px 18px -2px rgba(14, 20, 26, 0.24), 0 0 0 0.65px rgba($btn-color, 0.3);
-    color: rgba(14, 20, 26, 0.8);
+  &.wd-btn-selected {
+    box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 9px 18px -2px rgba($wd-color-black, 0.24), 0 0 0 0.65px rgba($btn-color, 0.3);
+    color: rgba($wd-color-black, 0.8);
 
-    .icon svg {
-      fill: rgba(14, 20, 26, 0.8);
+    .wd-btn-icon svg {
+      fill: rgba($wd-color-black, 0.8);
     }
 
-    &.btn-darktheme {
-      box-shadow: 0 1px 2px 0 rgba(14, 20, 26, 0.12), 0 9px 18px -2px rgba(14, 20, 26, 0.24), 0 0 0 0.65px rgba($btn-color, 0.3);
+    &.wd-btn-darktheme {
+      box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 9px 18px -2px rgba($wd-color-black, 0.24), 0 0 0 0.65px rgba($btn-color, 0.3);
       color: rgba(255, 255, 255, 0.98);
     }
   }
 
   &[disabled] {
-    box-shadow: 0 1px 3px 0 rgba(14, 20, 26, 0.06), 0 6px 12px -3px rgba(14, 20, 26, 0.18);
-    color: rgba(14, 20, 26, 0.3);
+    box-shadow: 0 1px 3px 0 rgba($wd-color-black, 0.06), 0 6px 12px -3px rgba($wd-color-black, 0.18);
+    color: rgba($wd-color-black, 0.3);
 
-    .icon svg {
-      fill: rgba(14, 20, 26, 0.3);
+    .wd-btn-icon svg {
+      fill: rgba($wd-color-black, 0.3);
     }
 
-    &.btn-darktheme {
+    &.wd-btn-darktheme {
       color: rgba(255, 255, 255, 0.3);
 
-      .icon svg {
+      .wd-btn-icon svg {
         fill: rgba(255, 255, 255, 0.3);
       }
     }
   }
 
-  &.btn-darktheme {
-    background-color: #0e141a;
+  &.wd-btn-darktheme {
+    background-color: $wd-color-black;
     color: rgba(255, 255, 255, 0.98);
 
-    .icon svg {
+    .wd-btn-icon svg {
       fill: rgba(255, 255, 255, 0.98);
     }
   }
 }
 
-.btn.btn-destructive {
-  background-color: #ff4040;
-  box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.18), 0 0 0 0.65px #ff4040;
+.wd-btn.wd-btn-destructive {
+  background-color: $wd-color-red;
+  box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.18), 0 0 0 0.65px $wd-color-red;
   color: rgba(255, 255, 255, 0.98);
 
-  .icon svg {
+  .wd-btn-icon svg {
     fill: rgba(255, 255, 255, 0.98);
   }
 
   &:hover {
-    background-color: mix(#0e141a, #ff4040, 10%);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.2), 0 0 0 0.65px #ff4040;
+    background-color: mix($wd-color-black, $wd-color-red, 10%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.2), 0 0 0 0.65px $wd-color-red;
   }
 
   &:focus {
-    background-color: mix(#0e141a, #ff4040, 20%);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.2), 0 0 0 0.65px #ff4040, 0 0 0 4px rgba(255, 64, 64, 0.3);
+    background-color: mix($wd-color-black, $wd-color-red, 20%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.2), 0 0 0 0.65px $wd-color-red, 0 0 0 4px rgba($wd-color-red, 0.3);
   }
 
   &:active {
-    background-color: mix(#0e141a, #ff4040, 20%);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.3), 0 0 0 0.65px #ff4040;
+    background-color: mix($wd-color-black, $wd-color-red, 20%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.3), 0 0 0 0.65px $wd-color-red;
   }
 
-  &.btn-selected {
-    background-color: mix(#0e141a, #ff4040, 30%);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.5), 0 0 0 0.65px #ff4040;
+  &.wd-btn-selected {
+    background-color: mix($wd-color-black, $wd-color-red, 30%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.5), 0 0 0 0.65px $wd-color-red;
   }
 
   &[disabled] {
-    background-color: rgba(255, 64, 64, 0.4);
-    box-shadow: 0 0 0 0.65px rgba(14, 20, 26, 0.1), 0 0 0 0.65px rgba(255, 64, 64, 0.4);
+    background-color: rgba($wd-color-red, 0.4);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.1), 0 0 0 0.65px rgba($wd-color-red, 0.4);
     color: rgba(255, 255, 255, 0.3);
 
-    .icon svg {
+    .wd-btn-icon svg {
       fill: rgba(255, 255, 255, 0.3);
     }
   }
@@ -362,414 +348,414 @@ $btn-yellow: #ffb700;
 
 /* Color
    ========================================================================== */
-.btn {
-  &.btn-primary-accent {
-    @include button-primary(#0e141a, $btn-accent);
+.wd-btn {
+  &.wd-btn-primary-accent {
+    @include button-primary($wd-color-black, $wd-color-accent);
   }
-  &.btn-primary-black {
-    @include button-primary(#fff, $btn-black);
+  &.wd-btn-primary-black {
+    @include button-primary(#fff, $wd-color-black);
   }
-  &.btn-primary-green {
-    @include button-primary(#0e141a, $btn-green);
+  &.wd-btn-primary-green {
+    @include button-primary($wd-color-black, $wd-color-accent);
   }
-  &.btn-primary-blue-light {
-    @include button-primary(#0e141a, $btn-blue-light);
+  &.wd-btn-primary-blue-light {
+    @include button-primary($wd-color-black, $wd-color-blue-lt);
   }
-  &.btn-primary-blue {
-    @include button-primary(#0e141a, $btn-blue);
+  &.wd-btn-primary-blue {
+    @include button-primary($wd-color-black, $wd-color-blue);
   }
-  &.btn-primary-violet {
-    @include button-primary(#0e141a, $btn-violet);
+  &.wd-btn-primary-violet {
+    @include button-primary($wd-color-black, $wd-color-violet);
   }
-  &.btn-primary-red {
-    @include button-primary(#0e141a, $btn-red);
+  &.wd-btn-primary-red {
+    @include button-primary($wd-color-black, $wd-color-red);
   }
-  &.btn-primary-orange {
-    @include button-primary(#0e141a, $btn-orange);
+  &.wd-btn-primary-orange {
+    @include button-primary($wd-color-black, $wd-color-orange);
   }
-  &.btn-primary-yellow {
-    @include button-primary(#0e141a, $btn-yellow);
-  }
-
-  &.btn-outline-accent {
-    @include button-outline($btn-accent);
-  }
-  &.btn-outline-black {
-    @include button-outline($btn-black);
-  }
-  &.btn-outline-green {
-    @include button-outline($btn-green);
-  }
-  &.btn-outline-blue-light {
-    @include button-outline($btn-blue-light);
-  }
-  &.btn-outline-blue {
-    @include button-outline($btn-blue);
-  }
-  &.btn-outline-violet {
-    @include button-outline($btn-violet);
-  }
-  &.btn-outline-red {
-    @include button-outline($btn-red);
-  }
-  &.btn-outline-orange {
-    @include button-outline($btn-orange);
-  }
-  &.btn-outline-yellow {
-    @include button-outline($btn-yellow);
+  &.wd-btn-primary-yellow {
+    @include button-primary($wd-color-black, $wd-color-yellow);
   }
 
-  &.btn-ghost-accent {
-    @include button-ghost($btn-accent);
+  &.wd-btn-outline-accent {
+    @include button-outline($wd-color-accent);
   }
-  &.btn-ghost-black {
-    @include button-ghost($btn-black);
+  &.wd-btn-outline-black {
+    @include button-outline($wd-color-black);
   }
-  &.btn-ghost-green {
-    @include button-ghost($btn-green);
+  &.wd-btn-outline-green {
+    @include button-outline($wd-color-accent);
   }
-  &.btn-ghost-blue-light {
-    @include button-ghost($btn-blue-light);
+  &.wd-btn-outline-blue-light {
+    @include button-outline($wd-color-blue-lt);
   }
-  &.btn-ghost-blue {
-    @include button-ghost($btn-blue);
+  &.wd-btn-outline-blue {
+    @include button-outline($wd-color-blue);
   }
-  &.btn-ghost-violet {
-    @include button-ghost($btn-violet);
+  &.wd-btn-outline-violet {
+    @include button-outline($wd-color-violet);
   }
-  &.btn-ghost-red {
-    @include button-ghost($btn-red);
+  &.wd-btn-outline-red {
+    @include button-outline($wd-color-red);
   }
-  &.btn-ghost-orange {
-    @include button-ghost($btn-orange);
+  &.wd-btn-outline-orange {
+    @include button-outline($wd-color-orange);
   }
-  &.btn-ghost-yellow {
-    @include button-ghost($btn-yellow);
+  &.wd-btn-outline-yellow {
+    @include button-outline($wd-color-yellow);
   }
 
-  &.btn-float-accent {
-    @include button-float($btn-accent);
+  &.wd-btn-ghost-accent {
+    @include button-ghost($wd-color-accent);
   }
-  &.btn-float-black {
-    @include button-float($btn-black);
+  &.wd-btn-ghost-black {
+    @include button-ghost($wd-color-black);
   }
-  &.btn-float-green {
-    @include button-float($btn-green);
+  &.wd-btn-ghost-green {
+    @include button-ghost($wd-color-accent);
   }
-  &.btn-float-blue-light {
-    @include button-float($btn-blue-light);
+  &.wd-btn-ghost-blue-light {
+    @include button-ghost($wd-color-blue-lt);
   }
-  &.btn-float-blue {
-    @include button-float($btn-blue);
+  &.wd-btn-ghost-blue {
+    @include button-ghost($wd-color-blue);
   }
-  &.btn-float-violet {
-    @include button-float($btn-violet);
+  &.wd-btn-ghost-violet {
+    @include button-ghost($wd-color-violet);
   }
-  &.btn-float-red {
-    @include button-float($btn-red);
+  &.wd-btn-ghost-red {
+    @include button-ghost($wd-color-red);
   }
-  &.btn-float-orange {
-    @include button-float($btn-orange);
+  &.wd-btn-ghost-orange {
+    @include button-ghost($wd-color-orange);
   }
-  &.btn-float-yellow {
-    @include button-float($btn-yellow);
+  &.wd-btn-ghost-yellow {
+    @include button-ghost($wd-color-yellow);
+  }
+
+  &.wd-btn-float-accent {
+    @include button-float($wd-color-accent);
+  }
+  &.wd-btn-float-black {
+    @include button-float($wd-color-black);
+  }
+  &.wd-btn-float-green {
+    @include button-float($wd-color-accent);
+  }
+  &.wd-btn-float-blue-light {
+    @include button-float($wd-color-blue-lt);
+  }
+  &.wd-btn-float-blue {
+    @include button-float($wd-color-blue);
+  }
+  &.wd-btn-float-violet {
+    @include button-float($wd-color-violet);
+  }
+  &.wd-btn-float-red {
+    @include button-float($wd-color-red);
+  }
+  &.wd-btn-float-orange {
+    @include button-float($wd-color-orange);
+  }
+  &.wd-btn-float-yellow {
+    @include button-float($wd-color-yellow);
   }
 }
 
 /* Size / Fitting / Rounded / Icon Sizing
    ========================================================================== */
-.btn {
-  &.btn-xs {
+.wd-btn {
+  &.wd-btn-xs {
     height: 30px;
     font-size: 13px;
     padding: 0 9px;
 
-    &.btn-rounded {
+    &.wd-btn-rounded {
       border-radius: 15px;
     }
 
-    .icon, .icon svg {
+    .wd-btn-icon, .wd-btn-icon svg {
       max-height: 16px;
       max-width: 16px;
     }
   }
 
-  &.btn-s {
+  &.wd-btn-s {
     height: 36px;
     font-size: 14px;
     padding: 0 12.5px;
 
-    &.btn-rounded {
+    &.wd-btn-rounded {
       border-radius: 18px;
     }
 
-    .icon, .icon svg {
+    .wd-btn-icon, .wd-btn-icon svg {
       max-height: 16px;
       max-width: 16px;
     }
   }
 
-  &.btn-m {
+  &.wd-btn-m {
     height: 42px;
     font-size: 14px;
     padding: 0 12px;
 
-    &.btn-rounded {
+    &.wd-btn-rounded {
       border-radius: 21px;
     }
 
-    .icon, .icon svg {
+    .wd-btn-icon, .wd-btn-icon svg {
       max-height: 16px;
       max-width: 16px;
     }
   }
 
-  &.btn-l {
+  &.wd-btn-l {
     height: 48px;
     font-size: 16px;
     padding: 0 12px;
 
-    &.btn-rounded {
+    &.wd-btn-rounded {
       border-radius: 24px;
     }
 
-    .icon, .icon svg {
+    .wd-btn-icon, .wd-btn-icon svg {
       max-height: 20px;
       max-width: 20px;
     }
   }
 
-  &.btn-xl {
+  &.wd-btn-xl {
     height: 54px;
     font-size: 16px;
     padding: 0 12px;
 
-    &.btn-rounded {
+    &.wd-btn-rounded {
       border-radius: 27px;
     }
 
-    .icon, .icon svg {
+    .wd-btn-icon, .wd-btn-icon svg {
       max-height: 20px;
       max-width: 20px;
     }
   }
 
-  &.btn-xxl {
+  &.wd-btn-xxl {
     height: 60px;
     font-size: 18px;
     padding: 0 18.5px;
 
-    &.btn-rounded {
+    &.wd-btn-rounded {
       border-radius: 30px;
     }
 
-    .icon, .icon svg {
+    .wd-btn-icon, .wd-btn-icon svg {
       max-height: 20px;
       max-width: 20px;
     }
   }
 
-  &.btn-borderRadius-6px {
+  &.wd-btn-borderRadius-6px {
     border-radius: 6px;
   }
 
-  &.btn-fullwidth {
+  &.wd-btn-fullwidth {
     width: 100%;
   }
 }
 
 /* Font Weight
    ========================================================================== */
-.btn {
-  &.btn-lightweight {
-    font-weight: normal;
+.wd-btn {
+  &.wd-btn-lightweight {
+    font-weight: 400;
   }
 
-  &.btn-middleweight {
+  &.wd-btn-middleweight {
     font-weight: 500;
   }
 
-  &.btn-heavyweight {
+  &.wd-btn-heavyweight {
     font-weight: 900;
   }
 }
 
 /* Content
    ========================================================================== */
-.btn {
+.wd-btn {
 
-  .icon, .button-label {
+  .wd-btn-icon, .wd-btn-label {
     display: flex;
   }
 
-  &.btn-lone-icon {
+  &.wd-btn-lone-icon {
     border-radius: 50%;
 
-    &.btn-xs {
+    &.wd-btn-xs {
       width: 30px;
       padding: 7px;
     }
 
-    &.btn-s {
+    &.wd-btn-s {
       width: 36px;
       padding: 10px;
     }
 
-    &.btn-m {
+    &.wd-btn-m {
       width: 42px;
       padding: 13px;
     }
 
-    &.btn-l {
+    &.wd-btn-l {
       width: 48px;
       padding: 14px;
     }
 
-    &.btn-xl {
+    &.wd-btn-xl {
       width: 54px;
       padding: 17px;
     }
 
-    &.btn-xxl {
+    &.wd-btn-xxl {
       width: 60px;
       padding: 20px;
     }
   }
 
-  &.btn-xs {
+  &.wd-btn-xs {
 
-    .button-label-icon-left-center, .button-label-icon-right-center {
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
       margin: 0;
     }
 
-    .button-label-icon-left-justified {
+    .wd-btn-label-icon-left-justified {
       margin: 0 0 0 auto;
     }
 
-    .button-label-icon-right-justified {
+    .wd-btn-label-icon-right-justified {
       margin: 0 auto 0 0;
     }
 
-    .icon-left-center, .icon-left-justified {
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
       margin: 0 5px 0 0;
     }
 
-    .icon-right-center, .icon-right-justified {
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
       margin: 0 0 0 5px;
     }
   }
 
-  &.btn-s {
+  &.wd-btn-s {
 
-    .button-label-icon-left-center, .button-label-icon-right-center {
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
       margin: 0;
     }
 
-    .button-label-icon-left-justified {
+    .wd-btn-label-icon-left-justified {
       margin: 0 0 0 auto;
     }
 
-    .button-label-icon-right-justified {
+    .wd-btn-label-icon-right-justified {
       margin: 0 auto 0 0;
     }
 
-    .icon-left-center, .icon-left-justified {
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
       margin: 0 8.5px 0 0;
     }
 
-    .icon-right-center, .icon-right-justified {
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
       margin: 0 0 0 8.5px;
     }
   }
 
-  &.btn-m {
+  &.wd-btn-m {
 
-    .button-label-icon-left-center, .button-label-icon-right-center {
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
       margin: 0;
     }
 
-    .button-label-icon-left-justified {
+    .wd-btn-label-icon-left-justified {
       margin: 0 0 0 auto;
     }
 
-    .button-label-icon-right-justified {
+    .wd-btn-label-icon-right-justified {
       margin: 0 auto 0 0;
     }
 
-    .icon-left-center, .icon-left-justified {
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
       margin: 0 11px 0 0;
     }
 
-    .icon-right-center, .icon-right-justified {
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
       margin: 0 0 0 11px;
     }
   }
 
-  &.btn-l {
+  &.wd-btn-l {
 
-    .button-label-icon-left-center, .button-label-icon-right-center {
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
       margin: 0;
     }
 
-    .button-label-icon-left-justified {
+    .wd-btn-label-icon-left-justified {
       margin: 0 0 0 auto;
     }
 
-    .button-label-icon-right-justified {
+    .wd-btn-label-icon-right-justified {
       margin: 0 auto 0 0;
     }
 
-    .icon-left-center, .icon-left-justified {
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
       margin: 0 9px 0 0;
     }
 
-    .icon-right-center, .icon-right-justified {
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
       margin: 0 0 0 9px;
     }
   }
 
-  &.btn-xl {
+  &.wd-btn-xl {
 
-    .button-label-icon-left-center, .button-label-icon-right-center {
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
       margin: 0;
     }
 
-    .button-label-icon-left-justified {
+    .wd-btn-label-icon-left-justified {
       margin: 0 0 0 auto;
     }
 
-    .button-label-icon-right-justified {
+    .wd-btn-label-icon-right-justified {
       margin: 0 auto 0 0;
     }
 
-    .icon-left-center, .icon-left-justified {
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
       margin: 0 9.5px 0 0;
     }
 
-    .icon-right-center, .icon-right-justified {
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
       margin: 0 0 0 9.5px;
     }
   }
 
-  &.btn-xxl {
+  &.wd-btn-xxl {
 
-    .button-label-icon-left-center, .button-label-icon-right-center {
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
       margin: 0;
     }
 
-    .button-label-icon-left-justified {
+    .wd-btn-label-icon-left-justified {
       margin: 0 0 0 auto;
     }
 
-    .button-label-icon-right-justified {
+    .wd-btn-label-icon-right-justified {
       margin: 0 auto 0 0;
     }
 
-    .icon-left-center, .icon-left-justified {
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
       margin: 0 15.5px 0 0;
     }
 
-    .icon-right-center, .icon-right-justified {
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
       margin: 0 0 0 15.5px;
     }
   }
@@ -777,98 +763,107 @@ $btn-yellow: #ffb700;
 
 /* Button Group
    ========================================================================== */
-.btngroup {
+.wd-btn-group {
   display: inline-flex;
 
-  .btngroup-list {
+  .wd-btn-group-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: inline-flex;
 
-    .btngroup-item {
+    .wd-btn-group-item {
       display: inline-flex;
       align-items: center;
     }
   }
 
-  &.btngroup-segmented {
+  &.wd-btn-group-segmented {
 
-    .btngroup-item {
+    .wd-btn-group-list .wd-btn-group-item {
 
-      &#btngroup-firstitem {
+      &.wd-btn-group-firstitem {
 
-        .btn {
+        .wd-btn.wd-btn-groupbtn {
           border-radius: 4px 0 0 4px;
         }
 
-        &.btn-borderRadius-6px {
-          border-radius: 6px 0 0 6px;
+        &.wd-btn-borderRadius-6px {
+
+          .wd-btn.wd-btn-groupbtn {
+            border-radius: 6px 0 0 6px;
+          }
         }
 
-        &.btn-rounded {
-          .btn {
+        &.wd-btn-rounded {
 
-            &.btn-xs {
+          .wd-btn.wd-btn-groupbtn {
+
+            &.wd-btn-xs {
               border-radius: 15px 0 0 15px;
             }
-            &.btn-s {
+            &.wd-btn-s {
               border-radius: 18px 0 0 18px;
             }
-            &.btn-m {
+            &.wd-btn-m {
               border-radius: 21px 0 0 21px;
             }
-            &.btn-l {
+            &.wd-btn-l {
               border-radius: 24px 0 0 24px;
             }
-            &.btn-xl {
+            &.wd-btn-xl {
               border-radius: 27px 0 0 27px;
             }
-            &.btn-xxl {
+            &.wd-btn-xxl {
               border-radius: 30px 0 0 30px;
             }
           }
         }
       }
 
-      &#btngroup-lastitem {
+      &.wd-btn-group-lastitem {
 
-        .btn {
+        .wd-btn.wd-btn-groupbtn {
           border-radius: 0 4px 4px 0;
         }
 
-        &.btn-borderRadius-6px {
-          border-radius: 0 6px 6px 0;
+        &.wd-btn-borderRadius-6px {
+
+          .wd-btn.wd-btn-groupbtn {
+            border-radius: 0 6px 6px 0;
+          }
         }
 
-        &.btn-rounded {
+        &.wd-btn-rounded {
 
-          .btn {
+          .wd-btn.wd-btn-groupbtn {
 
-            &.btn-xs {
+            &.wd-btn-xs {
               border-radius: 0 15px 15px 0;
             }
-            &.btn-s {
+            &.wd-btn-s {
               border-radius: 0 18px 18px 0;
             }
-            &.btn-m {
+            &.wd-btn-m {
               border-radius: 0 21px 21px 0;
             }
-            &.btn-l {
+            &.wd-btn-l {
               border-radius: 0 24px 24px 0;
             }
-            &.btn-xl {
+            &.wd-btn-xl {
               border-radius: 0 27px 27px 0;
             }
-            &.btn-xxl {
+            &.wd-btn-xxl {
               border-radius: 0 30px 30px 0;
             }
           }
         }
       }
 
-      &[id^='btngroup-miditem-'] .btn {
-        border-radius: 0;
+      &[class^='wd-btn-group-miditem-'] {
+        .wd-btn.wd-btn-groupbtn {
+          border-radius: 0;
+        }
       }
     }
   }

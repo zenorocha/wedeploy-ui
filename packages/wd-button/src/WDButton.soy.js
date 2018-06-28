@@ -110,25 +110,27 @@ function $render(opt_data, opt_ijData, opt_ijData_deprecated) {
   var attributes__soy29 = function() {
     var $tmp = null;
     if (style == 'destructive') {
-      $tmp = ' btn-destructive';
+      $tmp = ' wd-btn-destructive';
     } else if (style && color) {
-      $tmp = ' btn-' + style + '-' + color;
+      $tmp = ' wd-btn-' + style + '-' + color;
     } else if (style && !color) {
-      $tmp = ' btn-' + style + '-accent';
+      $tmp = ' wd-btn-' + style + '-accent';
     } else if (color && !style) {
-      $tmp = ' btn-primary-' + color;
+      $tmp = ' wd-btn-primary-' + color;
     } else {
-      $tmp = ' btn-primary-accent';
+      $tmp = ' wd-btn-primary-accent';
     }
-    incrementalDom.attr('class', 'btn' + $tmp + (size ? ' btn-' + size : '') + (width == 'full' ? ' btn-fullwidth' : '') + (weight ? ' btn-' + weight : '') + (darkTheme ? ' btn-darktheme' : '') + (borderRadius ? ' btn-' + borderRadius : '') + (!label ? (icon || classIcon ? ' btn-lone-icon' : '') : '') + (iconAlignment == 'left-justified' || iconAlignment == 'right-justified' ? ' btn-justified-padding' : '') + (elementClasses ? ' ' + elementClasses : ''));
-    if (width && !hardWidth) {
-      incrementalDom.attr('style', 'min-width:' + width);
-    }
-    if (width && hardWidth) {
-      incrementalDom.attr('style', 'width:' + width);
+    incrementalDom.attr('class', 'wd-btn' + $tmp + (size ? ' wd-btn-' + size : '') + (width == 'full' || width == 'fullwidth' ? ' wd-btn-fullwidth' : '') + (weight ? ' wd-btn-' + weight : '') + (darkTheme ? ' wd-btn-darktheme' : '') + (borderRadius ? ' wd-btn-' + borderRadius : '') + (!label ? (icon || classIcon ? ' wd-btn-lone-icon' : '') : '') + (iconAlignment == 'left-justified' || iconAlignment == 'right-justified' ? ' wd-btn-justified-padding' : '') + (elementClasses ? ' ' + elementClasses : ''));
+    if (width != 'full' && width != 'fullwidth') {
+      if (width && !hardWidth) {
+        incrementalDom.attr('style', 'min-width:' + width);
+      }
+      if (width && hardWidth) {
+        incrementalDom.attr('style', 'width:' + width);
+      }
     }
     if (disabled) {
-      incrementalDom.attr('disabled', '');
+      incrementalDom.attr('disabled', 'true');
     }
     if (href) {
       incrementalDom.attr('href', href);
@@ -152,12 +154,12 @@ function $render(opt_data, opt_ijData, opt_ijData_deprecated) {
       incrementalDom.attr('type', type);
     }
   };
-  var btnGroupAttributes__soy154 = function() {
-    incrementalDom.attr('class', 'btngroup' + (groupType ? ' btngroup-' + groupType : ''));
+  var btnGroupAttributes__soy158 = function() {
+    incrementalDom.attr('class', 'wd-btn-group' + (groupType ? ' wd-btn-group-' + groupType : ''));
   };
   if (group) {
     incrementalDom.elementOpenStart('div');
-        btnGroupAttributes__soy154();
+        btnGroupAttributes__soy158();
     incrementalDom.elementOpenEnd();
       $buttonGroup(opt_data, null, opt_ijData);
     incrementalDom.elementClose('div');
@@ -242,7 +244,7 @@ function $content(opt_data, opt_ijData, opt_ijData_deprecated) {
   if (!label) {
     if (icon || classIcon) {
       incrementalDom.elementOpenStart('span');
-          incrementalDom.attr('class', 'icon lone-icon ' + (($$temp = classIcon) == null ? '' : $$temp));
+          incrementalDom.attr('class', 'wd-btn-icon wd-btn-lone-icon ' + (($$temp = classIcon) == null ? '' : $$temp));
       incrementalDom.elementOpenEnd();
         soyIdom.print(($$temp = icon) == null ? '' : $$temp);
       incrementalDom.elementClose('span');
@@ -252,31 +254,31 @@ function $content(opt_data, opt_ijData, opt_ijData_deprecated) {
       if (iconAlignment) {
         if (iconAlignment == 'left-center' || iconAlignment == 'left-justified') {
           incrementalDom.elementOpenStart('span');
-              incrementalDom.attr('class', 'icon ' + (($$temp = classIcon) == null ? '' : $$temp) + ' icon-' + iconAlignment);
+              incrementalDom.attr('class', 'wd-btn-icon ' + (($$temp = classIcon) == null ? '' : $$temp) + ' wd-btn-icon-' + iconAlignment);
           incrementalDom.elementOpenEnd();
             soyIdom.print(($$temp = icon) == null ? '' : $$temp);
           incrementalDom.elementClose('span');
         }
         incrementalDom.elementOpenStart('span');
-            incrementalDom.attr('class', 'button-label button-label-icon-' + iconAlignment);
+            incrementalDom.attr('class', 'wd-btn-label wd-btn-label-icon-' + iconAlignment);
         incrementalDom.elementOpenEnd();
           soyIdom.print(($$temp = label) == null ? '' : $$temp);
         incrementalDom.elementClose('span');
         if (iconAlignment == 'right-center' || iconAlignment == 'right-justified') {
           incrementalDom.elementOpenStart('span');
-              incrementalDom.attr('class', 'icon ' + (($$temp = classIcon) == null ? '' : $$temp) + ' icon-' + iconAlignment);
+              incrementalDom.attr('class', 'wd-btn-icon ' + (($$temp = classIcon) == null ? '' : $$temp) + ' wd-btn-icon-' + iconAlignment);
           incrementalDom.elementOpenEnd();
             soyIdom.print(($$temp = icon) == null ? '' : $$temp);
           incrementalDom.elementClose('span');
         }
       } else {
         incrementalDom.elementOpenStart('span');
-            incrementalDom.attr('class', 'icon ' + (($$temp = classIcon) == null ? '' : $$temp) + ' icon-left-center');
+            incrementalDom.attr('class', 'wd-btn-icon ' + (($$temp = classIcon) == null ? '' : $$temp) + ' wd-btn-icon-left-center');
         incrementalDom.elementOpenEnd();
           soyIdom.print(($$temp = icon) == null ? '' : $$temp);
         incrementalDom.elementClose('span');
         incrementalDom.elementOpenStart('span');
-            incrementalDom.attr('class', 'button-label button-label-icon-left-center');
+            incrementalDom.attr('class', 'wd-btn-label wd-btn-label-icon-left-center');
         incrementalDom.elementOpenEnd();
           soyIdom.print(($$temp = label) == null ? '' : $$temp);
         incrementalDom.elementClose('span');
@@ -284,13 +286,13 @@ function $content(opt_data, opt_ijData, opt_ijData_deprecated) {
     } else {
       if (iconAlignment) {
         incrementalDom.elementOpenStart('span');
-            incrementalDom.attr('class', 'button-label button-label-icon-' + iconAlignment);
+            incrementalDom.attr('class', 'wd-btn-label wd-btn-label-icon-' + iconAlignment);
         incrementalDom.elementOpenEnd();
           soyIdom.print(($$temp = label) == null ? '' : $$temp);
         incrementalDom.elementClose('span');
       } else {
         incrementalDom.elementOpenStart('span');
-            incrementalDom.attr('class', 'button-label button-label-noIcon');
+            incrementalDom.attr('class', 'wd-btn-label wd-btn-label-noIcon');
         incrementalDom.elementOpenEnd();
           soyIdom.print(($$temp = label) == null ? '' : $$temp);
         incrementalDom.elementClose('span');
@@ -335,48 +337,46 @@ function $buttonGroup(opt_data, opt_ijData, opt_ijData_deprecated) {
   var groupSpacing = soy.asserts.assertType(opt_data.groupSpacing == null || (goog.isString(opt_data.groupSpacing) || opt_data.groupSpacing instanceof goog.soy.data.SanitizedContent), 'groupSpacing', opt_data.groupSpacing, '!goog.soy.data.SanitizedContent|null|string|undefined');
   /** @type {!Array<?>} */
   var groupButtons = soy.asserts.assertType(goog.isArray(opt_data.groupButtons), 'groupButtons', opt_data.groupButtons, '!Array<?>');
-  var btnGroupItemAttributes__soy277 = function() {
-    incrementalDom.attr('class', 'btngroup-item' + (borderRadius ? ' btn-' + borderRadius : '') + (elementClasses ? ' ' + elementClasses : ''));
-  };
-  var btnGroupSpacerAttributes__soy292 = function() {
-    incrementalDom.attr('class', 'btngroup-spacing');
+  var btnGroupItemClasses__soy281 = '';
+  btnGroupItemClasses__soy281 += 'wd-btn-group-item';
+  btnGroupItemClasses__soy281 += borderRadius ? ' wd-btn-' + borderRadius : '';
+  btnGroupItemClasses__soy281 += elementClasses ? ' ' + elementClasses : '';
+  var btnGroupSpacingAttributes__soy296 = function() {
+    incrementalDom.attr('class', 'wd-btn-group-spacing');
     if (groupSpacing) {
       incrementalDom.attr('style', 'width:' + groupSpacing);
     }
   };
   incrementalDom.elementOpenStart('ul');
-      incrementalDom.attr('class', 'btngroup-list');
+      incrementalDom.attr('class', 'wd-btn-group-list');
   incrementalDom.elementOpenEnd();
-    var button327List = groupButtons;
-    var button327ListLen = button327List.length;
-        for (var button327Index = 0; button327Index < button327ListLen; button327Index++) {
-            var button327Data = button327List[button327Index];
-            var btnId__soy302 = button327Index + 1;
-              if (button327Index == 0) {
+    var button331List = groupButtons;
+    var button331ListLen = button331List.length;
+        for (var button331Index = 0; button331Index < button331ListLen; button331Index++) {
+            var button331Data = button331List[button331Index];
+            var btnId__soy306 = button331Index + 1;
+              if (button331Index == 0) {
                 incrementalDom.elementOpenStart('li');
-              incrementalDom.attr('id', 'btngroup-firstitem');
-              btnGroupItemAttributes__soy277();
+              incrementalDom.attr('class', 'wd-btn-group-firstitem ' + btnGroupItemClasses__soy281);
           incrementalDom.elementOpenEnd();
-              } else if (button327Index == button327ListLen - 1) {
+              } else if (button331Index == button331ListLen - 1) {
                 incrementalDom.elementOpenStart('div');
-                btnGroupSpacerAttributes__soy292();
+                btnGroupSpacingAttributes__soy296();
             incrementalDom.elementOpenEnd();
             incrementalDom.elementClose('div');
             incrementalDom.elementOpenStart('li');
-                incrementalDom.attr('id', 'btngroup-lastitem');
-                btnGroupItemAttributes__soy277();
+                incrementalDom.attr('class', 'wd-btn-group-lastitem ' + btnGroupItemClasses__soy281);
             incrementalDom.elementOpenEnd();
               } else {
                 incrementalDom.elementOpenStart('div');
-                  btnGroupSpacerAttributes__soy292();
+                  btnGroupSpacingAttributes__soy296();
               incrementalDom.elementOpenEnd();
               incrementalDom.elementClose('div');
               incrementalDom.elementOpenStart('li');
-                  incrementalDom.attr('id', 'btngroup-miditem-' + btnId__soy302);
-                  btnGroupItemAttributes__soy277();
+                  incrementalDom.attr('class', 'wd-btn-group-miditem-' + btnId__soy306 + ' ' + btnGroupItemClasses__soy281);
               incrementalDom.elementOpenEnd();
               }
-              $buttonGroupContent({button: button327Data}, null, opt_ijData);
+              $buttonGroupContent({button: button331Data}, null, opt_ijData);
             incrementalDom.elementClose('li');
           }
       incrementalDom.elementClose('ul');
@@ -407,22 +407,23 @@ function $buttonGroup(opt_data, opt_ijData, opt_ijData_deprecated) {
      */
     function $buttonGroupContent(opt_data, opt_ijData, opt_ijData_deprecated) {
       opt_ijData = opt_ijData_deprecated || opt_ijData;
+      var $$temp;
       /** @type {?} */
       var button = opt_data.button;
-      var groupButtonAttributes__soy333 = function() {
+      var groupButtonAttributes__soy337 = function() {
         var $tmp = null;
         if (button.style == 'destructive') {
-          $tmp = ' btn-destructive';
+          $tmp = ' wd-btn-destructive';
         } else if (button.style && button.color) {
-          $tmp = ' btn-' + button.style + '-' + button.color;
+          $tmp = ' wd-btn-' + button.style + '-' + button.color;
         } else if (button.style && !button.color) {
-          $tmp = ' btn-' + button.style + '-accent';
+          $tmp = ' wd-btn-' + button.style + '-accent';
         } else if (button.color && !button.style) {
-          $tmp = ' btn-primary-' + button.color;
+          $tmp = ' wd-btn-primary-' + button.color;
         } else {
-          $tmp = ' btn-primary-accent';
+          $tmp = ' wd-btn-primary-accent';
         }
-        incrementalDom.attr('class', 'btn btn-groupbtn' + $tmp + (button.size ? ' btn-' + button.size : ' btn-s') + (button.weight ? ' btn-' + button.weight : ' btn-middleweight') + (button.darkTheme ? ' btn-darktheme' : '') + (!button.label ? (button.icon || button.classIcon ? ' btn-lone-icon' : '') : '') + (button.iconAlignment == 'left-justified' || button.iconAlignment == 'right-justified' ? ' btn-justified-padding' : '') + (button.elementClasses ? ' ' + button.elementClasses : ''));
+        incrementalDom.attr('class', 'wd-btn wd-btn-groupbtn' + $tmp + (button.size ? ' wd-btn-' + button.size : ' wd-btn-s') + (button.weight ? ' wd-btn-' + button.weight : '') + (button.darkTheme ? ' wd-btn-darktheme' : '') + (!button.label ? (button.icon || button.classIcon ? ' wd-btn-lone-icon' : '') : '') + (button.iconAlignment == 'left-justified' || button.iconAlignment == 'right-justified' ? ' wd-btn-justified-padding' : '') + (button.elementClasses ? ' ' + button.elementClasses : ''));
         if (button.width && !button.hardWidth) {
           incrementalDom.attr('style', 'min-width:' + button.width);
         }
@@ -430,7 +431,7 @@ function $buttonGroup(opt_data, opt_ijData, opt_ijData_deprecated) {
           incrementalDom.attr('style', 'width:' + button.width);
         }
         if (button.disabled) {
-          incrementalDom.attr('disabled', '');
+          incrementalDom.attr('disabled', 'true');
         }
         if (button.href) {
           incrementalDom.attr('href', button.href);
@@ -451,16 +452,16 @@ function $buttonGroup(opt_data, opt_ijData, opt_ijData_deprecated) {
           incrementalDom.attr('target', button.target);
         }
         if (!button.href) {
-          incrementalDom.attr('type', button.type);
+          incrementalDom.attr('type', ($$temp = button.type) == null ? 'button' : $$temp);
         }
       };
           if (button.href) {
             incrementalDom.elementOpenStart('a');
-            groupButtonAttributes__soy333();
+            groupButtonAttributes__soy337();
         incrementalDom.elementOpenEnd();
           } else {
             incrementalDom.elementOpenStart('btn');
-              groupButtonAttributes__soy333();
+              groupButtonAttributes__soy337();
           incrementalDom.elementOpenEnd();
           }
           $content({icon: button.icon, classIcon: button.classIcon, iconAlignment: button.iconAlignment, label: button.label}, null, opt_ijData);

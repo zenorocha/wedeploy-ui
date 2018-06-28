@@ -31,47 +31,47 @@
   {@param? value: string}
 
   {let $attributes kind="attributes"}
-    class="btn
+    class="wd-btn
       {if $style == 'destructive'}
-        {sp}btn-destructive
+        {sp}wd-btn-destructive
       {elseif $style and $color}
-        {sp}btn-{$style}-{$color}
+        {sp}wd-btn-{$style}-{$color}
       {elseif $style and not $color}
-        {sp}btn-{$style}-accent
+        {sp}wd-btn-{$style}-accent
       {elseif $color and not $style}
-        {sp}btn-primary-{$color}
+        {sp}wd-btn-primary-{$color}
       {else}
-        {sp}btn-primary-accent
+        {sp}wd-btn-primary-accent
       {/if}
 
       {if $size}
-        {sp}btn-{$size}
+        {sp}wd-btn-{$size}
       {/if}
 
-      {if $width == 'full'}
-        {sp}btn-fullwidth
+      {if $width == 'full' or $width == 'fullwidth'}
+        {sp}wd-btn-fullwidth
       {/if}
 
       {if $weight}
-        {sp}btn-{$weight}
+        {sp}wd-btn-{$weight}
       {/if}
 
       {if $darkTheme}
-        {sp}btn-darktheme
+        {sp}wd-btn-darktheme
       {/if}
 
       {if $borderRadius}
-        {sp}btn-{$borderRadius}
+        {sp}wd-btn-{$borderRadius}
       {/if}
 
       {if not $label}
         {if $icon or $classIcon}
-          {sp}btn-lone-icon
+          {sp}wd-btn-lone-icon
         {/if}
       {/if}
 
       {if $iconAlignment == 'left-justified' or $iconAlignment == 'right-justified'}
-        {sp}btn-justified-padding
+        {sp}wd-btn-justified-padding
       {/if}
 
       {if $elementClasses}
@@ -79,16 +79,18 @@
       {/if}
     "
 
-    {if $width and not $hardWidth}
-      style="min-width:{$width}"
-    {/if}
+    {if $width != 'full' and $width != 'fullwidth'}
+      {if $width and not $hardWidth}
+        style="min-width:{$width}"
+      {/if}
 
-    {if $width and $hardWidth}
-      style="width:{$width}"
+      {if $width and $hardWidth}
+        style="width:{$width}"
+      {/if}
     {/if}
 
     {if $disabled}
-      disabled
+      disabled="true"
     {/if}
 
     {if $href}
@@ -121,9 +123,9 @@
   {/let}
 
   {let $btnGroupAttributes kind="attributes"}
-    class="btngroup
+    class="wd-btn-group
       {if $groupType}
-        {sp}btngroup-{$groupType}
+        {sp}wd-btn-group-{$groupType}
       {/if}
     "
   {/let}
@@ -166,31 +168,31 @@
 
   {if not $label}
     {if $icon or $classIcon}
-      <span class="icon lone-icon {$classIcon ?: ''}">{$icon ?: ''}</span>
+      <span class="wd-btn-icon wd-btn-lone-icon {$classIcon ?: ''}">{$icon ?: ''}</span>
     {/if}
   {else}
     {if $icon or $classIcon}
 
       {if $iconAlignment}
         {if $iconAlignment == 'left-center' or $iconAlignment == 'left-justified'}
-          <span class="icon {$classIcon ?: ''} icon-{$iconAlignment}">{$icon ?: ''}</span>
+          <span class="wd-btn-icon {$classIcon ?: ''} wd-btn-icon-{$iconAlignment}">{$icon ?: ''}</span>
         {/if}
 
-        <span class="button-label button-label-icon-{$iconAlignment}">{$label ?: ''}</span>
+        <span class="wd-btn-label wd-btn-label-icon-{$iconAlignment}">{$label ?: ''}</span>
 
         {if $iconAlignment == 'right-center' or $iconAlignment == 'right-justified'}
-          <span class="icon {$classIcon ?: ''} icon-{$iconAlignment}">{$icon ?: ''}</span>
+          <span class="wd-btn-icon {$classIcon ?: ''} wd-btn-icon-{$iconAlignment}">{$icon ?: ''}</span>
         {/if}
       {else}
-        <span class="icon {$classIcon ?: ''} icon-left-center">{$icon ?: ''}</span>
-        <span class="button-label button-label-icon-left-center">{$label ?: ''}</span>
+        <span class="wd-btn-icon {$classIcon ?: ''} wd-btn-icon-left-center">{$icon ?: ''}</span>
+        <span class="wd-btn-label wd-btn-label-icon-left-center">{$label ?: ''}</span>
       {/if}
 
     {else}
       {if $iconAlignment}
-        <span class="button-label button-label-icon-{$iconAlignment}">{$label ?: ''}</span>
+        <span class="wd-btn-label wd-btn-label-icon-{$iconAlignment}">{$label ?: ''}</span>
       {else}
-        <span class="button-label button-label-noIcon">{$label ?: ''}</span>
+        <span class="wd-btn-label wd-btn-label-noIcon">{$label ?: ''}</span>
       {/if}
     {/if}
   {/if}
@@ -205,42 +207,41 @@
   {@param? groupSpacing: string}
   {@param groupButtons: list<?>}
 
-  {let $btnGroupItemAttributes kind="attributes"}
-    class="btngroup-item
+  {let $btnGroupItemClasses kind="text"}
+    wd-btn-group-item
 
-      {if $borderRadius}
-        {sp}btn-{$borderRadius}
-      {/if}
+    {if $borderRadius}
+      {sp}wd-btn-{$borderRadius}
+    {/if}
 
-      {if $elementClasses}
-        {sp}{$elementClasses}
-      {/if}
-    "
+    {if $elementClasses}
+      {sp}{$elementClasses}
+    {/if}
   {/let}
 
-  {let $btnGroupSpacerAttributes kind="attributes"}
-    class="btngroup-spacing"
+  {let $btnGroupSpacingAttributes kind="attributes"}
+    class="wd-btn-group-spacing"
 
     {if $groupSpacing}
       style="width:{$groupSpacing}"
     {/if}
   {/let}
 
-  <ul class="btngroup-list">
+  <ul class="wd-btn-group-list">
     {foreach $button in $groupButtons}
 
       {let $btnId: index($button) + 1 /}
 
       {if isFirst($button)}
-        <li id="btngroup-firstitem" {$btnGroupItemAttributes}>
+        <li class="wd-btn-group-firstitem {$btnGroupItemClasses}">
 
       {elseif isLast($button)}
-        <div {$btnGroupSpacerAttributes}></div>
-        <li id="btngroup-lastitem" {$btnGroupItemAttributes}>
+        <div {$btnGroupSpacingAttributes}></div>
+        <li class="wd-btn-group-lastitem {$btnGroupItemClasses}">
 
       {else}
-        <div {$btnGroupSpacerAttributes}></div>
-        <li id="btngroup-miditem-{$btnId}" {$btnGroupItemAttributes}>
+        <div {$btnGroupSpacingAttributes}></div>
+        <li class="wd-btn-group-miditem-{$btnId} {$btnGroupItemClasses}">
       {/if}
 
           {call .buttonGroupContent}
@@ -260,43 +261,41 @@
   {@param button: ?}
 
   {let $groupButtonAttributes kind="attributes"}
-    class="btn btn-groupbtn
+    class="wd-btn wd-btn-groupbtn
       {if $button.style == 'destructive'}
-        {sp}btn-destructive
+        {sp}wd-btn-destructive
       {elseif $button.style and $button.color}
-        {sp}btn-{$button.style}-{$button.color}
+        {sp}wd-btn-{$button.style}-{$button.color}
       {elseif $button.style and not $button.color}
-        {sp}btn-{$button.style}-accent
+        {sp}wd-btn-{$button.style}-accent
       {elseif $button.color and not $button.style}
-        {sp}btn-primary-{$button.color}
+        {sp}wd-btn-primary-{$button.color}
       {else}
-        {sp}btn-primary-accent
+        {sp}wd-btn-primary-accent
       {/if}
 
       {if $button.size}
-        {sp}btn-{$button.size}
+        {sp}wd-btn-{$button.size}
       {else}
-        {sp}btn-s
+        {sp}wd-btn-s
       {/if}
 
       {if $button.weight}
-        {sp}btn-{$button.weight}
-      {else}
-        {sp}btn-middleweight
+        {sp}wd-btn-{$button.weight}
       {/if}
 
       {if $button.darkTheme}
-        {sp}btn-darktheme
+        {sp}wd-btn-darktheme
       {/if}
 
       {if not $button.label}
         {if $button.icon or $button.classIcon}
-          {sp}btn-lone-icon
+          {sp}wd-btn-lone-icon
         {/if}
       {/if}
 
       {if $button.iconAlignment == 'left-justified' or $button.iconAlignment == 'right-justified'}
-        {sp}btn-justified-padding
+        {sp}wd-btn-justified-padding
       {/if}
 
       {if $button.elementClasses}
@@ -313,7 +312,7 @@
     {/if}
 
     {if $button.disabled}
-      disabled
+      disabled="true"
     {/if}
 
     {if $button.href}
@@ -341,7 +340,7 @@
     {/if}
 
     {if not $button.href}
-      type="{$button.type}"
+      type="{$button.type ?: 'button'}"
     {/if}
   {/let}
 

@@ -45,13 +45,13 @@ WDButton.STATE = {
    * @type {?string}
    * @default 'accent'
    */
-  color: Config.oneOf(['accent', 'black', 'green', 'blue-light', 'blue', 'violet', 'red', 'orange', 'yellow']).value('accent'),
+  color: Config.oneOf(['accent', 'black', 'blue', 'blue-light', 'green', 'orange', 'red', 'violet', 'yellow']).value('accent'),
 
   /**
    * @type {?string}
    * @default 'm'
    */
-  size: Config.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl']).value('s'),
+  size: Config.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']).value('sm'),
 
   /**
    * @type {?string|undefined}
@@ -64,12 +64,6 @@ WDButton.STATE = {
    * @default false
    */
   hardWidth: Config.bool().value(false),
-
-  /**
-   * @type {?string}
-   * @default undefined
-   */
-  weight: Config.oneOf(['lightweight', 'middleweight', 'heavyweight']),
 
   /**
    * @type {?boolean}
@@ -110,11 +104,10 @@ WDButton.STATE = {
       disabled: Config.bool().value(false),
       elementClasses: Config.string(),
       style: Config.oneOf(['primary', 'outline', 'ghost', 'danger', 'destructive', 'float']).value('primary'),
-      color: Config.oneOf(['accent', 'black', 'green', 'blue-light', 'blue', 'violet', 'red', 'orange', 'yellow']).value('accent'),
-      size: Config.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl']).value('s'),
+      color: Config.oneOf(['accent', 'black', 'blue', 'blue-light', 'green', 'orange', 'red', 'violet', 'yellow']).value('accent'),
+      size: Config.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']).value('sm'),
       width: Config.string(),
       hardWidth: Config.bool().value(false),
-      weight: Config.oneOf(['lightweight', 'middleweight', 'heavyweight']),
       darkTheme: Config.bool(),
       href: Config.string(),
       icon: Config.any(),

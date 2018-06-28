@@ -11,7 +11,6 @@
   {@param? size: string}
   {@param? width: string}
   {@param? hardWidth: bool}
-  {@param? weight: string}
   {@param? darkTheme: bool}
   {@param? borderRadius: string}
   {@param? group: bool}
@@ -50,10 +49,6 @@
 
       {if $width == 'full' or $width == 'fullwidth'}
         {sp}wd-btn-fullwidth
-      {/if}
-
-      {if $weight}
-        {sp}wd-btn-{$weight}
       {/if}
 
       {if $darkTheme}
@@ -277,11 +272,7 @@
       {if $button.size}
         {sp}wd-btn-{$button.size}
       {else}
-        {sp}wd-btn-s
-      {/if}
-
-      {if $button.weight}
-        {sp}wd-btn-{$button.weight}
+        {sp}wd-btn-sm
       {/if}
 
       {if $button.darkTheme}

@@ -3,20 +3,21 @@
 /* ==========================================================================
    Buttons
    ========================================================================== */
-.wd-btn {
-  box-sizing: border-box;
+.wd-btn
+{
   align-content: center;
   align-items: center;
-  display: inline-flex;
   border: 0 solid transparent;
-  border-radius: 4px;
+  border-radius: $wd-radius-sm;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
   font-family: $wd-font-primary;
-  font-weight: 500;
+  font-weight: $wd--emphasis;
   justify-content: center;
   text-align: center;
-  white-space: nowrap;
   transition: 0.33s;
-  cursor: pointer;
+  white-space: nowrap;
 
   &:active,
   &:focus {
@@ -464,14 +465,23 @@
 
 /* Size / Fitting / Rounded / Icon Sizing
    ========================================================================== */
+
+// Size Variables
+$wd-btn-xs  :  30px !default;
+$wd-btn-sm  :  36px !default;
+$wd-btn-md  :  42px !default;
+$wd-btn-lg  :  48px !default;
+$wd-btn-xl  :  54px !default;
+$wd-btn-xxl :  60px !default;
+
 .wd-btn {
   &.wd-btn-xs {
-    height: 30px;
     font-size: 13px;
+    height: $wd-btn-xs;
     padding: 0 9px;
 
     &.wd-btn-rounded {
-      border-radius: 15px;
+      border-radius: $wd-btn-xs/2;
     }
 
     .wd-btn-icon, .wd-btn-icon svg {
@@ -480,13 +490,13 @@
     }
   }
 
-  &.wd-btn-s {
-    height: 36px;
+  &.wd-btn-sm {
     font-size: 14px;
+    height: $wd-btn-sm;
     padding: 0 12.5px;
 
     &.wd-btn-rounded {
-      border-radius: 18px;
+      border-radius: $wd-btn-sm/2;
     }
 
     .wd-btn-icon, .wd-btn-icon svg {
@@ -495,13 +505,13 @@
     }
   }
 
-  &.wd-btn-m {
-    height: 42px;
+  &.wd-btn-md {
     font-size: 14px;
+    height: $wd-btn-md;
     padding: 0 12px;
 
     &.wd-btn-rounded {
-      border-radius: 21px;
+      border-radius: $wd-btn-md/2;
     }
 
     .wd-btn-icon, .wd-btn-icon svg {
@@ -510,13 +520,13 @@
     }
   }
 
-  &.wd-btn-l {
-    height: 48px;
+  &.wd-btn-lg {
     font-size: 16px;
+    height: $wd-btn-lg;
     padding: 0 12px;
 
     &.wd-btn-rounded {
-      border-radius: 24px;
+      border-radius: $wd-btn-lg/2;
     }
 
     .wd-btn-icon, .wd-btn-icon svg {
@@ -526,12 +536,12 @@
   }
 
   &.wd-btn-xl {
-    height: 54px;
     font-size: 16px;
+    height: $wd-btn-xl;
     padding: 0 12px;
 
     &.wd-btn-rounded {
-      border-radius: 27px;
+      border-radius: $wd-btn-xl/2;
     }
 
     .wd-btn-icon, .wd-btn-icon svg {
@@ -541,12 +551,12 @@
   }
 
   &.wd-btn-xxl {
-    height: 60px;
     font-size: 18px;
+    height: $wd-btn-xxl;
     padding: 0 18.5px;
 
     &.wd-btn-rounded {
-      border-radius: 30px;
+      border-radius: $wd-btn-xxl/2;
     }
 
     .wd-btn-icon, .wd-btn-icon svg {
@@ -556,7 +566,7 @@
   }
 
   &.wd-btn-borderRadius-6px {
-    border-radius: 6px;
+    border-radius: $wd-radius-md;
   }
 
   &.wd-btn-fullwidth {
@@ -564,19 +574,24 @@
   }
 }
 
-/* Font Weight
+/* Weight (from WD Typography, specified in elementClasses)
    ========================================================================== */
 .wd-btn {
-  &.wd-btn-lightweight {
-    font-weight: 400;
-  }
 
-  &.wd-btn-middleweight {
-    font-weight: 500;
+  &.wd--body {
+    .wd-btn-label {
+      font-weight: $wd--body;
+    }
   }
-
-  &.wd-btn-heavyweight {
-    font-weight: 900;
+  &.wd--emphasis {
+    .wd-btn-label {
+      font-weight: $wd--emphasis;
+    }
+  }
+  &.wd--display {
+    .wd-btn-label {
+      font-weight: $wd--display;
+    }
   }
 }
 
@@ -592,33 +607,33 @@
     border-radius: 50%;
 
     &.wd-btn-xs {
-      width: 30px;
       padding: 7px;
+      width: $wd-btn-xs;
     }
 
-    &.wd-btn-s {
-      width: 36px;
+    &.wd-btn-sm {
       padding: 10px;
+      width: $wd-btn-sm;
     }
 
-    &.wd-btn-m {
-      width: 42px;
+    &.wd-btn-md {
       padding: 13px;
+      width: $wd-btn-md;
     }
 
-    &.wd-btn-l {
-      width: 48px;
+    &.wd-btn-lg {
       padding: 14px;
+      width: $wd-btn-lg;
     }
 
     &.wd-btn-xl {
-      width: 54px;
       padding: 17px;
+      width: $wd-btn-xl;
     }
 
     &.wd-btn-xxl {
-      width: 60px;
       padding: 20px;
+      width: $wd-btn-xxl;
     }
   }
 
@@ -645,7 +660,7 @@
     }
   }
 
-  &.wd-btn-s {
+  &.wd-btn-sm {
 
     .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
       margin: 0;
@@ -668,7 +683,7 @@
     }
   }
 
-  &.wd-btn-m {
+  &.wd-btn-md {
 
     .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
       margin: 0;
@@ -691,7 +706,7 @@
     }
   }
 
-  &.wd-btn-l {
+  &.wd-btn-lg {
 
     .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
       margin: 0;
@@ -767,14 +782,14 @@
   display: inline-flex;
 
   .wd-btn-group-list {
+    display: inline-flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: inline-flex;
 
     .wd-btn-group-item {
-      display: inline-flex;
       align-items: center;
+      display: inline-flex;
     }
   }
 
@@ -785,13 +800,13 @@
       &.wd-btn-group-firstitem {
 
         .wd-btn.wd-btn-groupbtn {
-          border-radius: 4px 0 0 4px;
+          border-radius: $wd-radius-sm 0 0 $wd-radius-sm;
         }
 
         &.wd-btn-borderRadius-6px {
 
           .wd-btn.wd-btn-groupbtn {
-            border-radius: 6px 0 0 6px;
+            border-radius: $wd-radius-md 0 0 $wd-radius-md;
           }
         }
 
@@ -800,22 +815,22 @@
           .wd-btn.wd-btn-groupbtn {
 
             &.wd-btn-xs {
-              border-radius: 15px 0 0 15px;
+              border-radius: $wd-btn-xs/2 0 0 $wd-btn-xs/2;
             }
-            &.wd-btn-s {
-              border-radius: 18px 0 0 18px;
+            &.wd-btn-sm {
+              border-radius: $wd-btn-sm/2 0 0 $wd-btn-sm/2;
             }
-            &.wd-btn-m {
-              border-radius: 21px 0 0 21px;
+            &.wd-btn-md {
+              border-radius: $wd-btn-md/2 0 0 $wd-btn-md/2;
             }
-            &.wd-btn-l {
-              border-radius: 24px 0 0 24px;
+            &.wd-btn-lg {
+              border-radius: $wd-btn-lg/2 0 0 $wd-btn-lg/2;
             }
             &.wd-btn-xl {
-              border-radius: 27px 0 0 27px;
+              border-radius: $wd-btn-xl/2 0 0 $wd-btn-xl/2;
             }
             &.wd-btn-xxl {
-              border-radius: 30px 0 0 30px;
+              border-radius: $wd-btn-xxl/2 0 0 $wd-btn-xxl/2;
             }
           }
         }
@@ -824,13 +839,13 @@
       &.wd-btn-group-lastitem {
 
         .wd-btn.wd-btn-groupbtn {
-          border-radius: 0 4px 4px 0;
+          border-radius: 0 $wd-radius-sm $wd-radius-sm 0;
         }
 
         &.wd-btn-borderRadius-6px {
 
           .wd-btn.wd-btn-groupbtn {
-            border-radius: 0 6px 6px 0;
+            border-radius: 0 $wd-radius-md $wd-radius-md 0;
           }
         }
 
@@ -839,22 +854,22 @@
           .wd-btn.wd-btn-groupbtn {
 
             &.wd-btn-xs {
-              border-radius: 0 15px 15px 0;
+              border-radius: 0 $wd-btn-xs/2 $wd-btn-xs/2 0;
             }
-            &.wd-btn-s {
-              border-radius: 0 18px 18px 0;
+            &.wd-btn-sm {
+              border-radius: 0 $wd-btn-sm/2 $wd-btn-sm/2 0;
             }
-            &.wd-btn-m {
-              border-radius: 0 21px 21px 0;
+            &.wd-btn-md {
+              border-radius: 0 $wd-btn-md/2 $wd-btn-md/2 0;
             }
-            &.wd-btn-l {
-              border-radius: 0 24px 24px 0;
+            &.wd-btn-lg {
+              border-radius: 0 $wd-btn-lg/2 $wd-btn-lg/2 0;
             }
             &.wd-btn-xl {
-              border-radius: 0 27px 27px 0;
+              border-radius: 0 $wd-btn-xl/2 $wd-btn-xl/2 0;
             }
             &.wd-btn-xxl {
-              border-radius: 0 30px 30px 0;
+              border-radius: 0 $wd-btn-xxl/2 $wd-btn-xxl/2 0;
             }
           }
         }

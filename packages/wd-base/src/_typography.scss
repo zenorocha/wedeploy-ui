@@ -7,18 +7,17 @@
 $wd-font-primary :  "Circular", sans-serif !default;
 
 /* Font Weight Variables */
+$wd--body        :  400 !default;
 $wd--display     :  900 !default;
 $wd--emphasis    :  500 !default;
-$wd--body        :  400 !default;
 
 
 /* Font Builder Mixin
    ========================================================================== */
 @mixin font-builder($font-weight-variable) {
-  font-weight: $font-weight-variable;
-
-  font-family: $wd-font-primary;
   color: $wd-color-black;
+  font-family: $wd-font-primary;
+  font-weight: $font-weight-variable;
 }
 
 

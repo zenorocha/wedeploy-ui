@@ -2,9 +2,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/WDButtonGroup.js'
-  // , './src/WDButtonGroup.scss'
-  ],
+  entry: ['./src/WDButtonGroup.js', './src/WDButtonGroup.scss'],
   module: {
     rules: [{
       test: /\.js$/,

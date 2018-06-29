@@ -1,4 +1,5 @@
-@import "wd-base/src/main";
+@import "../../wd-base/src/main";
+@import "../../wd-button/src/WDButton";
 
 /* ==========================================================================
    Button Groups
@@ -24,20 +25,20 @@
 
       &.wd-btn-group-firstitem {
 
-        .wd-btn.wd-btn-groupbtn {
+        .wd-btn {
           border-radius: $wd-radius-sm 0 0 $wd-radius-sm;
         }
 
         &.wd-btn-borderRadius-6px {
 
-          .wd-btn.wd-btn-groupbtn {
+          .wd-btn {
             border-radius: $wd-radius-md 0 0 $wd-radius-md;
           }
         }
 
         &.wd-btn-rounded {
 
-          .wd-btn.wd-btn-groupbtn {
+          .wd-btn {
 
             &.wd-btn-xs {
               border-radius: $wd-btn-xs/2 0 0 $wd-btn-xs/2;
@@ -63,20 +64,20 @@
 
       &.wd-btn-group-lastitem {
 
-        .wd-btn.wd-btn-groupbtn {
+        .wd-btn {
           border-radius: 0 $wd-radius-sm $wd-radius-sm 0;
         }
 
         &.wd-btn-borderRadius-6px {
 
-          .wd-btn.wd-btn-groupbtn {
+          .wd-btn {
             border-radius: 0 $wd-radius-md $wd-radius-md 0;
           }
         }
 
         &.wd-btn-rounded {
 
-          .wd-btn.wd-btn-groupbtn {
+          .wd-btn {
 
             &.wd-btn-xs {
               border-radius: 0 $wd-btn-xs/2 $wd-btn-xs/2 0;
@@ -101,7 +102,7 @@
       }
 
       &[class^='wd-btn-group-miditem-'] {
-        .wd-btn.wd-btn-groupbtn {
+        .wd-btn {
           border-radius: 0;
         }
       }

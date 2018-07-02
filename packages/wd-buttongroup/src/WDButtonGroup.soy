@@ -6,9 +6,6 @@
 {template .render}
   {@param? elementClasses: string}
   {@param? type: string}
-  {@param? style: string}
-  {@param? color: string}
-  {@param? size: string}
   {@param? spacing: string}
   {@param buttons: list<?>}
   {@param? borderRadius: string}
@@ -17,28 +14,8 @@
 
   {let $attributes kind="attributes"}
     class="wd-btn-group
-      {if $style == 'destructive'}
-        {sp}wd-btn-destructive
-      {elseif $style and $color}
-        {sp}wd-btn-{$style}-{$color}
-      {elseif $style and not $color}
-        {sp}wd-btn-{$style}-accent
-      {elseif $color and not $style}
-        {sp}wd-btn-primary-{$color}
-      {else}
-        {sp}wd-btn-primary-accent
-      {/if}
-
       {if $type}
         {sp}wd-btn-group-{$type}
-      {/if}
-
-      {if $size}
-        {sp}wd-btn-group-{$size}
-      {/if}
-
-      {if $borderRadius}
-        {sp}wd-btn-{$borderRadius}
       {/if}
 
       {if $elementClasses}
@@ -57,10 +34,7 @@
 
 
   <div {$attributes}>
-    {call .buttonList }
-      {param spacing: $spacing /}
-      {param buttons: $buttons /}
-    {/call}
+    {call .buttonList data="all" /}
   </div>
 {/template}
 

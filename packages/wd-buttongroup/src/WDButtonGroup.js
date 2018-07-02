@@ -34,6 +34,18 @@ WDButtonGroup.STATE = {
    * @default empty
    */
   buttons: Config.array().value([]),
+
+  /**
+   * @type {?(string|undefined)}
+   * @default undefined
+   */
+  id: Config.string(),
+
+  /**
+   * @type {?(string|undefined)}
+   * @default undefined
+   */
+  name: Config.string(),
 };
 
 Soy.register(WDButtonGroup, templates);

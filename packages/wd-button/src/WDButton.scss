@@ -1,10 +1,9 @@
-@import "wd-base/src/main";
+@import "../../wd-base/src/main";
 
 /* ==========================================================================
    Buttons
    ========================================================================== */
-.wd-btn
-{
+.wd-btn {
   align-content: center;
   align-items: center;
   border: 0 solid transparent;
@@ -13,7 +12,7 @@
   cursor: pointer;
   display: inline-flex;
   font-family: $wd-font-primary;
-  font-weight: $wd--emphasis;
+  font-weight: $wd-fw-emphasis;
   justify-content: center;
   text-align: center;
   transition: 0.33s;
@@ -578,19 +577,19 @@ $wd-btn-xxl :  60px !default;
    ========================================================================== */
 .wd-btn {
 
-  &.wd--body {
+  &.wd-fw-body {
     .wd-btn-label {
-      font-weight: $wd--body;
+      font-weight: $wd-fw-body;
     }
   }
-  &.wd--emphasis {
+  &.wd-fw-emphasis {
     .wd-btn-label {
-      font-weight: $wd--emphasis;
+      font-weight: $wd-fw-emphasis;
     }
   }
-  &.wd--display {
+  &.wd-fw-display {
     .wd-btn-label {
-      font-weight: $wd--display;
+      font-weight: $wd-fw-display;
     }
   }
 }
@@ -772,114 +771,6 @@ $wd-btn-xxl :  60px !default;
 
     .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
       margin: 0 0 0 15.5px;
-    }
-  }
-}
-
-/* Button Group
-   ========================================================================== */
-.wd-btn-group {
-  display: inline-flex;
-
-  .wd-btn-group-list {
-    display: inline-flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    .wd-btn-group-item {
-      align-items: center;
-      display: inline-flex;
-    }
-  }
-
-  &.wd-btn-group-segmented {
-
-    .wd-btn-group-list .wd-btn-group-item {
-
-      &.wd-btn-group-firstitem {
-
-        .wd-btn.wd-btn-groupbtn {
-          border-radius: $wd-radius-sm 0 0 $wd-radius-sm;
-        }
-
-        &.wd-btn-borderRadius-6px {
-
-          .wd-btn.wd-btn-groupbtn {
-            border-radius: $wd-radius-md 0 0 $wd-radius-md;
-          }
-        }
-
-        &.wd-btn-rounded {
-
-          .wd-btn.wd-btn-groupbtn {
-
-            &.wd-btn-xs {
-              border-radius: $wd-btn-xs/2 0 0 $wd-btn-xs/2;
-            }
-            &.wd-btn-sm {
-              border-radius: $wd-btn-sm/2 0 0 $wd-btn-sm/2;
-            }
-            &.wd-btn-md {
-              border-radius: $wd-btn-md/2 0 0 $wd-btn-md/2;
-            }
-            &.wd-btn-lg {
-              border-radius: $wd-btn-lg/2 0 0 $wd-btn-lg/2;
-            }
-            &.wd-btn-xl {
-              border-radius: $wd-btn-xl/2 0 0 $wd-btn-xl/2;
-            }
-            &.wd-btn-xxl {
-              border-radius: $wd-btn-xxl/2 0 0 $wd-btn-xxl/2;
-            }
-          }
-        }
-      }
-
-      &.wd-btn-group-lastitem {
-
-        .wd-btn.wd-btn-groupbtn {
-          border-radius: 0 $wd-radius-sm $wd-radius-sm 0;
-        }
-
-        &.wd-btn-borderRadius-6px {
-
-          .wd-btn.wd-btn-groupbtn {
-            border-radius: 0 $wd-radius-md $wd-radius-md 0;
-          }
-        }
-
-        &.wd-btn-rounded {
-
-          .wd-btn.wd-btn-groupbtn {
-
-            &.wd-btn-xs {
-              border-radius: 0 $wd-btn-xs/2 $wd-btn-xs/2 0;
-            }
-            &.wd-btn-sm {
-              border-radius: 0 $wd-btn-sm/2 $wd-btn-sm/2 0;
-            }
-            &.wd-btn-md {
-              border-radius: 0 $wd-btn-md/2 $wd-btn-md/2 0;
-            }
-            &.wd-btn-lg {
-              border-radius: 0 $wd-btn-lg/2 $wd-btn-lg/2 0;
-            }
-            &.wd-btn-xl {
-              border-radius: 0 $wd-btn-xl/2 $wd-btn-xl/2 0;
-            }
-            &.wd-btn-xxl {
-              border-radius: 0 $wd-btn-xxl/2 $wd-btn-xxl/2 0;
-            }
-          }
-        }
-      }
-
-      &[class^='wd-btn-group-miditem-'] {
-        .wd-btn.wd-btn-groupbtn {
-          border-radius: 0;
-        }
-      }
     }
   }
 }

@@ -33,10 +33,6 @@ var soyIdom = goog.require('soy.idom');
  *  hardWidth: (boolean|null|undefined),
  *  darkTheme: (boolean|null|undefined),
  *  borderRadius: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  group: (boolean|null|undefined),
- *  groupType: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  groupSpacing: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  groupButtons: !Array<?>,
  *  href: (!goog.soy.data.SanitizedContent|null|string|undefined),
  *  icon: (!goog.soy.data.SanitizedContent|function()|null|string|undefined),
  *  classIcon: (!goog.soy.data.SanitizedContent|null|string|undefined),
@@ -56,6 +52,7 @@ var soyIdom = goog.require('soy.idom');
  */
 function $render(opt_data, opt_ijData, opt_ijData_deprecated) {
   opt_ijData = opt_ijData_deprecated || opt_ijData;
+  opt_data = opt_data || {};
   /** @type {boolean|null|undefined} */
   var disabled = soy.asserts.assertType(opt_data.disabled == null || (goog.isBoolean(opt_data.disabled) || opt_data.disabled === 1 || opt_data.disabled === 0), 'disabled', opt_data.disabled, 'boolean|null|undefined');
   /** @type {!goog.soy.data.SanitizedContent|null|string|undefined} */
@@ -74,14 +71,6 @@ function $render(opt_data, opt_ijData, opt_ijData_deprecated) {
   var darkTheme = soy.asserts.assertType(opt_data.darkTheme == null || (goog.isBoolean(opt_data.darkTheme) || opt_data.darkTheme === 1 || opt_data.darkTheme === 0), 'darkTheme', opt_data.darkTheme, 'boolean|null|undefined');
   /** @type {!goog.soy.data.SanitizedContent|null|string|undefined} */
   var borderRadius = soy.asserts.assertType(opt_data.borderRadius == null || (goog.isString(opt_data.borderRadius) || opt_data.borderRadius instanceof goog.soy.data.SanitizedContent), 'borderRadius', opt_data.borderRadius, '!goog.soy.data.SanitizedContent|null|string|undefined');
-  /** @type {boolean|null|undefined} */
-  var group = soy.asserts.assertType(opt_data.group == null || (goog.isBoolean(opt_data.group) || opt_data.group === 1 || opt_data.group === 0), 'group', opt_data.group, 'boolean|null|undefined');
-  /** @type {!goog.soy.data.SanitizedContent|null|string|undefined} */
-  var groupType = soy.asserts.assertType(opt_data.groupType == null || (goog.isString(opt_data.groupType) || opt_data.groupType instanceof goog.soy.data.SanitizedContent), 'groupType', opt_data.groupType, '!goog.soy.data.SanitizedContent|null|string|undefined');
-  /** @type {!goog.soy.data.SanitizedContent|null|string|undefined} */
-  var groupSpacing = soy.asserts.assertType(opt_data.groupSpacing == null || (goog.isString(opt_data.groupSpacing) || opt_data.groupSpacing instanceof goog.soy.data.SanitizedContent), 'groupSpacing', opt_data.groupSpacing, '!goog.soy.data.SanitizedContent|null|string|undefined');
-  /** @type {!Array<?>} */
-  var groupButtons = soy.asserts.assertType(goog.isArray(opt_data.groupButtons), 'groupButtons', opt_data.groupButtons, '!Array<?>');
   /** @type {!goog.soy.data.SanitizedContent|null|string|undefined} */
   var href = soy.asserts.assertType(opt_data.href == null || (goog.isString(opt_data.href) || opt_data.href instanceof goog.soy.data.SanitizedContent), 'href', opt_data.href, '!goog.soy.data.SanitizedContent|null|string|undefined');
   /** @type {!goog.soy.data.SanitizedContent|function()|null|string|undefined} */
@@ -104,7 +93,7 @@ function $render(opt_data, opt_ijData, opt_ijData_deprecated) {
   var type = soy.asserts.assertType(opt_data.type == null || (goog.isString(opt_data.type) || opt_data.type instanceof goog.soy.data.SanitizedContent), 'type', opt_data.type, '!goog.soy.data.SanitizedContent|null|string|undefined');
   /** @type {!goog.soy.data.SanitizedContent|null|string|undefined} */
   var value = soy.asserts.assertType(opt_data.value == null || (goog.isString(opt_data.value) || opt_data.value instanceof goog.soy.data.SanitizedContent), 'value', opt_data.value, '!goog.soy.data.SanitizedContent|null|string|undefined');
-  var attributes__soy28 = function() {
+  var attributes__soy24 = function() {
     var $tmp = null;
     if (style == 'destructive') {
       $tmp = ' wd-btn-destructive';
@@ -151,31 +140,20 @@ function $render(opt_data, opt_ijData, opt_ijData_deprecated) {
       incrementalDom.attr('type', type);
     }
   };
-  var btnGroupAttributes__soy151 = function() {
-    incrementalDom.attr('class', 'wd-btn-group' + (groupType ? ' wd-btn-group-' + groupType : ''));
-  };
-  if (group) {
-    incrementalDom.elementOpenStart('div');
-        btnGroupAttributes__soy151();
+      if (href) {
+        incrementalDom.elementOpenStart('a');
+        attributes__soy24();
     incrementalDom.elementOpenEnd();
-      $buttonGroup(opt_data, null, opt_ijData);
-    incrementalDom.elementClose('div');
-  } else {
-    if (href) {
-          incrementalDom.elementOpenStart('a');
-          attributes__soy28();
+      } else {
+        incrementalDom.elementOpenStart('btn');
+          attributes__soy24();
       incrementalDom.elementOpenEnd();
-        } else {
-          incrementalDom.elementOpenStart('btn');
-            attributes__soy28();
-        incrementalDom.elementOpenEnd();
-        }
-        $content(opt_data, null, opt_ijData);
-    if (href) {
-      incrementalDom.elementClose('a');
-    } else {
-      incrementalDom.elementClose('btn');
-    }
+      }
+      $content(opt_data, null, opt_ijData);
+  if (href) {
+    incrementalDom.elementClose('a');
+  } else {
+    incrementalDom.elementClose('btn');
   }
 }
 exports.render = $render;
@@ -190,10 +168,6 @@ exports.render = $render;
  *  hardWidth: (boolean|null|undefined),
  *  darkTheme: (boolean|null|undefined),
  *  borderRadius: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  group: (boolean|null|undefined),
- *  groupType: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  groupSpacing: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  groupButtons: !Array<?>,
  *  href: (!goog.soy.data.SanitizedContent|null|string|undefined),
  *  icon: (!goog.soy.data.SanitizedContent|function()|null|string|undefined),
  *  classIcon: (!goog.soy.data.SanitizedContent|null|string|undefined),
@@ -310,182 +284,10 @@ if (goog.DEBUG) {
   $content.soyTemplateName = 'WDButton.content';
 }
 
-
-/**
- * @param {{
- *  elementClasses: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  borderRadius: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  groupSpacing: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  groupButtons: !Array<?>
- * }} opt_data
- * @param {Object<string, *>=} opt_ijData
- * @param {Object<string, *>=} opt_ijData_deprecated
- * @return {void}
- * @suppress {checkTypes}
- */
-function $buttonGroup(opt_data, opt_ijData, opt_ijData_deprecated) {
-  opt_ijData = opt_ijData_deprecated || opt_ijData;
-  /** @type {!goog.soy.data.SanitizedContent|null|string|undefined} */
-  var elementClasses = soy.asserts.assertType(opt_data.elementClasses == null || (goog.isString(opt_data.elementClasses) || opt_data.elementClasses instanceof goog.soy.data.SanitizedContent), 'elementClasses', opt_data.elementClasses, '!goog.soy.data.SanitizedContent|null|string|undefined');
-  /** @type {!goog.soy.data.SanitizedContent|null|string|undefined} */
-  var borderRadius = soy.asserts.assertType(opt_data.borderRadius == null || (goog.isString(opt_data.borderRadius) || opt_data.borderRadius instanceof goog.soy.data.SanitizedContent), 'borderRadius', opt_data.borderRadius, '!goog.soy.data.SanitizedContent|null|string|undefined');
-  /** @type {!goog.soy.data.SanitizedContent|null|string|undefined} */
-  var groupSpacing = soy.asserts.assertType(opt_data.groupSpacing == null || (goog.isString(opt_data.groupSpacing) || opt_data.groupSpacing instanceof goog.soy.data.SanitizedContent), 'groupSpacing', opt_data.groupSpacing, '!goog.soy.data.SanitizedContent|null|string|undefined');
-  /** @type {!Array<?>} */
-  var groupButtons = soy.asserts.assertType(goog.isArray(opt_data.groupButtons), 'groupButtons', opt_data.groupButtons, '!Array<?>');
-  var btnGroupItemClasses__soy274 = '';
-  btnGroupItemClasses__soy274 += 'wd-btn-group-item';
-  btnGroupItemClasses__soy274 += borderRadius ? ' wd-btn-' + borderRadius : '';
-  btnGroupItemClasses__soy274 += elementClasses ? ' ' + elementClasses : '';
-  var btnGroupSpacingAttributes__soy289 = function() {
-    incrementalDom.attr('class', 'wd-btn-group-spacing');
-    if (groupSpacing) {
-      incrementalDom.attr('style', 'width:' + groupSpacing);
-    }
-  };
-  incrementalDom.elementOpenStart('ul');
-      incrementalDom.attr('class', 'wd-btn-group-list');
-  incrementalDom.elementOpenEnd();
-    var button324List = groupButtons;
-    var button324ListLen = button324List.length;
-        for (var button324Index = 0; button324Index < button324ListLen; button324Index++) {
-            var button324Data = button324List[button324Index];
-            var btnId__soy299 = button324Index + 1;
-              if (button324Index == 0) {
-                incrementalDom.elementOpenStart('li');
-              incrementalDom.attr('class', 'wd-btn-group-firstitem ' + btnGroupItemClasses__soy274);
-          incrementalDom.elementOpenEnd();
-              } else if (button324Index == button324ListLen - 1) {
-                incrementalDom.elementOpenStart('div');
-                btnGroupSpacingAttributes__soy289();
-            incrementalDom.elementOpenEnd();
-            incrementalDom.elementClose('div');
-            incrementalDom.elementOpenStart('li');
-                incrementalDom.attr('class', 'wd-btn-group-lastitem ' + btnGroupItemClasses__soy274);
-            incrementalDom.elementOpenEnd();
-              } else {
-                incrementalDom.elementOpenStart('div');
-                  btnGroupSpacingAttributes__soy289();
-              incrementalDom.elementOpenEnd();
-              incrementalDom.elementClose('div');
-              incrementalDom.elementOpenStart('li');
-                  incrementalDom.attr('class', 'wd-btn-group-miditem-' + btnId__soy299 + ' ' + btnGroupItemClasses__soy274);
-              incrementalDom.elementOpenEnd();
-              }
-              $buttonGroupContent({button: button324Data}, null, opt_ijData);
-            incrementalDom.elementClose('li');
-          }
-      incrementalDom.elementClose('ul');
-    }
-    exports.buttonGroup = $buttonGroup;
-    /**
-     * @typedef {{
- *  elementClasses: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  borderRadius: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  groupSpacing: (!goog.soy.data.SanitizedContent|null|string|undefined),
- *  groupButtons: !Array<?>
- * }}
-     */
-    $buttonGroup.Params;
-    if (goog.DEBUG) {
-      $buttonGroup.soyTemplateName = 'WDButton.buttonGroup';
-    }
-    
-    
-    /**
- * @param {{
- *  button: (?)
- * }    } opt_data
-     * @param {Object<string, *>=} opt_ijData
-     * @param {Object<string, *>=} opt_ijData_deprecated
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $buttonGroupContent(opt_data, opt_ijData, opt_ijData_deprecated) {
-      opt_ijData = opt_ijData_deprecated || opt_ijData;
-      var $$temp;
-      /** @type {?} */
-      var button = opt_data.button;
-      var groupButtonAttributes__soy330 = function() {
-        var $tmp = null;
-        if (button.style == 'destructive') {
-          $tmp = ' wd-btn-destructive';
-        } else if (button.style && button.color) {
-          $tmp = ' wd-btn-' + button.style + '-' + button.color;
-        } else if (button.style && !button.color) {
-          $tmp = ' wd-btn-' + button.style + '-accent';
-        } else if (button.color && !button.style) {
-          $tmp = ' wd-btn-primary-' + button.color;
-        } else {
-          $tmp = ' wd-btn-primary-accent';
-        }
-        incrementalDom.attr('class', 'wd-btn wd-btn-groupbtn' + $tmp + (button.size ? ' wd-btn-' + button.size : ' wd-btn-sm') + (button.darkTheme ? ' wd-btn-darktheme' : '') + (!button.label ? (button.icon || button.classIcon ? ' wd-btn-lone-icon' : '') : '') + (button.iconAlignment == 'left-justified' || button.iconAlignment == 'right-justified' ? ' wd-btn-justified-padding' : '') + (button.elementClasses ? ' ' + button.elementClasses : ''));
-        if (button.width && !button.hardWidth) {
-          incrementalDom.attr('style', 'min-width:' + button.width);
-        }
-        if (button.width && button.hardWidth) {
-          incrementalDom.attr('style', 'width:' + button.width);
-        }
-        if (button.disabled) {
-          incrementalDom.attr('disabled', 'true');
-        }
-        if (button.href) {
-          incrementalDom.attr('href', button.href);
-        }
-        if (button.id) {
-          incrementalDom.attr('id', button.id);
-        }
-        if (button.name) {
-          incrementalDom.attr('name', button.name);
-        }
-        if (button.rel) {
-          incrementalDom.attr('rel', button.rel);
-        }
-        if (button.value) {
-          incrementalDom.attr('value', button.value);
-        }
-        if (button.target) {
-          incrementalDom.attr('target', button.target);
-        }
-        if (!button.href) {
-          incrementalDom.attr('type', ($$temp = button.type) == null ? 'button' : $$temp);
-        }
-      };
-          if (button.href) {
-            incrementalDom.elementOpenStart('a');
-            groupButtonAttributes__soy330();
-        incrementalDom.elementOpenEnd();
-          } else {
-            incrementalDom.elementOpenStart('btn');
-              groupButtonAttributes__soy330();
-          incrementalDom.elementOpenEnd();
-          }
-          $content({icon: button.icon, classIcon: button.classIcon, iconAlignment: button.iconAlignment, label: button.label}, null, opt_ijData);
-      if (button.href) {
-        incrementalDom.elementClose('a');
-      } else {
-        incrementalDom.elementClose('btn');
-      }
-    }
-    exports.buttonGroupContent = $buttonGroupContent;
-    /**
-     * @typedef {{
- *  button: (?)
- * }}
-     */
-    $buttonGroupContent.Params;
-    if (goog.DEBUG) {
-      $buttonGroupContent.soyTemplateName = 'WDButton.buttonGroupContent';
-    }
-
-exports.render.params = ["disabled","elementClasses","style","color","size","width","hardWidth","darkTheme","borderRadius","group","groupType","groupSpacing","groupButtons","href","icon","classIcon","iconAlignment","id","label","name","rel","target","type","value"];
-exports.render.types = {"disabled":"bool","elementClasses":"string","style":"string","color":"string","size":"string","width":"string","hardWidth":"bool","darkTheme":"bool","borderRadius":"string","group":"bool","groupType":"string","groupSpacing":"string","groupButtons":"list<?>","href":"string","icon":"html|string","classIcon":"string","iconAlignment":"string","id":"string","label":"html|string","name":"string","rel":"string","target":"string","type":"string","value":"string"};
+exports.render.params = ["disabled","elementClasses","style","color","size","width","hardWidth","darkTheme","borderRadius","href","icon","classIcon","iconAlignment","id","label","name","rel","target","type","value"];
+exports.render.types = {"disabled":"bool","elementClasses":"string","style":"string","color":"string","size":"string","width":"string","hardWidth":"bool","darkTheme":"bool","borderRadius":"string","href":"string","icon":"html|string","classIcon":"string","iconAlignment":"string","id":"string","label":"html|string","name":"string","rel":"string","target":"string","type":"string","value":"string"};
 exports.content.params = ["icon","classIcon","iconAlignment","label"];
 exports.content.types = {"icon":"html|string","classIcon":"string","iconAlignment":"string","label":"html|string"};
-exports.buttonGroup.params = ["elementClasses","borderRadius","groupSpacing","groupButtons"];
-exports.buttonGroup.types = {"elementClasses":"string","borderRadius":"string","groupSpacing":"string","groupButtons":"list<?>"};
-exports.buttonGroupContent.params = ["button"];
-exports.buttonGroupContent.types = {"button":"?"};
 templates = exports;
 return exports;
 

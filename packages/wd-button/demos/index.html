@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo: Button</title>
 
-  <link rel="stylesheet" href="../build/main.css">
+  <link rel="stylesheet" href="../build/commons.css">
   <link rel="stylesheet" href="../../wd-base/build/fonts/circular/circular.css">
 
   <style>
@@ -104,7 +104,7 @@
     <div class="wd-demo-body">
 
       <div id="styles" class="wd-demo-body-section">
-        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Style</h3>
+        <h3 class="wd-typo-h5 wd-fw-emphasis wd-demo-heading">Style</h3>
 
         <div class="wd-demo-body-content-section" id="states">
           <h3 class="wd-typo-caption wd-demo-sectionheading">States</h3>
@@ -138,7 +138,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="selected">
-          <h3 class="wd-typo-caption wd-demo-sectionheading">Selected <em style="color:rgba(14,20,26,0.3)">(Class, different from the Active state when clicked. For states, see above.)</em></h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Selected</h3>
           <script>
 
             new metal.WDButton({
@@ -211,7 +211,7 @@
       </div>
 
       <div id="sizes" class="wd-demo-body-section">
-        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Size</h3>
+        <h3 class="wd-typo-h5 wd-fw-emphasis wd-demo-heading">Size</h3>
 
         <div class="wd-demo-body-content-section" id="xs">
           <h3 class="wd-typo-caption wd-demo-sectionheading">XS</h3>
@@ -431,7 +431,7 @@
       </div>
 
       <div id="weights" class="wd-demo-body-section">
-        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Weight</h3>
+        <h3 class="wd-typo-h5 wd-fw-emphasis wd-demo-heading">Weight</h3>
 
         <div class="wd-demo-body-content-section" id="lightweight">
           <h3 class="wd-typo-caption wd-demo-sectionheading">Body</h3>
@@ -439,67 +439,67 @@
 
             new metal.WDButton({
               label: 'Primary',
-              elementClasses: 'wd--body'
+              elementClasses: 'wd-fw-body'
             }, '#lightweight');
 
             new metal.WDButton({
               label: 'Outline',
               style: 'outline',
-              elementClasses: 'wd--body'
+              elementClasses: 'wd-fw-body'
             }, '#lightweight');
 
             new metal.WDButton({
               label: 'Ghost',
               style: 'ghost',
-              elementClasses: 'wd--body'
+              elementClasses: 'wd-fw-body'
             }, '#lightweight');
 
             new metal.WDButton({
               label: 'Destructive',
               style: 'destructive',
-              elementClasses: 'wd--body'
+              elementClasses: 'wd-fw-body'
             }, '#lightweight');
 
             new metal.WDButton({
               label: 'Float',
               style: 'float',
-              elementClasses: 'wd--body'
+              elementClasses: 'wd-fw-body'
             }, '#lightweight');
 
           </script>
         </div>
 
         <div class="wd-demo-body-content-section" id="middleweight">
-          <h3 class="wd-typo-caption wd-demo-sectionheading">Emphasis <em style="color:rgba(14,20,26,0.3)">Default</em></h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Emphasis</h3>
           <script>
 
             new metal.WDButton({
               label: 'Primary',
-              elementClasses: 'wd--emphasis'
+              elementClasses: 'wd-fw-emphasis'
             }, '#middleweight');
 
             new metal.WDButton({
               label: 'Outline',
               style: 'outline',
-              elementClasses: 'wd--emphasis'
+              elementClasses: 'wd-fw-emphasis'
             }, '#middleweight');
 
             new metal.WDButton({
               label: 'Ghost',
               style: 'ghost',
-              elementClasses: 'wd--emphasis'
+              elementClasses: 'wd-fw-emphasis'
             }, '#middleweight');
 
             new metal.WDButton({
               label: 'Destructive',
               style: 'destructive',
-              elementClasses: 'wd--emphasis'
+              elementClasses: 'wd-fw-emphasis'
             }, '#middleweight');
 
             new metal.WDButton({
               label: 'Float',
               style: 'float',
-              elementClasses: 'wd--emphasis'
+              elementClasses: 'wd-fw-emphasis'
             }, '#middleweight');
 
           </script>
@@ -511,31 +511,31 @@
 
             new metal.WDButton({
               label: 'Primary',
-              elementClasses: 'wd--display'
+              elementClasses: 'wd-fw-display'
             }, '#heavyweight');
 
             new metal.WDButton({
               label: 'Outline',
               style: 'outline',
-              elementClasses: 'wd--display'
+              elementClasses: 'wd-fw-display'
             }, '#heavyweight');
 
             new metal.WDButton({
               label: 'Ghost',
               style: 'ghost',
-              elementClasses: 'wd--display'
+              elementClasses: 'wd-fw-display'
             }, '#heavyweight');
 
             new metal.WDButton({
               label: 'Destructive',
               style: 'destructive',
-              elementClasses: 'wd--display'
+              elementClasses: 'wd-fw-display'
             }, '#heavyweight');
 
             new metal.WDButton({
               label: 'Float',
               style: 'float',
-              elementClasses: 'wd--display'
+              elementClasses: 'wd-fw-display'
             }, '#heavyweight');
 
           </script>
@@ -543,10 +543,10 @@
       </div>
 
       <div id="borderRadius" class="wd-demo-body-section">
-        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Border Radius <em style="color:rgba(14,20,26,0.3)">(borderRadius)</em></h3>
+        <h3 class="wd-typo-h5 wd-fw-emphasis wd-demo-heading">Border Radius</h3>
 
         <div class="wd-demo-body-content-section" id="borderRadius-6px">
-          <h3 class="wd-typo-caption wd-demo-sectionheading">6px <em style="color:rgba(14,20,26,0.3)">(borderRadius-6px)</em></h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">borderRadius-6px</h3>
           <script>
 
             new metal.WDButton({
@@ -619,10 +619,10 @@
       </div>
 
       <div id="fitting" class="wd-demo-body-section">
-        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Width</h3>
+        <h3 class="wd-typo-h5 wd-fw-emphasis wd-demo-heading">Width</h3>
 
         <div class="wd-demo-body-content-section" id="fullwidth">
-          <h3 class="wd-typo-caption wd-demo-sectionheading">Fullwidth</h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Full</h3>
 
           <script>
 
@@ -666,7 +666,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="custom">
-          <h3 class="wd-typo-caption wd-demo-sectionheading">Customized <em style="color:rgba(14,20,26,0.3)">('&lt;number&gt;px')</em></h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Custom</h3>
 
           <script>
 
@@ -726,7 +726,7 @@
       </div>
 
       <div id="colors" class="wd-demo-body-section">
-        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Color</h3>
+        <h3 class="wd-typo-h5 wd-fw-emphasis wd-demo-heading">Color</h3>
 
         <div class="wd-demo-body-content-section" id="black">
           <h3 class="wd-typo-caption wd-demo-sectionheading">Black</h3>
@@ -1018,7 +1018,7 @@
       </div>
 
       <div id="stylesDarkTheme" class="wd-demo-body-section wd-demo-dark-section">
-        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Dark Theme <em style="color:rgba(170,170,170,0.3)">(darkTheme)</em></h3>
+        <h3 class="wd-typo-h5 wd-fw-emphasis wd-demo-heading">Dark Theme</em></h3>
 
         <div class="wd-demo-body-content-section" id="darkThemeStates">
           <h3 class="wd-typo-caption wd-demo-sectionheading">States</h3>
@@ -1057,7 +1057,7 @@
         </div>
 
         <div class="wd-demo-body-content-section" id="darkThemeSelected">
-          <h3 class="wd-typo-caption wd-demo-sectionheading">Selected <em style="color:rgba(170,170,170,0.3)">(Class, different from the Active state when clicked. For states, see above.)</em></h3>
+          <h3 class="wd-typo-caption wd-demo-sectionheading">Selected</h3>
           <script>
 
             new metal.WDButton({
@@ -1140,7 +1140,7 @@
       </div>
 
       <div id="icons" class="wd-demo-body-section">
-        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Content</h3>
+        <h3 class="wd-typo-h5 wd-fw-emphasis wd-demo-heading">Content</h3>
 
         <div class="wd-demo-body-content-section">
           <div id="xs-lone-icons" class="wd-demo-body-content-section">
@@ -3094,87 +3094,6 @@
           </div>
         </div>
       </div>
-
-
-      <div id="group" class="wd-demo-body-section">
-        <h3 class="wd-typo-h5 wd--emphasis wd-demo-heading">Group</h3>
-
-        <div class="wd-demo-body-content-section" id="group-default">
-          <h3 class="wd-typo-caption wd-demo-sectionheading">Default</h3>
-          <script>
-
-            new metal.WDButton({
-              group: true,
-              groupSpacing: '36px',
-              groupType: 'default',
-              groupButtons: [
-                {
-                  label: 'Primary 1',
-                },
-                {
-                  label: 'Primary 2',
-                },
-                {
-                  label: 'Primary 3',
-                  style: 'outline',
-                }
-              ],
-            }, '#group-default');
-
-          </script>
-        </div>
-        <div class="wd-demo-body-content-section" id="group-segmented">
-          <h3 class="wd-typo-caption wd-demo-sectionheading">Segmented</h3>
-          <script>
-
-            new metal.WDButton({
-              group: true,
-              groupSpacing: '1px',
-              groupType: 'segmented',
-              groupButtons: [
-                {
-                  label: 'Primary 1',
-                },
-                {
-                  label: 'Primary 2',
-                },
-                {
-                  label: 'Primary 3',
-                  style: 'outline',
-                }
-              ],
-            }, '#group-segmented');
-
-          </script>
-        </div>
-        <div class="wd-demo-body-content-section" id="group-segmented-icon">
-          <h3 class="wd-typo-caption wd-demo-sectionheading">Segmented With Lone Icon</h3>
-          <script>
-
-            new metal.WDButton({
-              group: true,
-              groupSpacing: '1px',
-              borderRadius: 'rounded',
-              groupType: 'segmented',
-              groupButtons: [
-                {
-                  label: 'Primary',
-                },
-                {
-                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
-                            <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
-                            <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
-                          </svg>`,
-                }
-              ],
-            }, '#group-segmented-icon');
-
-          </script>
-        </div>
-      </div>
-
-
-
     </div>
   </div>
 </body>

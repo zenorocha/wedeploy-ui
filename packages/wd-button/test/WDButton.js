@@ -1,8 +1,8 @@
-import Button from '../src/Button';
+import WDButton from '../src/WDButton';
 
 let button;
 
-describe('Button', () => {
+describe('WDButton', () => {
   afterEach(() => {
     if (button) {
       button.dispose();
@@ -10,7 +10,7 @@ describe('Button', () => {
   });
 
   it('should generate the default markup', () => {
-    button = new Button();
+    button = new WDButton();
 
     expect(button).toMatchSnapshot();
   });

@@ -32,7 +32,7 @@ module.exports = {
 };
 
 module.exports = {
-  entry: ['./src/_demo.scss'],
+  entry: ['./src/demo.scss'],
   module: {
     rules: [
       {

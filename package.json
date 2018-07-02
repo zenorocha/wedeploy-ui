@@ -6,7 +6,7 @@
     "build": "lerna run compile && lerna run build",
     "compile": "lerna run compile",
     "link": "lerna link",
-    "test": "jest",
+    "test": "jest --forceExit",
     "format": "npm run prettier -- --write",
     "prettier": "prettier-eslint packages/wd-*/src/*.js packages/wd-*/src/**/*.js"
   },

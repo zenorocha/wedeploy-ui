@@ -1,0 +1,181 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/* Font Variables
+   ========================================================================== */
+$wd-font-primary :  "Circular", sans-serif !default;
+
+/* Font Weight Variables */
+$wd-fw-body        :  400 !default;
+$wd-fw-display     :  900 !default;
+$wd-fw-emphasis    :  500 !default;
+
+
+/* Font Builder Mixin
+   ========================================================================== */
+@mixin font-builder($font-weight-variable) {
+  color: $wd-color-black;
+  font-family: $wd-font-primary;
+  font-weight: $font-weight-variable;
+}
+
+
+/* Font Mixins
+   ========================================================================== */
+@mixin wd-typo-large {
+  font-size: 85px;
+  line-height: 96px;
+
+  @include font-builder($wd-fw-display);
+}
+
+@mixin wd-typo-h1 {
+  font-size: 69px;
+  line-height: 78px;
+
+  @include font-builder($wd-fw-display);
+}
+
+@mixin wd-typo-h2 {
+  font-size: 56px;
+  line-height: 66px;
+
+  @include font-builder($wd-fw-display);
+}
+
+@mixin wd-typo-h3 {
+  font-size: 46px;
+  line-height: 60px;
+
+  @include font-builder($wd-fw-display);
+}
+
+@mixin wd-typo-h4 {
+  font-size: 41px;
+  line-height: 54px;
+
+  @include font-builder($wd-fw-display);
+}
+
+@mixin wd-typo-h5 {
+  font-size: 33px;
+  line-height: 48px;
+
+  @include font-builder($wd-fw-display);
+}
+
+@mixin wd-typo-h6 {
+  font-size: 27px;
+  line-height: 36px;
+
+  @include font-builder($wd-fw-display);
+}
+
+@mixin wd-typo-subheading {
+  font-size: 22px;
+  line-height: 30px;
+
+  @include font-builder($wd-fw-emphasis);
+}
+
+@mixin wd-typo-body {
+  font-size: 18px;
+  line-height: 30px;
+
+  @include font-builder($wd-fw-body);
+}
+
+@mixin wd-typo-caption {
+  font-size: 16px;
+  line-height: 24px;
+
+  @include font-builder($wd-fw-body);
+}
+
+@mixin wd-typo-small {
+  font-size: 14px;
+  line-height: 18px;
+
+  @include font-builder($wd-fw-body);
+}
+
+@mixin wd-typo-xsmall {
+  font-size: 13px;
+  line-height: 18px;
+
+  @include font-builder($wd-fw-body);
+}
+
+
+/* Font Classes
+   ========================================================================== */
+
+/* General Classes */
+.wd-typo-large,
+.wd-typo-lg {
+  @include wd-typo-large;
+}
+
+.wd-typo-h1 {
+  @include wd-typo-h1;
+}
+
+.wd-typo-h2 {
+  @include wd-typo-h2;
+}
+
+.wd-typo-h3 {
+  @include wd-typo-h3;
+}
+
+.wd-typo-h4 {
+  @include wd-typo-h4;
+}
+
+.wd-typo-h5 {
+  @include wd-typo-h5;
+}
+
+.wd-typo-h6 {
+  @include wd-typo-h6;
+}
+
+.wd-typo-subheading,
+.wd-typo-sh {
+  @include wd-typo-subheading;
+}
+
+.wd-typo-caption,
+.wd-typo-cp {
+  @include wd-typo-caption;
+}
+
+.wd-typo-body,
+.wd-typo-bd {
+  @include wd-typo-body;
+}
+
+.wd-typo-small,
+.wd-typo-sm {
+  @include wd-typo-small;
+}
+
+.wd-typo-xsmall,
+.wd-typo-xs {
+  @include wd-typo-xsmall;
+}
+
+
+/* Font-Weight Modifier Classes */
+.wd-fw-display {
+  font-weight: $wd-fw-display;
+}
+
+.wd-fw-emphasis {
+  font-weight: $wd-fw-emphasis;
+}
+
+.wd-fw-body {
+  font-weight: $wd-fw-body;
+}

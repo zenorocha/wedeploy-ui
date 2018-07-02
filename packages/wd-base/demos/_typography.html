@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo: Typography</title>
+  <link rel="stylesheet" href="../build/commons.css">
+  <link rel="stylesheet" href="../src/fonts/circular/circular.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      margin: 24px 0;
+    }
+    .wd-demo-container {
+      margin: 0;
+      padding: 48px 48px 84px;
+      box-sizing: border-box;
+      width: 100vw;
+      background-color: rgba(14, 20, 26, 0.02);
+    }
+    .wd-demo-heading {}
+    .wd-demo-cardheading {
+      color: rgba(14, 20, 26, 0.6);
+      margin: 0 0 24px;
+    }
+    .wd-demo-header {
+      margin: 0 0 60px;
+    }
+    .wd-demo {
+      width: 100%;
+      padding: 0;
+    }
+    .wd-demo-section {
+      margin: 24px 0 48px;
+    }
+    .wd-demo-content {
+      margin: 0 auto;
+      display: inline-flex;
+      width: 100%;
+    }
+    .wd-demo-content-3card {
+      box-sizing: border-box;
+      background-color: #fff;
+      padding: 48px;
+      box-shadow: 0 1px 8px -4px rgba(14, 20, 26, 0.3), 0 0 1px 0 rgba(14, 20, 26, 0.36);
+      border-radius: 4px;
+      width: 33%;
+      margin-right: 48px;
+    }
+    .wd-demo-content-3card:last-child {
+      margin-right: 0;
+    }
+    .wd-demo-dark-section {
+      background-color: rgba(14, 20, 26, 0.9);
+    }
+    .line-break-force {
+      width: 100%;
+      height: 0px;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wd-demo-container">
+
+    <div class="wd-demo-header">
+      <h1 class="wd-typo-h3">Typography</h1>
+    </div>
+
+    <div class="wd-demo">
+
+      <div class="wd-demo-section">
+        <h2 class="wd-typo-caption wd-fw-emphasis wd-demo-cardheading">Display</h2>
+        <div class="wd-demo-content">
+          <div class="wd-demo-content-3card">
+            <p class="wd-typo-large">01-large</p>
+            <p class="wd-typo-h1">02-heading-1</p>
+            <p class="wd-typo-h2">03-heading-2</p>
+            <p class="wd-typo-h3">04-heading-3</p>
+            <p class="wd-typo-h4">05-heading-4</p>
+            <p class="wd-typo-h5">06-heading-5</p>
+            <p class="wd-typo-h6">07-heading-6</p>
+            <p class="wd-typo-subheading wd-fw-display">08-subheading</p>
+            <p class="wd-typo-body wd-fw-display">09-body</p>
+            <p class="wd-typo-caption wd-fw-display">10-caption</p>
+            <p class="wd-typo-small wd-fw-display">11-small</p>
+            <p class="wd-typo-xsmall wd-fw-display">12-xsmall</p>
+          </div>
+          <div class="wd-demo-content-3card" style="text-align: center;">
+            <p class="wd-typo-large">01-large</p>
+            <p class="wd-typo-h1">02-heading-1</p>
+            <p class="wd-typo-h2">03-heading-2</p>
+            <p class="wd-typo-h3">04-heading-3</p>
+            <p class="wd-typo-h4">05-heading-4</p>
+            <p class="wd-typo-h5">06-heading-5</p>
+            <p class="wd-typo-h6">07-heading-6</p>
+            <p class="wd-typo-subheading wd-fw-display">08-subheading</p>
+            <p class="wd-typo-body wd-fw-display">09-body</p>
+            <p class="wd-typo-caption wd-fw-display">10-caption</p>
+            <p class="wd-typo-small wd-fw-display">11-small</p>
+            <p class="wd-typo-xsmall wd-fw-display">12-xsmall</p>
+          </div>
+          <div class="wd-demo-content-3card" style="text-align: right;">
+            <p class="wd-typo-large">01-large</p>
+            <p class="wd-typo-h1">02-heading-1</p>
+            <p class="wd-typo-h2">03-heading-2</p>
+            <p class="wd-typo-h3">04-heading-3</p>
+            <p class="wd-typo-h4">05-heading-4</p>
+            <p class="wd-typo-h5">06-heading-5</p>
+            <p class="wd-typo-h6">07-heading-6</p>
+            <p class="wd-typo-subheading wd-fw-display">08-subheading</p>
+            <p class="wd-typo-body wd-fw-display">09-body</p>
+            <p class="wd-typo-caption wd-fw-display">10-caption</p>
+            <p class="wd-typo-small wd-fw-display">11-small</p>
+            <p class="wd-typo-xsmall wd-fw-display">12-xsmall</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-demo-section">
+        <h2 class="wd-typo-caption wd-fw-emphasis wd-demo-cardheading">Emphasis</h2>
+        <div class="wd-demo-content">
+          <div class="wd-demo-content-3card">
+            <p class="wd-typo-large wd-fw-emphasis">01-large</p>
+            <p class="wd-typo-h1 wd-fw-emphasis">02-heading-1</p>
+            <p class="wd-typo-h2 wd-fw-emphasis">03-heading-2</p>
+            <p class="wd-typo-h3 wd-fw-emphasis">04-heading-3</p>
+            <p class="wd-typo-h4 wd-fw-emphasis">05-heading-4</p>
+            <p class="wd-typo-h5 wd-fw-emphasis">06-heading-5</p>
+            <p class="wd-typo-h6 wd-fw-emphasis">07-heading-6</p>
+            <p class="wd-typo-subheading">08-subheading</p>
+            <p class="wd-typo-body wd-fw-emphasis">09-body</p>
+            <p class="wd-typo-caption wd-fw-emphasis">10-caption</p>
+            <p class="wd-typo-small wd-fw-emphasis">11-small</p>
+            <p class="wd-typo-xsmall wd-fw-emphasis">12-xsmall</p>
+          </div>
+          <div class="wd-demo-content-3card" style="text-align: center;">
+            <p class="wd-typo-large wd-fw-emphasis">01-large</p>
+            <p class="wd-typo-h1 wd-fw-emphasis">02-heading-1</p>
+            <p class="wd-typo-h2 wd-fw-emphasis">03-heading-2</p>
+            <p class="wd-typo-h3 wd-fw-emphasis">04-heading-3</p>
+            <p class="wd-typo-h4 wd-fw-emphasis">05-heading-4</p>
+            <p class="wd-typo-h5 wd-fw-emphasis">06-heading-5</p>
+            <p class="wd-typo-h6 wd-fw-emphasis">07-heading-6</p>
+            <p class="wd-typo-subheading">08-subheading</p>
+            <p class="wd-typo-body wd-fw-emphasis">09-body</p>
+            <p class="wd-typo-caption wd-fw-emphasis">10-caption</p>
+            <p class="wd-typo-small wd-fw-emphasis">11-small</p>
+            <p class="wd-typo-xsmall wd-fw-emphasis">12-xsmall</p>
+          </div>
+          <div class="wd-demo-content-3card" style="text-align: right;">
+            <p class="wd-typo-large wd-fw-emphasis">01-large</p>
+            <p class="wd-typo-h1 wd-fw-emphasis">02-heading-1</p>
+            <p class="wd-typo-h2 wd-fw-emphasis">03-heading-2</p>
+            <p class="wd-typo-h3 wd-fw-emphasis">04-heading-3</p>
+            <p class="wd-typo-h4 wd-fw-emphasis">05-heading-4</p>
+            <p class="wd-typo-h5 wd-fw-emphasis">06-heading-5</p>
+            <p class="wd-typo-h6 wd-fw-emphasis">07-heading-6</p>
+            <p class="wd-typo-subheading">08-subheading</p>
+            <p class="wd-typo-body wd-fw-emphasis">09-body</p>
+            <p class="wd-typo-caption wd-fw-emphasis">10-caption</p>
+            <p class="wd-typo-small wd-fw-emphasis">11-small</p>
+            <p class="wd-typo-xsmall wd-fw-emphasis">12-xsmall</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-demo-section">
+        <h2 class="wd-typo-caption wd-fw-emphasis wd-demo-cardheading">Body</h2>
+        <div class="wd-demo-content">
+          <div class="wd-demo-content-3card">
+            <p class="wd-typo-large wd-fw-body">01-large</p>
+            <p class="wd-typo-h1 wd-fw-body">02-heading-1</p>
+            <p class="wd-typo-h2 wd-fw-body">03-heading-2</p>
+            <p class="wd-typo-h3 wd-fw-body">04-heading-3</p>
+            <p class="wd-typo-h4 wd-fw-body">05-heading-4</p>
+            <p class="wd-typo-h5 wd-fw-body">06-heading-5</p>
+            <p class="wd-typo-h6 wd-fw-body">07-heading-6</p>
+            <p class="wd-typo-subheading wd-fw-body">08-subheading</p>
+            <p class="wd-typo-body">09-body</p>
+            <p class="wd-typo-caption">10-caption</p>
+            <p class="wd-typo-small">11-small</p>
+            <p class="wd-typo-xsmall">12-xsmall</p>
+          </div>
+          <div class="wd-demo-content-3card" style="text-align: center;">
+            <p class="wd-typo-large wd-fw-body">01-large</p>
+            <p class="wd-typo-h1 wd-fw-body">02-heading-1</p>
+            <p class="wd-typo-h2 wd-fw-body">03-heading-2</p>
+            <p class="wd-typo-h3 wd-fw-body">04-heading-3</p>
+            <p class="wd-typo-h4 wd-fw-body">05-heading-4</p>
+            <p class="wd-typo-h5 wd-fw-body">06-heading-5</p>
+            <p class="wd-typo-h6 wd-fw-body">07-heading-6</p>
+            <p class="wd-typo-subheading wd-fw-body">08-subheading</p>
+            <p class="wd-typo-body">09-body</p>
+            <p class="wd-typo-caption">10-caption</p>
+            <p class="wd-typo-small">11-small</p>
+            <p class="wd-typo-xsmall">12-xsmall</p>
+          </div>
+          <div class="wd-demo-content-3card" style="text-align: right;">
+            <p class="wd-typo-large wd-fw-body">01-large</p>
+            <p class="wd-typo-h1 wd-fw-body">02-heading-1</p>
+            <p class="wd-typo-h2 wd-fw-body">03-heading-2</p>
+            <p class="wd-typo-h3 wd-fw-body">04-heading-3</p>
+            <p class="wd-typo-h4 wd-fw-body">05-heading-4</p>
+            <p class="wd-typo-h5 wd-fw-body">06-heading-5</p>
+            <p class="wd-typo-h6 wd-fw-body">07-heading-6</p>
+            <p class="wd-typo-subheading wd-fw-body">08-subheading</p>
+            <p class="wd-typo-body">09-body</p>
+            <p class="wd-typo-caption">10-caption</p>
+            <p class="wd-typo-small">11-small</p>
+            <p class="wd-typo-xsmall">12-xsmall</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

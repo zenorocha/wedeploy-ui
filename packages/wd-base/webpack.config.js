@@ -37,27 +37,28 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            'css-loader',
-            'sass-loader',
-          ],
-        }),
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
       },
     ],
   },
   output: {
     library: 'metal',
     libraryTarget: 'this',
-    filename: './build/globals/wd-base-demo.js',
+    filename: 'wd-base-demo.js',
+    path: __dirname + '/build/globals',
   },
   plugins: [
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new ExtractTextPlugin({
-      disable: false,
-      filename: './demos/demo.css',
-      allChunks: true,
+    new MiniCssExtractPlugin({
+      filename: '../../demos/demo.css',
     }),
   ],
 };

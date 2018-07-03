@@ -1,0 +1,114 @@
+{namespace WDButtonGroup}
+
+/**
+ * This renders the component's whole content.
+ */
+{template .render}
+  {@param? elementClasses: string}
+  {@param? type: string}
+  {@param? spacing: string}
+  {@param buttons: list<?>}
+  {@param? borderRadius: string}
+  {@param? id: string}
+  {@param? name: string}
+
+  {let $attributes kind="attributes"}
+    class="wd-btn-group
+      {if $type}
+        {sp}wd-btn-group-{$type}
+      {/if}
+
+      {if $elementClasses}
+        {sp}{$elementClasses}
+      {/if}
+    "
+
+    {if $id}
+      id="{$id}"
+    {/if}
+
+    {if $name}
+      name="{$name}"
+    {/if}
+  {/let}
+
+
+  <div {$attributes}>
+    {call .buttonList data="all" /}
+  </div>
+{/template}
+
+/**
+ * Renders list that contains buttons
+ */
+{template .buttonList}
+  {@param? elementClasses: string}
+  {@param? borderRadius: string}
+  {@param? spacing: string}
+  {@param buttons: list<?>}
+
+  {let $itemClasses kind="text"}
+    wd-btn-group-item
+
+    {if $borderRadius}
+      {sp}wd-btn-{$borderRadius}
+    {/if}
+
+    {if $elementClasses}
+      {sp}{$elementClasses}
+    {/if}
+  {/let}
+
+  {let $spacingAttributes kind="attributes"}
+    class="wd-btn-group-spacing"
+
+    {if $spacing}
+      style="width:{$spacing}"
+    {/if}
+  {/let}
+
+  <ul class="wd-btn-group-list">
+    {foreach $button in $buttons}
+
+      {let $btnId: index($button) + 1 /}
+
+      {if isFirst($button)}
+        <li class="wd-btn-group-firstitem {$itemClasses}">
+
+      {elseif isLast($button)}
+        <div {$spacingAttributes}></div>
+        <li class="wd-btn-group-lastitem {$itemClasses}">
+
+      {else}
+        <div {$spacingAttributes}></div>
+        <li class="wd-btn-group-miditem-{$btnId} {$itemClasses}">
+      {/if}
+
+          {call WDButton.render}
+            {param disabled: $button.disabled /}
+            {param elementClasses: $button.elementClasses /}
+            {param style: $button.style /}
+            {param color: $button.color /}
+            {param size: $button.size /}
+            {param width: $button.width /}
+            {param hardWidth: $button.hardWidth /}
+            {param darkTheme: $button.darkTheme /}
+            {param borderRadius: $button.borderRadius /}
+            {param href: $button.href /}
+            {param icon: $button.icon /}
+            {param classIcon: $button.classIcon /}
+            {param iconAlignment: $button.iconAlignment /}
+            {param id: $button.id /}
+            {param label: $button.label /}
+            {param name: $button.name /}
+            {param rel: $button.rel /}
+            {param target: $button.target /}
+            {param type: $button.type /}
+            {param value: $button.value /}
+          {/call}
+
+        </li>
+
+    {/foreach}
+  </ul>
+{/template}

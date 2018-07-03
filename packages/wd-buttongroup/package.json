@@ -1,0 +1,48 @@
+{
+  "name": "wd-buttongroup",
+  "version": "0.0.0",
+  "description": "WeDeploy Button Group component",
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/wedeploy/wedeploy-ui/tree/master/packages/wd-buttongroup",
+  "engines": {
+    "node": ">=0.12.0",
+    "npm": ">=3.0.0"
+  },
+  "main": "lib/WDButtonGroup.js",
+  "esnext:main": "src/WDButtonGroup.js",
+  "jsnext:main": "src/WDButtonGroup.js",
+  "files": [
+    "lib",
+    "src",
+    "test"
+  ],
+  "scripts": {
+    "build": "npm run soy && webpack",
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run soy && npm run compile",
+    "soy": "metalsoy  --soyDeps '../../node_modules/wd-+(button)/src/**/*.soy'"
+  },
+  "keywords": [
+    "metal",
+    "wedeploy"
+  ],
+  "dependencies": {
+    "metal-component": "^2.14.0",
+    "metal-soy": "^2.14.0",
+    "metal-state": "^2.14.0",
+    "wd-base": "^0.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-node-env-inline": "^0.2.0",
+    "babel-preset-metal": "^4.0.0",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "metal-tools-soy": "^4.2.6",
+    "metal-useragent": "^2.1.1",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "webpack": "^3.12.0"
+  }
+}

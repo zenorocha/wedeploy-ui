@@ -40,8 +40,10 @@
     margin: 48px 0 18px;
   }
 
-  .wd-demo-dark-section .wd-demo-heading, .wd-demo-dark-section .wd-demo-content-sectionheading {
-    color: rgba(255, 255 ,255, 0.4);
+  .wd-demo-dark-section {
+    .wd-demo-heading, .wd-demo-section-heading, .wd-demo-content-heading {
+      color: rgba(255, 255 ,255, 0.4);
+    }
   }
 
   .wd-demo-main {

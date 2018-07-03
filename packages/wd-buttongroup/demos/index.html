@@ -5,83 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo: Button Group</title>
 
-  <link rel="stylesheet" href="../build/commons.css">
+  <link rel="stylesheet" href="../build/main.css">
+  <link rel="stylesheet" href="../../wd-base/demos/demo.css">
   <link rel="stylesheet" href="../../wd-base/build/fonts/circular/circular.css">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      font-family: "Circular";
-    }
-    .wd-demo-container {
-      margin: 0;
-      padding: 48px 48px 84px;
-      box-sizing: border-box;
-      width: 100vw;
-      background-color: rgba(14, 20, 26, 0.02);
-    }
-    .wd-demo-sectionheading {
-      margin: 0 0 60px;
-    }
-    .wd-demo-cardheading {
-      color: rgba(14, 20, 26, 0.6);
-      margin: 0 0 24px;
-    }
-    .wd-demo-content-sectionheading {
-      color: rgba(14, 20, 26, 0.6);
-      margin: 48px 0 18px;
-    }
-    .wd-demo-header {
-      margin: 0 0 60px;
-    }
-    .wd-demo-body {
+    .spacer {
       width: 100%;
-      padding: 24px 0 0;
+      height: 12px;
     }
-    .wd-demo-body-section {
-      margin: 24px 0 48px;
-    }
-    .wd-demo-body-section:last-child {
-      margin: 24px 0 0;
-    }
-    .wd-demo-body-content {
-      margin: 0 auto;
-      display: inline-flex;
-      width: 100%;
-    }
-    .wd-demo-body-content-section {
-      display: inline-flex;
-      justify-content: center;
-    }
-    .wd-demo-dark-section {
-      background-color: rgba(14, 20, 26, 0.9);
-      width: 100vw;
-      margin: 0 -48px;
-      padding: 36px 48px;
-      box-sizing: border-box;
-    }
-    .wd-demo-dark-section .wd-demo-heading, .wd-demo-dark-section .wd-demo-sectionheading {
-      color: rgba(255, 255 ,255, 0.4);
-    }
-    .line-break-force {
-      width: 100%;
-      height: 0px;
-      margin: 0;
-    }
-
-    .demo--3column {
-      min-width: 33%;
-    }
-
-    .demo--5column {
-      min-width: 19.8%;
-    }
-
-    .wd-demo-body .wd-demo-body-section .wd-btn-group {
+    .wd-demo-body .wd-demo-section .wd-btn-group {
       margin: 9px 18px;
     }
-    .wd-demo-body .wd-demo-body-section .wd-btn-group .wd-btn {
+    .wd-demo-body .wd-demo-section .wd-btn-group .wd-btn {
       margin: 0;
     }
   </style>
@@ -91,19 +27,17 @@
 <body>
   <div class="wd-demo-container">
 
-    <div class="wd-demo-header">
-      <h1 class="wd-typo-h3">Button Group</h1>
-    </div>
+    <h1 class="wd-demo-heading">Button Group</h1>
 
-    <div class="wd-demo-body">
+    <div class="wd-demo-main">
 
-      <div id="default" class="wd-demo-body-section">
-        <h2 class="wd-typo-h5 wd-fw-emphasis wd-demo-sectionheading">Default</h2>
+      <div class="wd-demo-section">
+        <h2 class="wd-demo-section-heading">Default</h2>
 
-        <div id="default-12" class="wd-demo-content">
-          <h3 class="wd-typo-caption wd-fw-emphasis wd-demo-content-sectionheading">Spacing - 12px</h3>
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Spacing - 12px</h3>
 
-          <div id="default-12-1" class="wd-demo-body-content-section demo--3column">
+          <div id="default-12-1" class="wd-demo-content-section wd-demo--3column">
             <script>
               new metal.WDButtonGroup({
                 spacing: '12px',
@@ -128,7 +62,7 @@
             </script>
           </div>
 
-          <div id="default-12-2" class="wd-demo-body-content-section demo--3column">
+          <div id="default-12-2" class="wd-demo-content-section wd-demo--3column">
             <script>
               new metal.WDButtonGroup({
                 spacing: '12px',
@@ -146,7 +80,7 @@
             </script>
           </div>
 
-          <div id="default-12-3" class="wd-demo-body-content-section demo--3column">
+          <div id="default-12-3" class="wd-demo-content-section wd-demo--3column">
             <script>
               new metal.WDButtonGroup({
                 spacing: '12px',
@@ -164,12 +98,10 @@
           </div>
         </div>
 
-        <div class="line-break-force"></div>
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Spacing - 24px</h3>
 
-        <div id="default-24" class="wd-demo-content">
-          <h3 class="wd-typo-caption wd-fw-emphasis wd-demo-content-sectionheading">Spacing - 24px</h3>
-
-          <div id="default-24-1" class="wd-demo-body-content-section demo--3column">
+          <div id="default-24-1" class="wd-demo-content-section wd-demo--3column">
             <script>
               new metal.WDButtonGroup({
                 spacing: '24px',
@@ -194,7 +126,7 @@
             </script>
           </div>
 
-          <div id="default-24-2" class="wd-demo-body-content-section demo--3column">
+          <div id="default-24-2" class="wd-demo-content-section wd-demo--3column">
             <script>
               new metal.WDButtonGroup({
                 spacing: '24px',
@@ -212,7 +144,7 @@
             </script>
           </div>
 
-          <div id="default-24-3" class="wd-demo-body-content-section demo--3column">
+          <div id="default-24-3" class="wd-demo-content-section wd-demo--3column">
             <script>
               new metal.WDButtonGroup({
                 spacing: '24px',
@@ -234,538 +166,542 @@
 
 
 
-      <div id="segmented" class="wd-demo-body-section">
-        <div class="wd-demo-sectionheading">
-          <h2 class="wd-typo-h5 wd-fw-emphasis">Segmented</h2>
+      <div class="wd-demo-section">
+        <h2 class="wd-demo-section-heading">Segmented</h2>
+
+        <div class="wd-demo-content">
+          <div id="segmented-states-1" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                  },
+                ]
+              }, '#segmented-states-1');
+            </script>
+          </div>
+
+          <div id="segmented-states-2" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'outline',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'outline',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'outline',
+                  },
+                ]
+              }, '#segmented-states-2');
+            </script>
+          </div>
+
+          <div id="segmented-states-3" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'ghost',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'ghost',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'ghost',
+                  },
+                ]
+              }, '#segmented-states-3');
+            </script>
+          </div>
+
+          <div id="segmented-states-4" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'destructive',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'destructive',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'destructive',
+                  },
+                ]
+              }, '#segmented-states-4');
+            </script>
+          </div>
+
+          <div id="segmented-states-5" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'float',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'float',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'float',
+                  },
+                ]
+              }, '#segmented-states-5');
+            </script>
+          </div>
         </div>
 
-        <div id="segmented-states-1" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                },
-              ]
-            }, '#segmented-states-1');
-          </script>
+        <div class="spacer"></div>
+
+        <div class="wd-demo-content">
+          <div id="segmented-selected-1" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                ]
+              }, '#segmented-selected-1');
+            </script>
+          </div>
+
+          <div id="segmented-selected-2" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'outline',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'outline',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'outline',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                ]
+              }, '#segmented-selected-2');
+            </script>
+          </div>
+
+          <div id="segmented-selected-3" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'ghost',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'ghost',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'ghost',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                ]
+              }, '#segmented-selected-3');
+            </script>
+          </div>
+
+          <div id="segmented-selected-4" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'destructive',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'destructive',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'destructive',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                ]
+              }, '#segmented-selected-4');
+            </script>
+          </div>
+
+          <div id="segmented-selected-5" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'float',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'float',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'float',
+                    elementClasses: 'wd-btn-selected',
+                  },
+                ]
+              }, '#segmented-selected-5');
+            </script>
+          </div>
         </div>
 
-        <div id="segmented-states-2" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'outline',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'outline',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'outline',
-                },
-              ]
-            }, '#segmented-states-2');
-          </script>
-        </div>
+        <div class="spacer"></div>
 
-        <div id="segmented-states-3" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'ghost',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'ghost',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'ghost',
-                },
-              ]
-            }, '#segmented-states-3');
-          </script>
-        </div>
+        <div class="wd-demo-content">
+          <div id="segmented-disabled-1" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    disabled: true,
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    disabled: true,
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    disabled: true,
+                  },
+                ]
+              }, '#segmented-disabled-1');
+            </script>
+          </div>
 
-        <div id="segmented-states-4" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'destructive',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'destructive',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'destructive',
-                },
-              ]
-            }, '#segmented-states-4');
-          </script>
-        </div>
+          <div id="segmented-disabled-2" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'outline',
+                    disabled: true,
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'outline',
+                    disabled: true,
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'outline',
+                    disabled: true,
+                  },
+                ]
+              }, '#segmented-disabled-2');
+            </script>
+          </div>
 
-        <div id="segmented-states-5" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'float',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'float',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'float',
-                },
-              ]
-            }, '#segmented-states-5');
-          </script>
-        </div>
+          <div id="segmented-disabled-3" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'ghost',
+                    disabled: true,
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'ghost',
+                    disabled: true,
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'ghost',
+                    disabled: true,
+                  },
+                ]
+              }, '#segmented-disabled-3');
+            </script>
+          </div>
 
-        <div class="line-break-force"></div>
+          <div id="segmented-disabled-4" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'destructive',
+                    disabled: true,
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'destructive',
+                    disabled: true,
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'destructive',
+                    disabled: true,
+                  },
+                ]
+              }, '#segmented-disabled-4');
+            </script>
+          </div>
 
-        <div id="segmented-selected-1" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  elementClasses: 'wd-btn-selected',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  elementClasses: 'wd-btn-selected',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  elementClasses: 'wd-btn-selected',
-                },
-              ]
-            }, '#segmented-selected-1');
-          </script>
-        </div>
-
-        <div id="segmented-selected-2" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'outline',
-                  elementClasses: 'wd-btn-selected',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'outline',
-                  elementClasses: 'wd-btn-selected',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'outline',
-                  elementClasses: 'wd-btn-selected',
-                },
-              ]
-            }, '#segmented-selected-2');
-          </script>
-        </div>
-
-        <div id="segmented-selected-3" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'ghost',
-                  elementClasses: 'wd-btn-selected',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'ghost',
-                  elementClasses: 'wd-btn-selected',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'ghost',
-                  elementClasses: 'wd-btn-selected',
-                },
-              ]
-            }, '#segmented-selected-3');
-          </script>
-        </div>
-
-        <div id="segmented-selected-4" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'destructive',
-                  elementClasses: 'wd-btn-selected',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'destructive',
-                  elementClasses: 'wd-btn-selected',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'destructive',
-                  elementClasses: 'wd-btn-selected',
-                },
-              ]
-            }, '#segmented-selected-4');
-          </script>
-        </div>
-
-        <div id="segmented-selected-5" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'float',
-                  elementClasses: 'wd-btn-selected',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'float',
-                  elementClasses: 'wd-btn-selected',
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'float',
-                  elementClasses: 'wd-btn-selected',
-                },
-              ]
-            }, '#segmented-selected-5');
-          </script>
-        </div>
-
-        <div class="line-break-force"></div>
-
-        <div id="segmented-disabled-1" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  disabled: true,
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  disabled: true,
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  disabled: true,
-                },
-              ]
-            }, '#segmented-disabled-1');
-          </script>
-        </div>
-
-        <div id="segmented-disabled-2" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'outline',
-                  disabled: true,
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'outline',
-                  disabled: true,
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'outline',
-                  disabled: true,
-                },
-              ]
-            }, '#segmented-disabled-2');
-          </script>
-        </div>
-
-        <div id="segmented-disabled-3" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'ghost',
-                  disabled: true,
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'ghost',
-                  disabled: true,
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'ghost',
-                  disabled: true,
-                },
-              ]
-            }, '#segmented-disabled-3');
-          </script>
-        </div>
-
-        <div id="segmented-disabled-4" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'destructive',
-                  disabled: true,
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'destructive',
-                  disabled: true,
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'destructive',
-                  disabled: true,
-                },
-              ]
-            }, '#segmented-disabled-4');
-          </script>
-        </div>
-
-        <div id="segmented-disabled-5" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              buttons: [
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'float',
-                  disabled: true,
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'float',
-                  disabled: true,
-                },
-                {
-                  label: 'Button',
-                  size: 'xs',
-                  style: 'float',
-                  disabled: true,
-                },
-              ]
-            }, '#segmented-disabled-5');
-          </script>
+          <div id="segmented-disabled-5" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                buttons: [
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'float',
+                    disabled: true,
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'float',
+                    disabled: true,
+                  },
+                  {
+                    label: 'Button',
+                    size: 'xs',
+                    style: 'float',
+                    disabled: true,
+                  },
+                ]
+              }, '#segmented-disabled-5');
+            </script>
+          </div>
         </div>
       </div>
 
-      <div id="lone-icon" class="wd-demo-body-section">
-        <div class="wd-demo-sectionheading">
-          <h2 class="wd-typo-h5 wd-fw-emphasis">Segmented with Lone Icon</h2>
-        </div>
+      <div class="wd-demo-section">
+        <h2 class="wd-demo-section-heading">Segmented with Lone Icon</h2>
 
-        <div id="lone-icon-1" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              borderRadius: 'rounded',
-              buttons: [
-                {
-                  label: 'New Service',
-                },
-                {
-                  icon:  `<svg width="16" height="16" viewBox="2 2 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <path transform="translate(-8, -8)" d="M19,17 L23,17 C23.5522847,17 24,17.4477153 24,18 C24,18.5522847 23.5522847,19 23,19 L19,19 L19,23 C19,23.5522847 18.5522847,24 18,24 C17.4477153,24 17,23.5522847 17,23 L17,19 L13,19 C12.4477153,19 12,18.5522847 12,18 C12,17.4477153 12.4477153,17 13,17 L17,17 L17,13 C17,12.4477153 17.4477153,12 18,12 C18.5522847,12 19,12.4477153 19,13 L19,17 Z"></path>
-                          </svg>`,
-                },
-              ]
-            }, '#lone-icon-1');
-          </script>
-        </div>
+        <div class="wd-demo-content">
+          <div id="lone-icon-1" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                borderRadius: 'rounded',
+                buttons: [
+                  {
+                    label: 'New Service',
+                  },
+                  {
+                    icon:  `<svg width="16" height="16" viewBox="2 2 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <path transform="translate(-8, -8)" d="M19,17 L23,17 C23.5522847,17 24,17.4477153 24,18 C24,18.5522847 23.5522847,19 23,19 L19,19 L19,23 C19,23.5522847 18.5522847,24 18,24 C17.4477153,24 17,23.5522847 17,23 L17,19 L13,19 C12.4477153,19 12,18.5522847 12,18 C12,17.4477153 12.4477153,17 13,17 L17,17 L17,13 C17,12.4477153 17.4477153,12 18,12 C18.5522847,12 19,12.4477153 19,13 L19,17 Z"></path>
+                            </svg>`,
+                  },
+                ]
+              }, '#lone-icon-1');
+            </script>
+          </div>
 
-        <div id="lone-icon-2" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              borderRadius: 'rounded',
-              buttons: [
-                {
-                  label: 'New Service',
-                  style: 'outline',
-                },
-                {
-                  icon:  `<svg width="16" height="16" viewBox="2 2 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <path transform="translate(-8, -8)" d="M19,17 L23,17 C23.5522847,17 24,17.4477153 24,18 C24,18.5522847 23.5522847,19 23,19 L19,19 L19,23 C19,23.5522847 18.5522847,24 18,24 C17.4477153,24 17,23.5522847 17,23 L17,19 L13,19 C12.4477153,19 12,18.5522847 12,18 C12,17.4477153 12.4477153,17 13,17 L17,17 L17,13 C17,12.4477153 17.4477153,12 18,12 C18.5522847,12 19,12.4477153 19,13 L19,17 Z"></path>
-                          </svg>`,
-                  style: 'outline',
-                },
-              ]
-            }, '#lone-icon-2');
-          </script>
-        </div>
+          <div id="lone-icon-2" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                borderRadius: 'rounded',
+                buttons: [
+                  {
+                    label: 'New Service',
+                    style: 'outline',
+                  },
+                  {
+                    icon:  `<svg width="16" height="16" viewBox="2 2 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <path transform="translate(-8, -8)" d="M19,17 L23,17 C23.5522847,17 24,17.4477153 24,18 C24,18.5522847 23.5522847,19 23,19 L19,19 L19,23 C19,23.5522847 18.5522847,24 18,24 C17.4477153,24 17,23.5522847 17,23 L17,19 L13,19 C12.4477153,19 12,18.5522847 12,18 C12,17.4477153 12.4477153,17 13,17 L17,17 L17,13 C17,12.4477153 17.4477153,12 18,12 C18.5522847,12 19,12.4477153 19,13 L19,17 Z"></path>
+                            </svg>`,
+                    style: 'outline',
+                  },
+                ]
+              }, '#lone-icon-2');
+            </script>
+          </div>
 
-        <div id="lone-icon-3" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              borderRadius: 'rounded',
-              buttons: [
-                {
-                  label: 'New Service',
-                  style: 'ghost',
-                },
-                {
-                  icon:  `<svg width="16" height="16" viewBox="2 2 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <path transform="translate(-8, -8)" d="M19,17 L23,17 C23.5522847,17 24,17.4477153 24,18 C24,18.5522847 23.5522847,19 23,19 L19,19 L19,23 C19,23.5522847 18.5522847,24 18,24 C17.4477153,24 17,23.5522847 17,23 L17,19 L13,19 C12.4477153,19 12,18.5522847 12,18 C12,17.4477153 12.4477153,17 13,17 L17,17 L17,13 C17,12.4477153 17.4477153,12 18,12 C18.5522847,12 19,12.4477153 19,13 L19,17 Z"></path>
-                          </svg>`,
-                  style: 'ghost',
-                },
-              ]
-            }, '#lone-icon-3');
-          </script>
-        </div>
+          <div id="lone-icon-3" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                borderRadius: 'rounded',
+                buttons: [
+                  {
+                    label: 'New Service',
+                    style: 'ghost',
+                  },
+                  {
+                    icon:  `<svg width="16" height="16" viewBox="2 2 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <path transform="translate(-8, -8)" d="M19,17 L23,17 C23.5522847,17 24,17.4477153 24,18 C24,18.5522847 23.5522847,19 23,19 L19,19 L19,23 C19,23.5522847 18.5522847,24 18,24 C17.4477153,24 17,23.5522847 17,23 L17,19 L13,19 C12.4477153,19 12,18.5522847 12,18 C12,17.4477153 12.4477153,17 13,17 L17,17 L17,13 C17,12.4477153 17.4477153,12 18,12 C18.5522847,12 19,12.4477153 19,13 L19,17 Z"></path>
+                            </svg>`,
+                    style: 'ghost',
+                  },
+                ]
+              }, '#lone-icon-3');
+            </script>
+          </div>
 
-        <div id="lone-icon-4" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              borderRadius: 'rounded',
-              buttons: [
-                {
-                  label: 'New Service',
-                  style: 'destructive',
-                },
-                {
-                  icon:  `<svg width="16" height="16" viewBox="2 2 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <path transform="translate(-8, -8)" d="M19,17 L23,17 C23.5522847,17 24,17.4477153 24,18 C24,18.5522847 23.5522847,19 23,19 L19,19 L19,23 C19,23.5522847 18.5522847,24 18,24 C17.4477153,24 17,23.5522847 17,23 L17,19 L13,19 C12.4477153,19 12,18.5522847 12,18 C12,17.4477153 12.4477153,17 13,17 L17,17 L17,13 C17,12.4477153 17.4477153,12 18,12 C18.5522847,12 19,12.4477153 19,13 L19,17 Z"></path>
-                          </svg>`,
-                  style: 'destructive',
-                },
-              ]
-            }, '#lone-icon-4');
-          </script>
-        </div>
+          <div id="lone-icon-4" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                borderRadius: 'rounded',
+                buttons: [
+                  {
+                    label: 'New Service',
+                    style: 'destructive',
+                  },
+                  {
+                    icon:  `<svg width="16" height="16" viewBox="2 2 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <path transform="translate(-8, -8)" d="M19,17 L23,17 C23.5522847,17 24,17.4477153 24,18 C24,18.5522847 23.5522847,19 23,19 L19,19 L19,23 C19,23.5522847 18.5522847,24 18,24 C17.4477153,24 17,23.5522847 17,23 L17,19 L13,19 C12.4477153,19 12,18.5522847 12,18 C12,17.4477153 12.4477153,17 13,17 L17,17 L17,13 C17,12.4477153 17.4477153,12 18,12 C18.5522847,12 19,12.4477153 19,13 L19,17 Z"></path>
+                            </svg>`,
+                    style: 'destructive',
+                  },
+                ]
+              }, '#lone-icon-4');
+            </script>
+          </div>
 
-        <div id="lone-icon-5" class="wd-demo-body-content-section demo--5column">
-          <script>
-            new metal.WDButtonGroup({
-              type: 'segmented',
-              spacing: '1px',
-              borderRadius: 'rounded',
-              buttons: [
-                {
-                  label: 'New Service',
-                  style: 'float',
-                },
-                {
-                  icon:  `<svg width="16" height="16" viewBox="2 2 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <path transform="translate(-8, -8)" d="M19,17 L23,17 C23.5522847,17 24,17.4477153 24,18 C24,18.5522847 23.5522847,19 23,19 L19,19 L19,23 C19,23.5522847 18.5522847,24 18,24 C17.4477153,24 17,23.5522847 17,23 L17,19 L13,19 C12.4477153,19 12,18.5522847 12,18 C12,17.4477153 12.4477153,17 13,17 L17,17 L17,13 C17,12.4477153 17.4477153,12 18,12 C18.5522847,12 19,12.4477153 19,13 L19,17 Z"></path>
-                          </svg>`,
-                  style: 'float',
-                },
-              ]
-            }, '#lone-icon-5');
-          </script>
+          <div id="lone-icon-5" class="wd-demo-content-section wd-demo--5column">
+            <script>
+              new metal.WDButtonGroup({
+                type: 'segmented',
+                spacing: '1px',
+                borderRadius: 'rounded',
+                buttons: [
+                  {
+                    label: 'New Service',
+                    style: 'float',
+                  },
+                  {
+                    icon:  `<svg width="16" height="16" viewBox="2 2 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <path transform="translate(-8, -8)" d="M19,17 L23,17 C23.5522847,17 24,17.4477153 24,18 C24,18.5522847 23.5522847,19 23,19 L19,19 L19,23 C19,23.5522847 18.5522847,24 18,24 C17.4477153,24 17,23.5522847 17,23 L17,19 L13,19 C12.4477153,19 12,18.5522847 12,18 C12,17.4477153 12.4477153,17 13,17 L17,17 L17,13 C17,12.4477153 17.4477153,12 18,12 C18.5522847,12 19,12.4477153 19,13 L19,17 Z"></path>
+                            </svg>`,
+                    style: 'float',
+                  },
+                ]
+              }, '#lone-icon-5');
+            </script>
+          </div>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@
     "build": "lerna run compile && lerna run build",
     "compile": "lerna run compile",
     "link": "lerna link",
-    "test": "jest",
+    "test": "jest --forceExit",
     "format": "npm run prettier -- --write",
     "prettier": "prettier-eslint packages/wd-*/src/*.js packages/wd-*/src/**/*.js"
   },
@@ -15,7 +15,7 @@
     "babel-preset-metal": "^4.0.0",
     "eslint": "^4.11.0",
     "eslint-config-liferay": "^2.0.10",
-    "jest": "^23.1.0",
+    "jest": "^23.2.0",
     "lerna": "^2.5.1",
     "metal-jest-serializer": "^2.0.0",
     "prettier-eslint-cli": "^4.4.0",
@@ -32,7 +32,10 @@
     "snapshotSerializers": [
       "metal-jest-serializer"
     ],
-    "resolver": "./jest-wd-lerna-resolver"
+    "resolver": "./jest-wd-lerna-resolver",
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/mocks/styleMock.js"
+    }
   },
   "workspaces": [
     "packages/*"

@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+/* Standard Color Variables
+   ========================================================================== */
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/* Font Variables
+   ========================================================================== */
+/* Font Weight Variables */
+/* Font Builder Mixin
+   ========================================================================== */
+/* Font Mixins
+   ========================================================================== */
+/* Font Classes
+   ========================================================================== */
+/* General Classes */
+.wd-typo-large,
+.wd-typo-lg {
+  font-size: 85px;
+  line-height: 96px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 900; }
+
+.wd-typo-h1 {
+  font-size: 69px;
+  line-height: 78px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 900; }
+
+.wd-typo-h2 {
+  font-size: 56px;
+  line-height: 66px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 900; }
+
+.wd-typo-h3 {
+  font-size: 46px;
+  line-height: 60px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 900; }
+
+.wd-typo-h4 {
+  font-size: 41px;
+  line-height: 54px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 900; }
+
+.wd-typo-h5 {
+  font-size: 33px;
+  line-height: 48px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 900; }
+
+.wd-typo-h6 {
+  font-size: 27px;
+  line-height: 36px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 900; }
+
+.wd-typo-subheading,
+.wd-typo-sh {
+  font-size: 22px;
+  line-height: 30px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 500; }
+
+.wd-typo-caption,
+.wd-typo-cp {
+  font-size: 16px;
+  line-height: 24px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 400; }
+
+.wd-typo-body,
+.wd-typo-bd {
+  font-size: 18px;
+  line-height: 30px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 400; }
+
+.wd-typo-small,
+.wd-typo-sm {
+  font-size: 14px;
+  line-height: 18px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 400; }
+
+.wd-typo-xsmall,
+.wd-typo-xs {
+  font-size: 13px;
+  line-height: 18px;
+  color: #0e141a;
+  font-family: "Circular", sans-serif;
+  font-weight: 400; }
+
+/* Font-Weight Modifier Classes */
+.wd-fw-display {
+  font-weight: 900; }
+
+.wd-fw-emphasis {
+  font-weight: 500; }
+
+.wd-fw-body {
+  font-weight: 400; }
+
+/* ==========================================================================
+   Demo Page
+   ========================================================================== */
+/* Reset
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* Page
+   ========================================================================== */
+.wd-demo-container {
+  background-color: rgba(14, 20, 26, 0.02);
+  box-sizing: border-box;
+  margin: 0;
+  min-height: 100vh;
+  padding: 48px 48px 84px;
+  width: 100vw; }
+  .wd-demo-container .wd-demo-heading {
+    font-size: 46px;
+    line-height: 60px;
+    color: #0e141a;
+    font-family: "Circular", sans-serif;
+    font-weight: 900;
+    margin: 0 0 60px; }
+  .wd-demo-container .wd-demo-section-heading {
+    font-size: 33px;
+    line-height: 48px;
+    color: #0e141a;
+    font-family: "Circular", sans-serif;
+    font-weight: 900;
+    font-weight: 500;
+    margin: 0 0 60px; }
+  .wd-demo-container .wd-demo-content-heading {
+    font-size: 16px;
+    line-height: 24px;
+    color: #0e141a;
+    font-family: "Circular", sans-serif;
+    font-weight: 400;
+    color: rgba(14, 20, 26, 0.6);
+    font-weight: 500;
+    margin: 48px 0 18px; }
+  .wd-demo-container .wd-demo-dark-section .wd-demo-heading, .wd-demo-container .wd-demo-dark-section .wd-demo-section-heading, .wd-demo-container .wd-demo-dark-section .wd-demo-content-heading {
+    color: rgba(255, 255, 255, 0.4); }
+  .wd-demo-container .wd-demo-main {
+    padding: 24px 0 0;
+    width: 100%; }
+  .wd-demo-container .wd-demo-section {
+    margin: 24px 0 48px; }
+  .wd-demo-container .wd-demo-section:last-child {
+    margin: 24px 0 0; }
+  .wd-demo-container .wd-demo-dark-section {
+    background-color: rgba(14, 20, 26, 0.9);
+    box-sizing: border-box;
+    margin: 0 -48px;
+    padding: 36px 48px;
+    width: 100vw; }
+  .wd-demo-container .wd-demo-content {
+    font-size: 0;
+    width: 100%; }
+  .wd-demo-container .wd-demo-content-section {
+    display: inline-flex;
+    min-width: 100%;
+    position: relative; }
+  .wd-demo-container .wd-demo-content-card {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 8px -4px rgba(14, 20, 26, 0.3), 0 0 1px 0 rgba(14, 20, 26, 0.36);
+    box-sizing: border-box;
+    display: inline-flex;
+    margin-right: 48px;
+    padding: 48px;
+    position: relative; }
+    .wd-demo-container .wd-demo-content-card.wd-demo--2column {
+      min-width: calc(50% - 24px); }
+    .wd-demo-container .wd-demo-content-card.wd-demo--3column {
+      min-width: calc(33.3% - 32px); }
+    .wd-demo-container .wd-demo-content-card.wd-demo--4column {
+      min-width: calc(25% - 36px); }
+    .wd-demo-container .wd-demo-content-card.wd-demo--5column {
+      min-width: calc(20% - 38.4px); }
+    .wd-demo-container .wd-demo-content-card.wd-demo--6column {
+      min-width: calc(16.6% - 40px); }
+    .wd-demo-container .wd-demo-content-card.wd-demo--7column {
+      min-width: calc(14.2% - 41.15px); }
+    .wd-demo-container .wd-demo-content-card.wd-demo--8column {
+      min-width: calc(12.5% - 42px); }
+    .wd-demo-container .wd-demo-content-card:last-child {
+      margin-right: 0; }
+  .wd-demo-container .wd-demo--2column {
+    justify-content: center;
+    min-width: 50%; }
+  .wd-demo-container .wd-demo--3column {
+    justify-content: center;
+    min-width: 33.3%; }
+  .wd-demo-container .wd-demo--4column {
+    justify-content: center;
+    min-width: 25%; }
+  .wd-demo-container .wd-demo--5column {
+    justify-content: center;
+    min-width: 20%; }
+  .wd-demo-container .wd-demo--6column {
+    justify-content: center;
+    min-width: 16.6%; }
+  .wd-demo-container .wd-demo--7column {
+    justify-content: center;
+    min-width: 14.2%; }
+  .wd-demo-container .wd-demo--8column {
+    justify-content: center;
+    min-width: 12.5%; }
+  .wd-demo-container .wd-demo--centered {
+    justify-content: center; }
+  .wd-demo-container .line-break-force {
+    height: 0px;
+    margin: 0;
+    width: 100%; }
+

@@ -1,25 +1,26 @@
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: ['./src/WDButton.js', './src/WDButton.scss'],
+  mode: 'production',
+  entry: ['./src/WDButton.js'],
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /(node_modules)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          compact: false,
-          presets: ['babel-preset-es2015'],
-          plugins: ['babel-plugin-transform-node-env-inline'],
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            compact: false,
+            presets: ['babel-preset-es2015'],
+            plugins: ['babel-plugin-transform-node-env-inline'],
+          },
         },
       },
-    },
-    {
-      test: /\.scss$/,
-      use: ExtractTextPlugin.extract({
+      {
+        test: /\.(sa|sc|c)ss$/,
         use: [
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
           },
@@ -30,20 +31,18 @@ module.exports = {
             },
           },
         ],
-      }),
-    }],
+      },
+    ],
   },
   output: {
     library: 'metal',
     libraryTarget: 'this',
-    filename: './build/globals/wd-button.js',
+    filename: 'wd-button.js',
+    path: __dirname + '/build/globals',
   },
   plugins: [
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new ExtractTextPlugin({
-      disable: false,
-      filename: './build/commons.css',
-      allChunks: true,
+    new MiniCssExtractPlugin({
+      filename: '../main.css',
     }),
   ],
 };

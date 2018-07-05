@@ -18,6 +18,8 @@ $wd-fw-emphasis    :  500 !default;
   color: $wd-color-black;
   font-family: $wd-font-primary;
   font-weight: $font-weight-variable;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 

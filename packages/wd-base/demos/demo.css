@@ -22,49 +22,63 @@
   line-height: 96px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 900; }
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 .wd-typo-h1 {
   font-size: 69px;
   line-height: 78px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 900; }
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 .wd-typo-h2 {
   font-size: 56px;
   line-height: 66px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 900; }
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 .wd-typo-h3 {
   font-size: 46px;
   line-height: 60px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 900; }
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 .wd-typo-h4 {
   font-size: 41px;
   line-height: 54px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 900; }
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 .wd-typo-h5 {
   font-size: 33px;
   line-height: 48px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 900; }
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 .wd-typo-h6 {
   font-size: 27px;
   line-height: 36px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 900; }
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 .wd-typo-subheading,
 .wd-typo-sh {
@@ -72,7 +86,9 @@
   line-height: 30px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 500; }
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 .wd-typo-caption,
 .wd-typo-cp {
@@ -80,7 +96,9 @@
   line-height: 24px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 .wd-typo-body,
 .wd-typo-bd {
@@ -88,7 +106,9 @@
   line-height: 30px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 .wd-typo-small,
 .wd-typo-sm {
@@ -96,7 +116,9 @@
   line-height: 18px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 .wd-typo-xsmall,
 .wd-typo-xs {
@@ -104,7 +126,9 @@
   line-height: 18px;
   color: #0e141a;
   font-family: "Circular", sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 /* Font-Weight Modifier Classes */
 .wd-fw-display {
@@ -140,6 +164,8 @@
     color: #0e141a;
     font-family: "Circular", sans-serif;
     font-weight: 900;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
     margin: 0 0 60px; }
   .wd-demo-container .wd-demo-section-heading {
     font-size: 33px;
@@ -147,6 +173,8 @@
     color: #0e141a;
     font-family: "Circular", sans-serif;
     font-weight: 900;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
     font-weight: 500;
     margin: 0 0 60px; }
   .wd-demo-container .wd-demo-content-heading {
@@ -155,6 +183,8 @@
     color: #0e141a;
     font-family: "Circular", sans-serif;
     font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
     color: rgba(14, 20, 26, 0.6);
     font-weight: 500;
     margin: 48px 0 18px; }

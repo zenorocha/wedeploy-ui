@@ -1,64 +1,66 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
-  mode: 'production',
-  entry: ['./src/main.scss'],
-  module: {
-    rules: [
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'sass-loader',
-          },
-        ],
-      },
+module.exports = [
+  {
+    mode: 'production',
+    entry: ['./src/main.scss'],
+    module: {
+      rules: [
+        {
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+            },
+            {
+              loader: 'sass-loader',
+            },
+          ],
+        },
+      ],
+    },
+    output: {
+      library: 'metal',
+      libraryTarget: 'this',
+      filename: 'wd-base.js',
+      path: __dirname + '/build/globals',
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: '../main.css',
+      }),
     ],
   },
-  output: {
-    library: 'metal',
-    libraryTarget: 'this',
-    filename: 'wd-base.js',
-    path: __dirname + '/build/globals',
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '../main.css',
-    }),
-  ],
-};
-
-module.exports = {
-  entry: ['./src/demo.scss'],
-  module: {
-    rules: [
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'sass-loader',
-          },
-        ],
-      },
+  {
+    mode: 'development',
+    entry: ['./src/demo.scss'],
+    module: {
+      rules: [
+        {
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+            },
+            {
+              loader: 'sass-loader',
+            },
+          ],
+        },
+      ],
+    },
+    output: {
+      library: 'metal',
+      libraryTarget: 'this',
+      filename: 'wd-base-demo.js',
+      path: __dirname + '/build/globals',
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: '../../demos/demo.css',
+      }),
     ],
-  },
-  output: {
-    library: 'metal',
-    libraryTarget: 'this',
-    filename: 'wd-base-demo.js',
-    path: __dirname + '/build/globals',
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '../../demos/demo.css',
-    }),
-  ],
-};
+  }
+];

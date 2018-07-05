@@ -17,13 +17,6 @@ class WDButton extends Component {}
  */
 WDButton.STATE = {
   /**
-   * ID to be applied to the element.
-   * @type {!String}
-   * @default example
-   */
-  id: Config.string().value('example'),
-
-  /**
    * @type {?boolean}
    * @default false
    */

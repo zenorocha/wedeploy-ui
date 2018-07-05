@@ -6,16 +6,4554 @@
   <title>Demo: Button</title>
 
   <link rel="stylesheet" href="../build/main.css">
+  <link rel="stylesheet" href="../../wd-base/demos/demo.css">
+  <link rel="stylesheet" href="../../wd-base/build/fonts/circular/circular.css">
+
+  <style>
+    .spacer {
+      width: 100%;
+      height: 12px;
+    }
+    .wd-demo-main .wd-demo-content .wd-btn {
+      margin-right: 18px;
+      margin-bottom: 12px;
+    }
+    .wd-demo-main .wd-demo-content .wd-btn:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+    #styles .wd-btn, #stylesDarkTheme .wd-btn, #colors .wd-btn, #weights .wd-btn, #rounded .wd-btn {
+      width: 106px;
+    }
+  </style>
 
   <script src="../build/globals/wd-button.js"></script>
 </head>
-<body class="container">
-  <h1 class="page-title">Button</h1>
+<body>
+  <div class="wd-demo-container">
+    <h1 class="wd-demo-heading">Button</h1>
+    <div class="wd-demo-main">
+      <div class="wd-demo-section">
+        <h3 class="wd-demo-section-heading">Style</h3>
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">States</h3>
+          <div id="states-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
 
-  <div id="container"></div>
+              new metal.WDButton({
+                label: 'Primary',
+              }, '#states-primary');
 
-  <script>
-    new metal.WDButton({}, '#container');
-  </script>
+            </script>
+          </div>
+
+          <div id="states-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline'
+              }, '#states-outline');
+
+            </script>
+          </div>
+
+          <div id="states-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost'
+              }, '#states-ghost');
+
+            </script>
+          </div>
+
+          <div id="states-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive'
+              }, '#states-destructive');
+
+            </script>
+          </div>
+
+          <div id="states-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float'
+              }, '#states-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Selected</h3>
+          <div id="states-primary-selected" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                elementClasses: 'wd-btn-selected',
+              }, '#states-primary-selected');
+
+            </script>
+          </div>
+
+          <div id="states-outline-selected" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                elementClasses: 'wd-btn-selected',
+              }, '#states-outline-selected');
+
+            </script>
+          </div>
+
+          <div id="states-ghost-selected" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                elementClasses: 'wd-btn-selected',
+              }, '#states-ghost-selected');
+
+            </script>
+          </div>
+
+          <div id="states-destructive-selected" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                elementClasses: 'wd-btn-selected',
+              }, '#states-destructive-selected');
+
+            </script>
+          </div>
+
+          <div id="states-float-selected" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                elementClasses: 'wd-btn-selected',
+              }, '#states-float-selected');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Disabled</h3>
+          <div id="states-primary-disabled" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                disabled: true,
+              }, '#states-primary-disabled');
+
+            </script>
+          </div>
+
+          <div id="states-outline-disabled" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                disabled: true,
+              }, '#states-outline-disabled');
+
+            </script>
+          </div>
+
+          <div id="states-ghost-disabled" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                disabled: true,
+              }, '#states-ghost-disabled');
+
+            </script>
+          </div>
+
+          <div id="states-destructive-disabled" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                disabled: true,
+              }, '#states-destructive-disabled');
+
+            </script>
+          </div>
+
+          <div id="states-float-disabled" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                disabled: true,
+              }, '#states-float-disabled');
+
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-demo-section">
+        <h3 class="wd-demo-section-heading">Size</h3>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">XS</h3>
+          <div id="xs-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                size: 'xs'
+              }, '#xs-primary');
+
+            </script>
+          </div>
+
+          <div id="xs-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                size: 'xs'
+              }, '#xs-outline');
+
+            </script>
+          </div>
+
+          <div id="xs-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                size: 'xs'
+              }, '#xs-ghost');
+
+            </script>
+          </div>
+
+          <div id="xs-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                size: 'xs'
+              }, '#xs-destructive');
+
+            </script>
+          </div>
+
+          <div id="xs-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                size: 'xs'
+              }, '#xs-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">SM</h3>
+          <div id="sm-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                size: 'sm'
+              }, '#sm-primary');
+
+            </script>
+          </div>
+
+          <div id="sm-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                size: 'sm'
+              }, '#sm-outline');
+
+            </script>
+          </div>
+
+          <div id="sm-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                size: 'sm'
+              }, '#sm-ghost');
+
+            </script>
+          </div>
+
+          <div id="sm-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                size: 'sm'
+              }, '#sm-destructive');
+
+            </script>
+          </div>
+
+          <div id="sm-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                size: 'sm'
+              }, '#sm-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">MD</h3>
+          <div id="md-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                size: 'md'
+              }, '#md-primary');
+
+            </script>
+          </div>
+
+          <div id="md-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                size: 'md'
+              }, '#md-outline');
+
+            </script>
+          </div>
+
+          <div id="md-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                size: 'md'
+              }, '#md-ghost');
+
+            </script>
+          </div>
+
+          <div id="md-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                size: 'md'
+              }, '#md-destructive');
+
+            </script>
+          </div>
+
+          <div id="md-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                size: 'md'
+              }, '#md-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">LG</h3>
+          <div id="lg-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                size: 'lg'
+              }, '#lg-primary');
+
+            </script>
+          </div>
+
+          <div id="lg-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                size: 'lg'
+              }, '#lg-outline');
+
+            </script>
+          </div>
+
+          <div id="lg-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                size: 'lg'
+              }, '#lg-ghost');
+
+            </script>
+          </div>
+
+          <div id="lg-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                size: 'lg'
+              }, '#lg-destructive');
+
+            </script>
+          </div>
+
+          <div id="lg-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                size: 'lg'
+              }, '#lg-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">XL</h3>
+          <div id="xl-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                size: 'xl'
+              }, '#xl-primary');
+
+            </script>
+          </div>
+
+          <div id="xl-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                size: 'xl'
+              }, '#xl-outline');
+
+            </script>
+          </div>
+
+          <div id="xl-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                size: 'xl'
+              }, '#xl-ghost');
+
+            </script>
+          </div>
+
+          <div id="xl-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                size: 'xl'
+              }, '#xl-destructive');
+
+            </script>
+          </div>
+
+          <div id="xl-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                size: 'xl'
+              }, '#xl-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">XXL</h3>
+          <div id="xxl-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                size: 'xxl'
+              }, '#xxl-primary');
+
+            </script>
+          </div>
+
+          <div id="xxl-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                size: 'xxl'
+              }, '#xxl-outline');
+
+            </script>
+          </div>
+
+          <div id="xxl-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                size: 'xxl'
+              }, '#xxl-ghost');
+
+            </script>
+          </div>
+
+          <div id="xxl-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                size: 'xxl'
+              }, '#xxl-destructive');
+
+            </script>
+          </div>
+
+          <div id="xxl-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                size: 'xxl'
+              }, '#xxl-float');
+
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-demo-section">
+        <h3 class="wd-demo-section-heading">Weight</h3>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Body</h3>
+          <div id="lightweight-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                elementClasses: 'wd-fw-body'
+              }, '#lightweight-primary');
+
+            </script>
+          </div>
+
+          <div id="lightweight-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                elementClasses: 'wd-fw-body'
+              }, '#lightweight-outline');
+
+            </script>
+          </div>
+
+          <div id="lightweight-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                elementClasses: 'wd-fw-body'
+              }, '#lightweight-ghost');
+
+            </script>
+          </div>
+
+          <div id="lightweight-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                elementClasses: 'wd-fw-body'
+              }, '#lightweight-destructive');
+
+            </script>
+          </div>
+
+          <div id="lightweight-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                elementClasses: 'wd-fw-body'
+              }, '#lightweight-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Emphasis</h3>
+          <div id="middleweight-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                elementClasses: 'wd-fw-emphasis'
+              }, '#middleweight-primary');
+
+            </script>
+          </div>
+
+          <div id="middleweight-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                elementClasses: 'wd-fw-emphasis'
+              }, '#middleweight-outline');
+
+            </script>
+          </div>
+
+          <div id="middleweight-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                elementClasses: 'wd-fw-emphasis'
+              }, '#middleweight-ghost');
+
+            </script>
+          </div>
+
+          <div id="middleweight-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                elementClasses: 'wd-fw-emphasis'
+              }, '#middleweight-destructive');
+
+            </script>
+          </div>
+
+          <div id="middleweight-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                elementClasses: 'wd-fw-emphasis'
+              }, '#middleweight-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Display</h3>
+          <div id="heavyweight-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                elementClasses: 'wd-fw-display'
+              }, '#heavyweight-primary');
+
+            </script>
+          </div>
+
+          <div id="heavyweight-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                elementClasses: 'wd-fw-display'
+              }, '#heavyweight-outline');
+
+            </script>
+          </div>
+
+          <div id="heavyweight-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                elementClasses: 'wd-fw-display'
+              }, '#heavyweight-ghost');
+
+            </script>
+          </div>
+
+          <div id="heavyweight-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                elementClasses: 'wd-fw-display'
+              }, '#heavyweight-destructive');
+
+            </script>
+          </div>
+
+          <div id="heavyweight-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                elementClasses: 'wd-fw-display'
+              }, '#heavyweight-float');
+
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-demo-section">
+        <h3 class="wd-demo-section-heading">Border Radius</h3>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">borderRadius-6px</h3>
+          <div id="borderRadius-6px-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                borderRadius: 'borderRadius-6px'
+              }, '#borderRadius-6px-primary');
+
+            </script>
+          </div>
+
+          <div id="borderRadius-6px-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                borderRadius: 'borderRadius-6px'
+              }, '#borderRadius-6px-outline');
+
+            </script>
+          </div>
+
+          <div id="borderRadius-6px-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                borderRadius: 'borderRadius-6px'
+              }, '#borderRadius-6px-ghost');
+
+            </script>
+          </div>
+
+          <div id="borderRadius-6px-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                borderRadius: 'borderRadius-6px'
+              }, '#borderRadius-6px-destructive');
+
+            </script>
+          </div>
+
+          <div id="borderRadius-6px-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                borderRadius: 'borderRadius-6px'
+              }, '#borderRadius-6px-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Rounded</h3>
+          <div id="rounded-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                borderRadius: 'rounded'
+              }, '#rounded-primary');
+
+            </script>
+          </div>
+
+          <div id="rounded-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                borderRadius: 'rounded'
+              }, '#rounded-outline');
+
+            </script>
+          </div>
+
+          <div id="rounded-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                borderRadius: 'rounded'
+              }, '#rounded-ghost');
+
+            </script>
+          </div>
+
+          <div id="rounded-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                borderRadius: 'rounded'
+              }, '#rounded-destructive');
+
+            </script>
+          </div>
+
+          <div id="rounded-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                borderRadius: 'rounded'
+              }, '#rounded-float');
+
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-demo-section">
+        <h3 class="wd-demo-section-heading">Width</h3>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Full</h3>
+
+          <div id="fullwidth-xs" class="wd-demo-content-section">
+            <script>
+
+              new metal.WDButton({
+                label: 'Button XS',
+                size: 'xs',
+                width: 'full',
+              }, '#fullwidth-xs');
+
+            </script>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div id="fullwidth-sm" class="wd-demo-content-section">
+            <script>
+
+              new metal.WDButton({
+                label: 'Button S',
+                size: 'sm',
+                width: 'full',
+              }, '#fullwidth-sm');
+
+            </script>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div id="fullwidth-md" class="wd-demo-content-section">
+            <script>
+
+              new metal.WDButton({
+                label: 'Button M',
+                size: 'md',
+                width: 'full',
+              }, '#fullwidth-md');
+
+            </script>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div id="fullwidth-lg" class="wd-demo-content-section">
+            <script>
+
+              new metal.WDButton({
+                label: 'Button L',
+                size: 'lg',
+                width: 'full',
+              }, '#fullwidth-lg');
+
+            </script>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div id="fullwidth-xl" class="wd-demo-content-section">
+            <script>
+
+              new metal.WDButton({
+                label: 'Button XL',
+                size: 'xl',
+                width: 'full',
+              }, '#fullwidth-xl');
+
+            </script>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div id="fullwidth-xxl" class="wd-demo-content-section">
+            <script>
+
+              new metal.WDButton({
+                label: 'Button XXL',
+                size: 'xxl',
+                width: 'full',
+              }, '#fullwidth-xxl');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Custom</h3>
+
+          <div id="custom-xs" class="wd-demo-content-section">
+            <script>
+
+              new metal.WDButton({
+                label: 'Button XS',
+                size: 'xs',
+                width: '240px',
+              }, '#custom-xs');
+
+            </script>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div id="custom-sm" class="wd-demo-content-section">
+            <script>
+              new metal.WDButton({
+                label: 'Button S',
+                size: 'sm',
+                width: '840px',
+              }, '#custom-sm');
+
+            </script>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div id="custom-md" class="wd-demo-content-section">
+            <script>
+              new metal.WDButton({
+                label: 'Button M',
+                size: 'md',
+                width: '1200px',
+              }, '#custom-md');
+
+            </script>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div id="custom-lg" class="wd-demo-content-section">
+            <script>
+              new metal.WDButton({
+                label: 'Button L',
+                size: 'lg',
+                width: '660px',
+              }, '#custom-lg');
+
+            </script>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div id="custom-xl" class="wd-demo-content-section">
+            <script>
+              new metal.WDButton({
+                label: 'Button XL',
+                size: 'xl',
+                width: '330px',
+              }, '#custom-xl');
+
+            </script>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div id="custom-xxl" class="wd-demo-content-section">
+            <script>
+              new metal.WDButton({
+                label: 'Button XXL',
+                size: 'xxl',
+                width: '540px',
+              }, '#custom-xxl');
+
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-demo-section">
+        <h3 class="wd-demo-section-heading">Color</h3>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Black</h3>
+          <div id="primary-black" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                color: 'black'
+              }, '#primary-black');
+
+            </script>
+          </div>
+
+          <div id="outline-black" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                color: 'black'
+              }, '#outline-black');
+
+            </script>
+          </div>
+
+          <div id="ghost-black" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                color: 'black'
+              }, '#ghost-black');
+
+            </script>
+          </div>
+
+          <div id="destructive-black" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                color: 'black'
+              }, '#destructive-black');
+
+            </script>
+          </div>
+
+          <div id="float-black" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                color: 'black'
+              }, '#float-black');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Green</h3>
+          <div id="primary-green" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                color: 'green'
+              }, '#primary-green');
+
+            </script>
+          </div>
+
+          <div id="outline-green" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                color: 'green'
+              }, '#outline-green');
+
+            </script>
+          </div>
+
+          <div id="ghost-green" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                color: 'green'
+              }, '#ghost-green');
+
+            </script>
+          </div>
+
+          <div id="destructive-green" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                color: 'green'
+              }, '#destructive-green');
+
+            </script>
+          </div>
+
+          <div id="float-green" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                color: 'green'
+              }, '#float-green');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Blue-Light</h3>
+          <div id="primary-blue-lt" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                color: 'blue-light'
+              }, '#primary-blue-lt');
+
+            </script>
+          </div>
+
+          <div id="outline-blue-lt" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                color: 'blue-light'
+              }, '#outline-blue-lt');
+
+            </script>
+          </div>
+
+          <div id="ghost-blue-lt" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                color: 'blue-light'
+              }, '#ghost-blue-lt');
+
+            </script>
+          </div>
+
+          <div id="destructive-blue-lt" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                color: 'blue-light'
+              }, '#destructive-blue-lt');
+
+            </script>
+          </div>
+
+          <div id="float-blue-lt" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                color: 'blue-light'
+              }, '#float-blue-lt');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Blue</h3>
+          <div id="primary-blue" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                color: 'blue'
+              }, '#primary-blue');
+
+            </script>
+          </div>
+
+          <div id="outline-blue" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                color: 'blue'
+              }, '#outline-blue');
+
+            </script>
+          </div>
+
+          <div id="ghost-blue" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                color: 'blue'
+              }, '#ghost-blue');
+
+            </script>
+          </div>
+
+          <div id="destructive-blue" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                color: 'blue'
+              }, '#destructive-blue');
+
+            </script>
+          </div>
+
+          <div id="float-blue" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                color: 'blue'
+              }, '#float-blue');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Violet</h3>
+          <div id="primary-violet" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                color: 'violet'
+              }, '#primary-violet');
+
+            </script>
+          </div>
+
+          <div id="outline-violet" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                color: 'violet'
+              }, '#outline-violet');
+
+            </script>
+          </div>
+
+          <div id="ghost-violet" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                color: 'violet'
+              }, '#ghost-violet');
+
+            </script>
+          </div>
+
+          <div id="destructive-violet" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                color: 'violet'
+              }, '#destructive-violet');
+
+            </script>
+          </div>
+
+          <div id="float-violet" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                color: 'violet'
+              }, '#float-violet');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Red</h3>
+          <div id="primary-red" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                color: 'red'
+              }, '#primary-red');
+
+            </script>
+          </div>
+
+          <div id="outline-red" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                color: 'red'
+              }, '#outline-red');
+
+            </script>
+          </div>
+
+          <div id="ghost-red" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                color: 'red'
+              }, '#ghost-red');
+
+            </script>
+          </div>
+
+          <div id="destructive-red" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                color: 'red'
+              }, '#destructive-red');
+
+            </script>
+          </div>
+
+          <div id="float-red" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                color: 'red'
+              }, '#float-red');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Orange</h3>
+          <div id="primary-orange" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                color: 'orange'
+              }, '#primary-orange');
+
+            </script>
+          </div>
+
+          <div id="outline-orange" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                color: 'orange'
+              }, '#outline-orange');
+
+            </script>
+          </div>
+
+          <div id="ghost-orange" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                color: 'orange'
+              }, '#ghost-orange');
+
+            </script>
+          </div>
+
+          <div id="destructive-orange" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                color: 'orange'
+              }, '#destructive-orange');
+
+            </script>
+          </div>
+
+          <div id="float-orange" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                color: 'orange'
+              }, '#float-orange');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Yellow</h3>
+          <div id="primary-yellow" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                color: 'yellow'
+              }, '#primary-yellow');
+
+            </script>
+          </div>
+
+          <div id="outline-yellow" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                color: 'yellow'
+              }, '#outline-yellow');
+
+            </script>
+          </div>
+
+          <div id="ghost-yellow" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                color: 'yellow'
+              }, '#ghost-yellow');
+
+            </script>
+          </div>
+
+          <div id="destructive-yellow" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                color: 'yellow'
+              }, '#destructive-yellow');
+
+            </script>
+          </div>
+
+          <div id="float-yellow" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                color: 'yellow'
+              }, '#float-yellow');
+
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-demo-section wd-demo-dark-section">
+        <h3 class="wd-demo-section-heading">Dark Theme</h3>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">States</h3>
+          <div id="darkTheme-primary-states" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                darkTheme: true,
+              }, '#darkTheme-primary-states');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-outline-states" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                darkTheme: true,
+              }, '#darkTheme-outline-states');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-ghost-states" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                darkTheme: true,
+              }, '#darkTheme-ghost-states');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-destructive-states" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                darkTheme: true,
+              }, '#darkTheme-destructive-states');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-float-states" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                darkTheme: true,
+              }, '#darkTheme-float-states');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Selected</h3>
+          <div id="darkTheme-primary-selected" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                darkTheme: true,
+                elementClasses: 'wd-btn-selected',
+              }, '#darkTheme-primary-selected');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-outline-selected" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                darkTheme: true,
+                elementClasses: 'wd-btn-selected',
+              }, '#darkTheme-outline-selected');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-ghost-selected" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                darkTheme: true,
+                elementClasses: 'wd-btn-selected',
+              }, '#darkTheme-ghost-selected');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-destructive-selected" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                darkTheme: true,
+                elementClasses: 'wd-btn-selected',
+              }, '#darkTheme-destructive-selected');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-float-selected" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                darkTheme: true,
+                elementClasses: 'wd-btn-selected',
+              }, '#darkTheme-float-selected');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Disabled</h3>
+          <div id="darkTheme-primary-disabled" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Primary',
+                darkTheme: true,
+                disabled: true,
+              }, '#darkTheme-primary-disabled');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-outline-disabled" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Outline',
+                style: 'outline',
+                darkTheme: true,
+                disabled: true,
+              }, '#darkTheme-outline-disabled');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-ghost-disabled" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Ghost',
+                style: 'ghost',
+                darkTheme: true,
+                disabled: true,
+              }, '#darkTheme-ghost-disabled');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-destructive-disabled" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Destructive',
+                style: 'destructive',
+                darkTheme: true,
+                disabled: true,
+              }, '#darkTheme-destructive-disabled');
+
+            </script>
+          </div>
+
+          <div id="darkTheme-float-disabled" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                label: 'Float',
+                style: 'float',
+                darkTheme: true,
+                disabled: true,
+              }, '#darkTheme-float-disabled');
+
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-demo-section">
+        <h3 class="wd-demo-section-heading">Content</h3>
+
+        <div class="wd-demo-content">
+          <h4 class="wd-demo-content-heading">Lone Icon - XS</h4>
+
+          <div id="xs-lone-icons-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                size: 'xs'
+              }, '#xs-lone-icons-primary');
+
+            </script>
+          </div>
+
+          <div id="xs-lone-icons-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'outline',
+                size: 'xs'
+              }, '#xs-lone-icons-outline');
+
+            </script>
+          </div>
+
+          <div id="xs-lone-icons-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'ghost',
+                size: 'xs'
+              }, '#xs-lone-icons-ghost');
+
+            </script>
+          </div>
+
+          <div id="xs-lone-icons-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'destructive',
+                size: 'xs'
+              }, '#xs-lone-icons-destructive');
+
+            </script>
+          </div>
+
+          <div id="xs-lone-icons-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'float',
+                size: 'xs'
+              }, '#xs-lone-icons-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h4 class="wd-demo-content-heading">Lone Icon - S</h4>
+
+          <div id="sm-lone-icons-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                size: 'sm'
+              }, '#sm-lone-icons-primary');
+
+            </script>
+          </div>
+
+          <div id="sm-lone-icons-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'outline',
+                size: 'sm'
+              }, '#sm-lone-icons-outline');
+
+            </script>
+          </div>
+
+          <div id="sm-lone-icons-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'ghost',
+                size: 'sm'
+              }, '#sm-lone-icons-ghost');
+
+            </script>
+          </div>
+
+          <div id="sm-lone-icons-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'destructive',
+                size: 'sm'
+              }, '#sm-lone-icons-destructive');
+
+            </script>
+          </div>
+
+          <div id="sm-lone-icons-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'float',
+                size: 'sm'
+              }, '#sm-lone-icons-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h4 class="wd-demo-content-heading">Lone Icon - M</h4>
+
+          <div id="md-lone-icons-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                size: 'md'
+              }, '#md-lone-icons-primary');
+
+            </script>
+          </div>
+
+          <div id="md-lone-icons-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'outline',
+                size: 'md'
+              }, '#md-lone-icons-outline');
+
+            </script>
+          </div>
+
+          <div id="md-lone-icons-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'ghost',
+                size: 'md'
+              }, '#md-lone-icons-ghost');
+
+            </script>
+          </div>
+
+          <div id="md-lone-icons-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'destructive',
+                size: 'md'
+              }, '#md-lone-icons-destructive');
+
+            </script>
+          </div>
+
+          <div id="md-lone-icons-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'float',
+                size: 'md'
+              }, '#md-lone-icons-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h4 class="wd-demo-content-heading">Lone Icon - L</h4>
+
+          <div id="lg-lone-icons-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                size: 'lg'
+              }, '#lg-lone-icons-primary');
+
+            </script>
+          </div>
+
+          <div id="lg-lone-icons-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'outline',
+                size: 'lg'
+              }, '#lg-lone-icons-outline');
+
+            </script>
+          </div>
+
+          <div id="lg-lone-icons-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'ghost',
+                size: 'lg'
+              }, '#lg-lone-icons-ghost');
+
+            </script>
+          </div>
+
+          <div id="lg-lone-icons-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'destructive',
+                size: 'lg'
+              }, '#lg-lone-icons-destructive');
+
+            </script>
+          </div>
+
+          <div id="lg-lone-icons-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'float',
+                size: 'lg'
+              }, '#lg-lone-icons-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h4 class="wd-demo-content-heading">Lone Icon - XL</h4>
+
+          <div id="xl-lone-icons-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                size: 'xl'
+              }, '#xl-lone-icons-primary');
+
+            </script>
+          </div>
+
+          <div id="xl-lone-icons-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'outline',
+                size: 'xl'
+              }, '#xl-lone-icons-outline');
+
+            </script>
+          </div>
+
+          <div id="xl-lone-icons-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'ghost',
+                size: 'xl'
+              }, '#xl-lone-icons-ghost');
+
+            </script>
+          </div>
+
+          <div id="xl-lone-icons-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'destructive',
+                size: 'xl'
+              }, '#xl-lone-icons-destructive');
+
+            </script>
+          </div>
+
+          <div id="xl-lone-icons-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'float',
+                size: 'xl'
+              }, '#xl-lone-icons-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h4 class="wd-demo-content-heading">Lone Icon - XXL</h4>
+
+          <div id="xxl-lone-icons-primary" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                size: 'xxl'
+              }, '#xxl-lone-icons-primary');
+
+            </script>
+          </div>
+
+          <div id="xxl-lone-icons-outline" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'outline',
+                size: 'xxl'
+              }, '#xxl-lone-icons-outline');
+
+            </script>
+          </div>
+
+          <div id="xxl-lone-icons-ghost" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'ghost',
+                size: 'xxl'
+              }, '#xxl-lone-icons-ghost');
+
+            </script>
+          </div>
+
+          <div id="xxl-lone-icons-destructive" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'destructive',
+                size: 'xxl'
+              }, '#xxl-lone-icons-destructive');
+
+            </script>
+          </div>
+
+          <div id="xxl-lone-icons-float" class="wd-demo-content-section wd-demo--5column">
+            <script>
+
+              new metal.WDButton({
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14">
+                          <g id="icon" fill-rule="evenodd">
+                            <path fill-opacity=".2" d="M15.7071 1.7071l-6 6A.9969.9969 0 0 1 9 8.0001a.9955.9955 0 0 1-.6004-.2004L5 5.25 1.6003 7.7997A.9954.9954 0 0 1 1 8c-.5523 0-1-.4477-1-1v6c0 .5523.4477 1 1 1h14c.5523 0 1-.4477 1-1V1a.997.997 0 0 1-.2929.7071"/>
+                            <path d="M15 0a.997.997 0 0 0-.7071.2929L8.9062 5.6796 5.6004 3.2003A.9955.9955 0 0 0 5 3a.9955.9955 0 0 0-.6003.2003L.4036 6.1973A.9985.9985 0 0 0 0 7c0 .5523.4477 1 1 1a.9955.9955 0 0 0 .6004-.2003L5 5.25l3.3997 2.5497A.9955.9955 0 0 0 9 8a.997.997 0 0 0 .7071-.2929l6-6A.997.997 0 0 0 16 1c0-.5523-.4477-1-1-1"/>
+                          </g>
+                        </svg>`,
+                style: 'float',
+                size: 'xxl'
+              }, '#xxl-lone-icons-float');
+
+            </script>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Icon With Label - Left Center</h3>
+
+          <div class="wd-demo-content">
+            <div id="xs-icon-label-lc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xs',
+                }, '#xs-icon-label-lc-primary');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-lc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xs',
+                  style: 'outline',
+                }, '#xs-icon-label-lc-outline');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-lc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xs',
+                  style: 'ghost',
+                }, '#xs-icon-label-lc-ghost');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-lc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xs',
+                  style: 'destructive',
+                }, '#xs-icon-label-lc-destructive');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-lc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xs',
+                  style: 'float',
+                }, '#xs-icon-label-lc-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="sm-icon-label-lc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'sm',
+                }, '#sm-icon-label-lc-primary');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-lc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'sm',
+                  style: 'outline',
+                }, '#sm-icon-label-lc-outline');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-lc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'sm',
+                  style: 'ghost',
+                }, '#sm-icon-label-lc-ghost');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-lc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'sm',
+                  style: 'destructive',
+                }, '#sm-icon-label-lc-destructive');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-lc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'sm',
+                  style: 'float',
+                }, '#sm-icon-label-lc-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="md-icon-label-lc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'md',
+                }, '#md-icon-label-lc-primary');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-lc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'md',
+                  style: 'outline',
+                }, '#md-icon-label-lc-outline');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-lc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'md',
+                  style: 'ghost',
+                }, '#md-icon-label-lc-ghost');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-lc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'md',
+                  style: 'destructive',
+                }, '#md-icon-label-lc-destructive');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-lc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'md',
+                  style: 'float',
+                }, '#md-icon-label-lc-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="lg-icon-label-lc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'lg',
+                }, '#lg-icon-label-lc-primary');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-lc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'lg',
+                  style: 'outline',
+                }, '#lg-icon-label-lc-outline');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-lc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'lg',
+                  style: 'ghost',
+                }, '#lg-icon-label-lc-ghost');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-lc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'lg',
+                  style: 'destructive',
+                }, '#lg-icon-label-lc-destructive');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-lc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'lg',
+                  style: 'float',
+                }, '#lg-icon-label-lc-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="xl-icon-label-lc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xl',
+                }, '#xl-icon-label-lc-primary');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-lc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xl',
+                  style: 'outline',
+                }, '#xl-icon-label-lc-outline');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-lc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xl',
+                  style: 'ghost',
+                }, '#xl-icon-label-lc-ghost');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-lc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xl',
+                  style: 'destructive',
+                }, '#xl-icon-label-lc-destructive');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-lc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xl',
+                  style: 'float',
+                }, '#xl-icon-label-lc-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="xxl-icon-label-lc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xxl',
+                }, '#xxl-icon-label-lc-primary');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-lc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xxl',
+                  style: 'outline',
+                }, '#xxl-icon-label-lc-outline');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-lc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xxl',
+                  style: 'ghost',
+                }, '#xxl-icon-label-lc-ghost');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-lc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xxl',
+                  style: 'destructive',
+                }, '#xxl-icon-label-lc-destructive');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-lc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-center',
+                  size: 'xxl',
+                  style: 'float',
+                }, '#xxl-icon-label-lc-float');
+
+              </script>
+            </div>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Icon With Label - Right Center</h3>
+
+          <div class="wd-demo-content">
+            <div id="xs-icon-label-rc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xs',
+                }, '#xs-icon-label-rc-primary');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-rc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xs',
+                  style: 'outline',
+                }, '#xs-icon-label-rc-outline');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-rc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xs',
+                  style: 'ghost',
+                }, '#xs-icon-label-rc-ghost');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-rc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xs',
+                  style: 'destructive',
+                }, '#xs-icon-label-rc-destructive');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-rc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xs',
+                  style: 'float',
+                }, '#xs-icon-label-rc-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="sm-icon-label-rc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'sm',
+                }, '#sm-icon-label-rc-primary');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-rc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'sm',
+                  style: 'outline',
+                }, '#sm-icon-label-rc-outline');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-rc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'sm',
+                  style: 'ghost',
+                }, '#sm-icon-label-rc-ghost');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-rc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'sm',
+                  style: 'destructive',
+                }, '#sm-icon-label-rc-destructive');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-rc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'sm',
+                  style: 'float',
+                }, '#sm-icon-label-rc-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="md-icon-label-rc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'md',
+                }, '#md-icon-label-rc-primary');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-rc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'md',
+                  style: 'outline',
+                }, '#md-icon-label-rc-outline');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-rc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'md',
+                  style: 'ghost',
+                }, '#md-icon-label-rc-ghost');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-rc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'md',
+                  style: 'destructive',
+                }, '#md-icon-label-rc-destructive');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-rc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'md',
+                  style: 'float',
+                }, '#md-icon-label-rc-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="lg-icon-label-rc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'lg',
+                }, '#lg-icon-label-rc-primary');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-rc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'lg',
+                  style: 'outline',
+                }, '#lg-icon-label-rc-outline');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-rc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'lg',
+                  style: 'ghost',
+                }, '#lg-icon-label-rc-ghost');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-rc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'lg',
+                  style: 'destructive',
+                }, '#lg-icon-label-rc-destructive');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-rc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'lg',
+                  style: 'float',
+                }, '#lg-icon-label-rc-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="xl-icon-label-rc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xl',
+                }, '#xl-icon-label-rc-primary');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-rc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xl',
+                  style: 'outline',
+                }, '#xl-icon-label-rc-outline');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-rc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xl',
+                  style: 'ghost',
+                }, '#xl-icon-label-rc-ghost');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-rc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xl',
+                  style: 'destructive',
+                }, '#xl-icon-label-rc-destructive');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-rc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xl',
+                  style: 'float',
+                }, '#xl-icon-label-rc-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="xxl-icon-label-rc-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xxl',
+                }, '#xxl-icon-label-rc-primary');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-rc-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xxl',
+                  style: 'outline',
+                }, '#xxl-icon-label-rc-outline');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-rc-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xxl',
+                  style: 'ghost',
+                }, '#xxl-icon-label-rc-ghost');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-rc-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xxl',
+                  style: 'destructive',
+                }, '#xxl-icon-label-rc-destructive');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-rc-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-center',
+                  size: 'xxl',
+                  style: 'float',
+                }, '#xxl-icon-label-rc-float');
+
+              </script>
+            </div>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Icon With Label - Left Justified</h3>
+
+          <div class="wd-demo-content">
+            <div id="xs-icon-label-lj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xs',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#xs-icon-label-lj-primary');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-lj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xs',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#xs-icon-label-lj-outline');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-lj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xs',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#xs-icon-label-lj-ghost');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-lj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xs',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#xs-icon-label-lj-destructive');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-lj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xs',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#xs-icon-label-lj-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="sm-icon-label-lj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'sm',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#sm-icon-label-lj-primary');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-lj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'sm',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#sm-icon-label-lj-outline');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-lj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'sm',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#sm-icon-label-lj-ghost');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-lj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'sm',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#sm-icon-label-lj-destructive');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-lj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'sm',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#sm-icon-label-lj-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="md-icon-label-lj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'md',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#md-icon-label-lj-primary');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-lj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'md',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#md-icon-label-lj-outline');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-lj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'md',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#md-icon-label-lj-ghost');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-lj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'md',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#md-icon-label-lj-destructive');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-lj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'md',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#md-icon-label-lj-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="lg-icon-label-lj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'lg',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#lg-icon-label-lj-primary');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-lj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'lg',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#lg-icon-label-lj-outline');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-lj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'lg',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#lg-icon-label-lj-ghost');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-lj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'lg',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#lg-icon-label-lj-destructive');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-lj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'lg',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#lg-icon-label-lj-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="xl-icon-label-lj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xl',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#xl-icon-label-lj-primary');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-lj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#xl-icon-label-lj-outline');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-lj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#xl-icon-label-lj-ghost');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-lj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#xl-icon-label-lj-destructive');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-lj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#xl-icon-label-lj-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="xxl-icon-label-lj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xxl',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#xxl-icon-label-lj-primary');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-lj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xxl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#xxl-icon-label-lj-outline');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-lj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xxl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#xxl-icon-label-lj-ghost');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-lj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xxl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#xxl-icon-label-lj-destructive');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-lj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'left-justified',
+                  size: 'xxl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#xxl-icon-label-lj-float');
+
+              </script>
+            </div>
+          </div>
+        </div>
+
+        <div class="wd-demo-content">
+          <h3 class="wd-demo-content-heading">Icon With Label - Right Justified</h3>
+
+          <div class="wd-demo-content">
+            <div id="xs-icon-label-rj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xs',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#xs-icon-label-rj-primary');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-rj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xs',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#xs-icon-label-rj-outline');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-rj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xs',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#xs-icon-label-rj-ghost');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-rj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xs',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#xs-icon-label-rj-destructive');
+
+              </script>
+            </div>
+
+            <div id="xs-icon-label-rj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xs',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#xs-icon-label-rj-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="sm-icon-label-rj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'sm',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#sm-icon-label-rj-primary');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-rj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'sm',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#sm-icon-label-rj-outline');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-rj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'sm',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#sm-icon-label-rj-ghost');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-rj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'sm',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#sm-icon-label-rj-destructive');
+
+              </script>
+            </div>
+
+            <div id="sm-icon-label-rj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'sm',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#sm-icon-label-rj-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="md-icon-label-rj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'md',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#md-icon-label-rj-primary');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-rj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'md',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#md-icon-label-rj-outline');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-rj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'md',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#md-icon-label-rj-ghost');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-rj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'md',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#md-icon-label-rj-destructive');
+
+              </script>
+            </div>
+
+            <div id="md-icon-label-rj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'md',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#md-icon-label-rj-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="lg-icon-label-rj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'lg',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#lg-icon-label-rj-primary');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-rj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'lg',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#lg-icon-label-rj-outline');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-rj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'lg',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#lg-icon-label-rj-ghost');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-rj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'lg',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#lg-icon-label-rj-destructive');
+
+              </script>
+            </div>
+
+            <div id="lg-icon-label-rj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'lg',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#lg-icon-label-rj-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="xl-icon-label-rj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xl',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#xl-icon-label-rj-primary');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-rj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#xl-icon-label-rj-outline');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-rj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#xl-icon-label-rj-ghost');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-rj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#xl-icon-label-rj-destructive');
+
+              </script>
+            </div>
+
+            <div id="xl-icon-label-rj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#xl-icon-label-rj-float');
+
+              </script>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="wd-demo-content">
+            <div id="xxl-icon-label-rj-primary" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Primary',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xxl',
+                  width: '90%',
+                  hardWidth: true,
+                }, '#xxl-icon-label-rj-primary');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-rj-outline" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Outline',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xxl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'outline',
+                }, '#xxl-icon-label-rj-outline');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-rj-ghost" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Ghost',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xxl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'ghost',
+                }, '#xxl-icon-label-rj-ghost');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-rj-destructive" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Destructive',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xxl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'destructive',
+                }, '#xxl-icon-label-rj-destructive');
+
+              </script>
+            </div>
+
+            <div id="xxl-icon-label-rj-float" class="wd-demo-content-section wd-demo--5column">
+              <script>
+
+                new metal.WDButton({
+                  label: 'Float',
+                  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 14 13" width="14" height="13">
+                          <path d="M5.707 9.707a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L5.586 7H1a1 1 0 0 1 0-2h4.586L4.293 3.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3z"/>
+                          <path fill-opacity=".6" d="M8.017 0H8a1 1 0 0 0 0 2 4 4 0 0 1 0 8 1 1 0 1 0 0 2 6 6 0 0 0 .017-12"/>
+                        </svg>`,
+                  iconAlignment: 'right-justified',
+                  size: 'xxl',
+                  width: '90%',
+                  hardWidth: true,
+                  style: 'float',
+                }, '#xxl-icon-label-rj-float');
+
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

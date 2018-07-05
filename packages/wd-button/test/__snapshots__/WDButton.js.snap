@@ -1,3 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WDButton should generate the default markup 1`] = `<div id="example">Hello World</div>`;
+exports[`WDButton should generate a button with classes "wd-btn-outline-violet" and "wd-btn-xxl" 1`] = `
+<btn class="wd-btn wd-btn-outline-violet wd-btn-xxl" type="button">
+  <span class="wd-btn-label wd-btn-label-noIcon">Default</span>
+</btn>
+`;
+
+exports[`WDButton should generate a button with inline min-width of "128px" 1`] = `
+<btn class="wd-btn wd-btn-primary-accent wd-btn-sm" style="min-width: 128px;" type="button">
+  <span class="wd-btn-label wd-btn-label-noIcon">Default</span>
+</btn>
+`;
+
+exports[`WDButton should generate a button with inline width= of "36px" 1`] = `
+<btn class="wd-btn wd-btn-primary-accent wd-btn-sm" style="width: 36px;" type="button">
+  <span class="wd-btn-label wd-btn-label-noIcon">Default</span>
+</btn>
+`;
+
+exports[`WDButton should generate a default button 1`] = `
+<btn class="wd-btn wd-btn-primary-accent wd-btn-sm" type="button">
+  <span class="wd-btn-label wd-btn-label-noIcon">Default</span>
+</btn>
+`;
+
+exports[`WDButton should generate a default button with an empty span with class="test-icon" 1`] = `
+<btn class="wd-btn wd-btn-primary-accent wd-btn-sm wd-btn-lone-icon" type="button">
+  <span class="wd-btn-icon wd-btn-lone-icon test-icon"></span>
+</btn>
+`;
+
+exports[`WDButton should generate a default button with class "wd-btn-borderRadius-6px" 1`] = `
+<btn class="wd-btn wd-btn-primary-accent wd-btn-sm wd-btn-borderRadius-6px" type="button">
+  <span class="wd-btn-label wd-btn-label-noIcon">Default</span>
+</btn>
+`;
+
+exports[`WDButton should generate a default button with class "wd-btn-justified-padding" and valid svg aligned to the right of label 1`] = `
+<btn class="wd-btn wd-btn-primary-accent wd-btn-sm wd-btn-justified-padding" type="button">
+  <span class="wd-btn-label wd-btn-label-icon-right-justified">Default</span>
+  <span class="wd-btn-icon  wd-btn-icon-right-justified">
+    <svg>
+      <path d="test"></path>
+    </svg>
+  </span>
+</btn>
+`;
+
+exports[`WDButton should generate a default button with class "wd-btn-rounded" 1`] = `
+<btn class="wd-btn wd-btn-primary-accent wd-btn-sm wd-btn-rounded" type="button">
+  <span class="wd-btn-label wd-btn-label-noIcon">Default</span>
+</btn>
+`;
+
+exports[`WDButton should generate a default button with valid svg element 1`] = `
+<btn class="wd-btn wd-btn-primary-accent wd-btn-sm wd-btn-lone-icon" type="button">
+  <span class="wd-btn-icon wd-btn-lone-icon ">
+    <svg>
+      <path d="test"></path>
+    </svg>
+  </span>
+</btn>
+`;
+
+exports[`WDButton should generate a disabled default button with id="test-id", class="test-class", name="test-name", and type="submit" 1`] = `
+<btn class="wd-btn wd-btn-primary-accent wd-btn-sm test-class" disabled="true" id="test-id" name="test-name" type="submit">
+  <span class="wd-btn-label wd-btn-label-noIcon">Default</span>
+</btn>
+`;
+
+exports[`WDButton should generate a link with href and target="_blank" 1`] = `
+<a class="wd-btn wd-btn-primary-accent wd-btn-sm" href="https://wedeploy.com" target="_blank">
+  <span class="wd-btn-label wd-btn-label-noIcon">Default</span>
+</a>
+`;

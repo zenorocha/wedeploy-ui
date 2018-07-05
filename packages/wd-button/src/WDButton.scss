@@ -1,1 +1,776 @@
-@import "wd-base/src/main";
+@import "../../wd-base/src/main";
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.wd-btn {
+  align-content: center;
+  align-items: center;
+  border: 0 solid transparent;
+  border-radius: $wd-radius-sm;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: $wd-font-primary;
+  font-weight: $wd-fw-emphasis;
+  justify-content: center;
+  text-align: center;
+  transition: 0.33s;
+  white-space: nowrap;
+
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    pointer-events: none;
+    text-decoration: none;
+  }
+
+  .wd-btn-icon svg {
+    transition: 0.33s;
+  }
+}
+
+/* Style
+   ========================================================================== */
+@mixin button-primary($overlay-color, $btn-color) {
+  background-color: $btn-color;
+  box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.18), 0 0 0 0.65px $btn-color;
+  color: rgba(255, 255, 255, 0.98);
+
+  .wd-btn-icon svg {
+    fill: rgba(255, 255, 255, 0.98);
+  }
+
+  &:hover {
+    background-color: mix($overlay-color, $btn-color, 10%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.2), 0 0 0 0.65px $btn-color;
+  }
+
+  &:focus {
+    background-color: mix($overlay-color, $btn-color, 20%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.2), 0 0 0 0.65px $btn-color, 0 0 0 4px rgba($btn-color, 0.3);
+  }
+
+  &:active {
+    background-color: mix($overlay-color, $btn-color, 20%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.3), 0 0 0 0.65px $btn-color;
+  }
+
+  &.wd-btn-selected {
+    background-color: mix($overlay-color, $btn-color, 30%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.5), 0 0 0 0.65px $btn-color;
+  }
+
+  &[disabled] {
+    background-color: rgba($btn-color, 0.4);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.1), 0 0 0 0.65px rgba($btn-color, 0.4);
+    color: rgba(255, 255, 255, 0.3);
+
+    .wd-btn-icon svg {
+      fill: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+@mixin button-outline($btn-color) {
+  background-color: rgba($wd-color-black, 0.02);
+  box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.18);
+  color: rgba($wd-color-black, 0.8);
+
+  .wd-btn-icon svg {
+    fill: rgba($wd-color-black, 0.8);
+  }
+
+  &:hover {
+    background-color: rgba($wd-color-black, 0.03);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.3);
+
+    &.wd-btn-darktheme {
+      background-color: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 0 0 0.65px rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  &:focus {
+    background-color: rgba($wd-color-black, 0.03);
+    box-shadow: 0 0 0 3px rgba($btn-color, 0.3), 0 0 0 0.65px rgba($wd-color-black, 0.3);
+
+    &.wd-btn-darktheme {
+      background-color: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 0 0 3px rgba($btn-color, 0.3), 0 0 0 0.65px rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  &:active {
+    background-color: rgba($wd-color-black, 0.06);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.3);
+
+    &.wd-btn-darktheme {
+      background-color: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 0 0 0.65px rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  &.wd-btn-selected {
+    background-color: rgba($btn-color, 0.06);
+    box-shadow: 0 0 0 0.65px $btn-color;
+    color: $btn-color;
+
+    .wd-btn-icon svg {
+      fill: $btn-color;
+    }
+
+    &.wd-btn-darktheme {
+      background-color: rgba($btn-color, 0.06);
+      box-shadow: 0 0 0 0.65px $btn-color;
+    }
+  }
+
+  &[disabled] {
+    background-color: rgba($wd-color-black, 0.06);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.12);
+    color: rgba($wd-color-black, 0.3);
+
+    .wd-btn-icon svg {
+      fill: rgba($wd-color-black, 0.3);
+    }
+
+    &.wd-btn-darktheme {
+      background-color: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 0 0 0.65px rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.3);
+
+      .wd-btn-icon svg {
+        fill: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  &.wd-btn-darktheme {
+    background-color: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 0 0 0.65px rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.98);
+
+    .wd-btn-icon svg {
+      fill: rgba(255, 255, 255, 0.98);
+    }
+  }
+}
+
+@mixin button-ghost($btn-color) {
+  background-color: transparent;
+  color: rgba($wd-color-black, 0.8);
+
+  .wd-btn-icon svg {
+    fill: rgba($wd-color-black, 0.8);
+  }
+
+  &:hover {
+    background-color: rgba($wd-color-black, 0.08);
+
+    &.wd-btn-darktheme {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  &:focus {
+    background-color: rgba($btn-color, 0.1);
+    box-shadow: 0 0 0 3px rgba($btn-color, 0.3);
+  }
+
+  &:active {
+    background-color: rgba($btn-color, 0.1);
+  }
+
+  &.wd-btn-selected {
+    background-color: rgba($btn-color, 0.2);
+    color: $btn-color;
+
+    .wd-btn-icon svg {
+      fill: $btn-color;
+    }
+
+    &.wd-btn-darktheme {
+      background-color: rgba($btn-color, 0.2);
+    }
+  }
+
+  &[disabled] {
+    color: rgba($wd-color-black, 0.3);
+
+    .wd-btn-icon svg {
+      fill: rgba($wd-color-black, 0.3);
+    }
+
+    &.wd-btn-darktheme {
+      color: rgba(255, 255, 255, 0.3);
+
+      .wd-btn-icon svg {
+        fill: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  &.wd-btn-darktheme {
+    color: rgba(255, 255, 255, 0.98);
+
+    .wd-btn-icon svg {
+      fill: rgba(255, 255, 255, 0.98);
+    }
+  }
+}
+
+@mixin button-float($btn-color) {
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba($wd-color-black, 0.06), 0 6px 12px -3px rgba($wd-color-black, 0.18);
+  color: rgba($wd-color-black, 0.8);
+
+  .wd-btn-icon svg {
+    fill: rgba($wd-color-black, 0.8);
+  }
+
+  &:hover {
+    box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 9px 15px -1px rgba($wd-color-black, 0.24);
+    color: $btn-color;
+
+    .wd-btn-icon svg {
+      fill: $btn-color;
+    }
+
+    &.wd-btn-darktheme {
+      box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 9px 15px -1px rgba($wd-color-black, 0.24);
+      color: $btn-color;
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 9px 15px -1px rgba($wd-color-black, 0.24), 0 0 0 3px rgba($btn-color, 0.3);
+    color: $btn-color;
+
+    .wd-btn-icon svg {
+      fill: $btn-color;
+    }
+  }
+
+  &:active {
+    box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 12px 18px -4px rgba($wd-color-black, 0.24);
+    color: $btn-color;
+
+    .wd-btn-icon svg {
+      fill: $btn-color;
+    }
+  }
+
+  &.wd-btn-selected {
+    box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 9px 18px -2px rgba($wd-color-black, 0.24), 0 0 0 0.65px rgba($btn-color, 0.3);
+    color: rgba($wd-color-black, 0.8);
+
+    .wd-btn-icon svg {
+      fill: rgba($wd-color-black, 0.8);
+    }
+
+    &.wd-btn-darktheme {
+      box-shadow: 0 1px 2px 0 rgba($wd-color-black, 0.12), 0 9px 18px -2px rgba($wd-color-black, 0.24), 0 0 0 0.65px rgba($btn-color, 0.3);
+      color: rgba(255, 255, 255, 0.98);
+    }
+  }
+
+  &[disabled] {
+    box-shadow: 0 1px 3px 0 rgba($wd-color-black, 0.06), 0 6px 12px -3px rgba($wd-color-black, 0.18);
+    color: rgba($wd-color-black, 0.3);
+
+    .wd-btn-icon svg {
+      fill: rgba($wd-color-black, 0.3);
+    }
+
+    &.wd-btn-darktheme {
+      color: rgba(255, 255, 255, 0.3);
+
+      .wd-btn-icon svg {
+        fill: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  &.wd-btn-darktheme {
+    background-color: $wd-color-black;
+    color: rgba(255, 255, 255, 0.98);
+
+    .wd-btn-icon svg {
+      fill: rgba(255, 255, 255, 0.98);
+    }
+  }
+}
+
+.wd-btn.wd-btn-destructive {
+  background-color: $wd-color-red;
+  box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.18), 0 0 0 0.65px $wd-color-red;
+  color: rgba(255, 255, 255, 0.98);
+
+  .wd-btn-icon svg {
+    fill: rgba(255, 255, 255, 0.98);
+  }
+
+  &:hover {
+    background-color: mix($wd-color-black, $wd-color-red, 10%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.2), 0 0 0 0.65px $wd-color-red;
+  }
+
+  &:focus {
+    background-color: mix($wd-color-black, $wd-color-red, 20%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.2), 0 0 0 0.65px $wd-color-red, 0 0 0 4px rgba($wd-color-red, 0.3);
+  }
+
+  &:active {
+    background-color: mix($wd-color-black, $wd-color-red, 20%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.3), 0 0 0 0.65px $wd-color-red;
+  }
+
+  &.wd-btn-selected {
+    background-color: mix($wd-color-black, $wd-color-red, 30%);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.5), 0 0 0 0.65px $wd-color-red;
+  }
+
+  &[disabled] {
+    background-color: rgba($wd-color-red, 0.4);
+    box-shadow: 0 0 0 0.65px rgba($wd-color-black, 0.1), 0 0 0 0.65px rgba($wd-color-red, 0.4);
+    color: rgba(255, 255, 255, 0.3);
+
+    .wd-btn-icon svg {
+      fill: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+/* Color
+   ========================================================================== */
+.wd-btn {
+  &.wd-btn-primary-accent {
+    @include button-primary($wd-color-black, $wd-color-accent);
+  }
+  &.wd-btn-primary-black {
+    @include button-primary(#fff, $wd-color-black);
+  }
+  &.wd-btn-primary-green {
+    @include button-primary($wd-color-black, $wd-color-accent);
+  }
+  &.wd-btn-primary-blue-light {
+    @include button-primary($wd-color-black, $wd-color-blue-lt);
+  }
+  &.wd-btn-primary-blue {
+    @include button-primary($wd-color-black, $wd-color-blue);
+  }
+  &.wd-btn-primary-violet {
+    @include button-primary($wd-color-black, $wd-color-violet);
+  }
+  &.wd-btn-primary-red {
+    @include button-primary($wd-color-black, $wd-color-red);
+  }
+  &.wd-btn-primary-orange {
+    @include button-primary($wd-color-black, $wd-color-orange);
+  }
+  &.wd-btn-primary-yellow {
+    @include button-primary($wd-color-black, $wd-color-yellow);
+  }
+
+  &.wd-btn-outline-accent {
+    @include button-outline($wd-color-accent);
+  }
+  &.wd-btn-outline-black {
+    @include button-outline($wd-color-black);
+  }
+  &.wd-btn-outline-green {
+    @include button-outline($wd-color-accent);
+  }
+  &.wd-btn-outline-blue-light {
+    @include button-outline($wd-color-blue-lt);
+  }
+  &.wd-btn-outline-blue {
+    @include button-outline($wd-color-blue);
+  }
+  &.wd-btn-outline-violet {
+    @include button-outline($wd-color-violet);
+  }
+  &.wd-btn-outline-red {
+    @include button-outline($wd-color-red);
+  }
+  &.wd-btn-outline-orange {
+    @include button-outline($wd-color-orange);
+  }
+  &.wd-btn-outline-yellow {
+    @include button-outline($wd-color-yellow);
+  }
+
+  &.wd-btn-ghost-accent {
+    @include button-ghost($wd-color-accent);
+  }
+  &.wd-btn-ghost-black {
+    @include button-ghost($wd-color-black);
+  }
+  &.wd-btn-ghost-green {
+    @include button-ghost($wd-color-accent);
+  }
+  &.wd-btn-ghost-blue-light {
+    @include button-ghost($wd-color-blue-lt);
+  }
+  &.wd-btn-ghost-blue {
+    @include button-ghost($wd-color-blue);
+  }
+  &.wd-btn-ghost-violet {
+    @include button-ghost($wd-color-violet);
+  }
+  &.wd-btn-ghost-red {
+    @include button-ghost($wd-color-red);
+  }
+  &.wd-btn-ghost-orange {
+    @include button-ghost($wd-color-orange);
+  }
+  &.wd-btn-ghost-yellow {
+    @include button-ghost($wd-color-yellow);
+  }
+
+  &.wd-btn-float-accent {
+    @include button-float($wd-color-accent);
+  }
+  &.wd-btn-float-black {
+    @include button-float($wd-color-black);
+  }
+  &.wd-btn-float-green {
+    @include button-float($wd-color-accent);
+  }
+  &.wd-btn-float-blue-light {
+    @include button-float($wd-color-blue-lt);
+  }
+  &.wd-btn-float-blue {
+    @include button-float($wd-color-blue);
+  }
+  &.wd-btn-float-violet {
+    @include button-float($wd-color-violet);
+  }
+  &.wd-btn-float-red {
+    @include button-float($wd-color-red);
+  }
+  &.wd-btn-float-orange {
+    @include button-float($wd-color-orange);
+  }
+  &.wd-btn-float-yellow {
+    @include button-float($wd-color-yellow);
+  }
+}
+
+/* Size / Fitting / Rounded / Icon Sizing
+   ========================================================================== */
+
+// Size Variables
+$wd-btn-xs  :  30px !default;
+$wd-btn-sm  :  36px !default;
+$wd-btn-md  :  42px !default;
+$wd-btn-lg  :  48px !default;
+$wd-btn-xl  :  54px !default;
+$wd-btn-xxl :  60px !default;
+
+.wd-btn {
+  &.wd-btn-xs {
+    font-size: 13px;
+    height: $wd-btn-xs;
+    padding: 0 9px;
+
+    &.wd-btn-rounded {
+      border-radius: $wd-btn-xs/2;
+    }
+
+    .wd-btn-icon, .wd-btn-icon svg {
+      max-height: 16px;
+      max-width: 16px;
+    }
+  }
+
+  &.wd-btn-sm {
+    font-size: 14px;
+    height: $wd-btn-sm;
+    padding: 0 12.5px;
+
+    &.wd-btn-rounded {
+      border-radius: $wd-btn-sm/2;
+    }
+
+    .wd-btn-icon, .wd-btn-icon svg {
+      max-height: 16px;
+      max-width: 16px;
+    }
+  }
+
+  &.wd-btn-md {
+    font-size: 14px;
+    height: $wd-btn-md;
+    padding: 0 12px;
+
+    &.wd-btn-rounded {
+      border-radius: $wd-btn-md/2;
+    }
+
+    .wd-btn-icon, .wd-btn-icon svg {
+      max-height: 16px;
+      max-width: 16px;
+    }
+  }
+
+  &.wd-btn-lg {
+    font-size: 16px;
+    height: $wd-btn-lg;
+    padding: 0 12px;
+
+    &.wd-btn-rounded {
+      border-radius: $wd-btn-lg/2;
+    }
+
+    .wd-btn-icon, .wd-btn-icon svg {
+      max-height: 20px;
+      max-width: 20px;
+    }
+  }
+
+  &.wd-btn-xl {
+    font-size: 16px;
+    height: $wd-btn-xl;
+    padding: 0 12px;
+
+    &.wd-btn-rounded {
+      border-radius: $wd-btn-xl/2;
+    }
+
+    .wd-btn-icon, .wd-btn-icon svg {
+      max-height: 20px;
+      max-width: 20px;
+    }
+  }
+
+  &.wd-btn-xxl {
+    font-size: 18px;
+    height: $wd-btn-xxl;
+    padding: 0 18.5px;
+
+    &.wd-btn-rounded {
+      border-radius: $wd-btn-xxl/2;
+    }
+
+    .wd-btn-icon, .wd-btn-icon svg {
+      max-height: 20px;
+      max-width: 20px;
+    }
+  }
+
+  &.wd-btn-borderRadius-6px {
+    border-radius: $wd-radius-md;
+  }
+
+  &.wd-btn-fullwidth {
+    width: 100%;
+  }
+}
+
+/* Weight (from WD Typography, specified in elementClasses)
+   ========================================================================== */
+.wd-btn {
+
+  &.wd-fw-body {
+    .wd-btn-label {
+      font-weight: $wd-fw-body;
+    }
+  }
+  &.wd-fw-emphasis {
+    .wd-btn-label {
+      font-weight: $wd-fw-emphasis;
+    }
+  }
+  &.wd-fw-display {
+    .wd-btn-label {
+      font-weight: $wd-fw-display;
+    }
+  }
+}
+
+/* Content
+   ========================================================================== */
+.wd-btn {
+
+  .wd-btn-icon, .wd-btn-label {
+    display: flex;
+  }
+
+  &.wd-btn-lone-icon {
+    border-radius: 50%;
+
+    &.wd-btn-xs {
+      padding: 7px;
+      width: $wd-btn-xs;
+    }
+
+    &.wd-btn-sm {
+      padding: 10px;
+      width: $wd-btn-sm;
+    }
+
+    &.wd-btn-md {
+      padding: 13px;
+      width: $wd-btn-md;
+    }
+
+    &.wd-btn-lg {
+      padding: 14px;
+      width: $wd-btn-lg;
+    }
+
+    &.wd-btn-xl {
+      padding: 17px;
+      width: $wd-btn-xl;
+    }
+
+    &.wd-btn-xxl {
+      padding: 20px;
+      width: $wd-btn-xxl;
+    }
+  }
+
+  &.wd-btn-xs {
+
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
+      margin: 0;
+    }
+
+    .wd-btn-label-icon-left-justified {
+      margin: 0 0 0 auto;
+    }
+
+    .wd-btn-label-icon-right-justified {
+      margin: 0 auto 0 0;
+    }
+
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
+      margin: 0 5px 0 0;
+    }
+
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
+      margin: 0 0 0 5px;
+    }
+  }
+
+  &.wd-btn-sm {
+
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
+      margin: 0;
+    }
+
+    .wd-btn-label-icon-left-justified {
+      margin: 0 0 0 auto;
+    }
+
+    .wd-btn-label-icon-right-justified {
+      margin: 0 auto 0 0;
+    }
+
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
+      margin: 0 8.5px 0 0;
+    }
+
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
+      margin: 0 0 0 8.5px;
+    }
+  }
+
+  &.wd-btn-md {
+
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
+      margin: 0;
+    }
+
+    .wd-btn-label-icon-left-justified {
+      margin: 0 0 0 auto;
+    }
+
+    .wd-btn-label-icon-right-justified {
+      margin: 0 auto 0 0;
+    }
+
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
+      margin: 0 11px 0 0;
+    }
+
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
+      margin: 0 0 0 11px;
+    }
+  }
+
+  &.wd-btn-lg {
+
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
+      margin: 0;
+    }
+
+    .wd-btn-label-icon-left-justified {
+      margin: 0 0 0 auto;
+    }
+
+    .wd-btn-label-icon-right-justified {
+      margin: 0 auto 0 0;
+    }
+
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
+      margin: 0 9px 0 0;
+    }
+
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
+      margin: 0 0 0 9px;
+    }
+  }
+
+  &.wd-btn-xl {
+
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
+      margin: 0;
+    }
+
+    .wd-btn-label-icon-left-justified {
+      margin: 0 0 0 auto;
+    }
+
+    .wd-btn-label-icon-right-justified {
+      margin: 0 auto 0 0;
+    }
+
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
+      margin: 0 9.5px 0 0;
+    }
+
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
+      margin: 0 0 0 9.5px;
+    }
+  }
+
+  &.wd-btn-xxl {
+
+    .wd-btn-label-icon-left-center, .wd-btn-label-icon-right-center {
+      margin: 0;
+    }
+
+    .wd-btn-label-icon-left-justified {
+      margin: 0 0 0 auto;
+    }
+
+    .wd-btn-label-icon-right-justified {
+      margin: 0 auto 0 0;
+    }
+
+    .wd-btn-icon-left-center, .wd-btn-icon-left-justified {
+      margin: 0 15.5px 0 0;
+    }
+
+    .wd-btn-icon-right-center, .wd-btn-icon-right-justified {
+      margin: 0 0 0 15.5px;
+    }
+  }
+}

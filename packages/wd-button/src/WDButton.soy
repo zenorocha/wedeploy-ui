@@ -4,7 +4,170 @@
  * This renders the component's whole content.
  */
 {template .render}
+  {@param? disabled: bool}
+  {@param? elementClasses: string}
+  {@param? style: string}
+  {@param? color: string}
+  {@param? size: string}
+  {@param? width: string}
+  {@param? hardWidth: bool}
+  {@param? darkTheme: bool}
+  {@param? borderRadius: string}
+  {@param? href: string}
+  {@param? icon: html|string}
+  {@param? classIcon: string}
+  {@param? iconAlignment: string}
   {@param? id: string}
+  {@param? label: html|string}
+  {@param? name: string}
+  {@param? rel: string}
+  {@param? target: string}
+  {@param? type: string}
+  {@param? value: string}
 
-  <div id="{$id}">Hello World</div>
+  {let $attributes kind="attributes"}
+    class="wd-btn
+      {if $style == 'destructive'}
+        {sp}wd-btn-destructive
+      {elseif $style and $color}
+        {sp}wd-btn-{$style}-{$color}
+      {elseif $style and not $color}
+        {sp}wd-btn-{$style}-accent
+      {elseif $color and not $style}
+        {sp}wd-btn-primary-{$color}
+      {else}
+        {sp}wd-btn-primary-accent
+      {/if}
+
+      {if $size}
+        {sp}wd-btn-{$size}
+      {/if}
+
+      {if $width == 'full' or $width == 'fullwidth'}
+        {sp}wd-btn-fullwidth
+      {/if}
+
+      {if $darkTheme}
+        {sp}wd-btn-darktheme
+      {/if}
+
+      {if $borderRadius}
+        {sp}wd-btn-{$borderRadius}
+      {/if}
+
+      {if not $label}
+        {if $icon or $classIcon}
+          {sp}wd-btn-lone-icon
+        {/if}
+      {/if}
+
+      {if $iconAlignment == 'left-justified' or $iconAlignment == 'right-justified'}
+        {sp}wd-btn-justified-padding
+      {/if}
+
+      {if $elementClasses}
+        {sp}{$elementClasses}
+      {/if}
+    "
+
+    {if $width != 'full' and $width != 'fullwidth'}
+      {if $width and not $hardWidth}
+        style="min-width:{$width}"
+      {/if}
+
+      {if $width and $hardWidth}
+        style="width:{$width}"
+      {/if}
+    {/if}
+
+    {if $disabled}
+      disabled="true"
+    {/if}
+
+    {if $href}
+      href="{$href}"
+    {/if}
+
+    {if $id}
+      id="{$id}"
+    {/if}
+
+    {if $name}
+      name="{$name}"
+    {/if}
+
+    {if $rel}
+      rel="{$rel}"
+    {/if}
+
+    {if $value}
+      value="{$value}"
+    {/if}
+
+    {if $target}
+      target="{$target}"
+    {/if}
+
+    {if not $href}
+      type="{$type}"
+    {/if}
+  {/let}
+
+  {if $href}
+   <a {$attributes}>
+  {else}
+   <btn {$attributes}>
+  {/if}
+    {call .content}
+      {param icon: $icon /}
+      {param classIcon: $classIcon /}
+      {param iconAlignment: $iconAlignment /}
+      {param label: $label /}
+    {/call}
+  {if $href}
+   </a>
+  {else}
+   </btn>
+  {/if}
+{/template}
+
+/**
+ * Renders button content
+ */
+{template .content}
+  {@param? icon: html|string}
+  {@param? classIcon: string}
+  {@param? iconAlignment: string}
+  {@param? label: html|string}
+
+  {if not $label}
+    {if $icon or $classIcon}
+      <span class="wd-btn-icon wd-btn-lone-icon {$classIcon ?: ''}">{$icon ?: ''}</span>
+    {/if}
+  {else}
+    {if $icon or $classIcon}
+
+      {if $iconAlignment}
+        {if $iconAlignment == 'left-center' or $iconAlignment == 'left-justified'}
+          <span class="wd-btn-icon {$classIcon ?: ''} wd-btn-icon-{$iconAlignment}">{$icon ?: ''}</span>
+        {/if}
+
+        <span class="wd-btn-label wd-btn-label-icon-{$iconAlignment}">{$label ?: ''}</span>
+
+        {if $iconAlignment == 'right-center' or $iconAlignment == 'right-justified'}
+          <span class="wd-btn-icon {$classIcon ?: ''} wd-btn-icon-{$iconAlignment}">{$icon ?: ''}</span>
+        {/if}
+      {else}
+        <span class="wd-btn-icon {$classIcon ?: ''} wd-btn-icon-left-center">{$icon ?: ''}</span>
+        <span class="wd-btn-label wd-btn-label-icon-left-center">{$label ?: ''}</span>
+      {/if}
+
+    {else}
+      {if $iconAlignment}
+        <span class="wd-btn-label wd-btn-label-icon-{$iconAlignment}">{$label ?: ''}</span>
+      {else}
+        <span class="wd-btn-label wd-btn-label-noIcon">{$label ?: ''}</span>
+      {/if}
+    {/if}
+  {/if}
 {/template}

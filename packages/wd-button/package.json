@@ -41,7 +41,7 @@
     "metal-tools-soy": "^4.2.6",
     "metal-useragent": "^2.1.1",
     "mini-css-extract-plugin": "^0.4.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.0.3",
     "webpack": "^4.0.0",
     "webpack-cli": "^3.0.8"
